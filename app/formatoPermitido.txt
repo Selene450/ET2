@@ -1,0 +1,23 @@
+| Atributo             | Descripción                                                                                                                                           |
+|----------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------|
+| CodigoA              | Un código único de 11 dígitos numéricos                                                                                                               |
+| AutoresA             | Nombre de los autores, debe tener un mínimo de siete y un máximo de 200 caracteres alfabéticos (incluye ñ, acentos y espacios)                        |
+| TituloA              | Nombre del artículo, debe tener un mínimo de tres y un máximo de 100 caracteres alfanuméricos (incluye ñ, acentos y espacios)                         |
+| TituloR              | Nombre de la revista, debe tener un mínimo de tres y un máximo de 100 caracteres alfabéticos (incluye ñ, acentos y espacios)                          |
+| ISSN                 | ISSN de la revista: nueve caracteres en formato DDDD-DDDX, siendo X un carácter de control y D un dígito numérico                                     |
+| VolumenR             | Volumen de la revista; debe tener mínimo 1 y máximo 4 caracteres numéricos                                                                            |
+| PagIniA              | Número de página inicial del artículo; debe tener como mínimo 1 y como máximo 4 caracteres numéricos                                                  |
+| PagFinA              | Número de página final del artículo; debe tener como mínimo 1 y como máximo 4 caracteres numéricos                                                    |
+| FechaPublicacionR    | Fecha de publicación de la revista; formato dd-mm-aaaa                                                                                                |
+| FicheropdfA          | Fichero tipo PDF; tamaño máximo 2000000B. Nombre con mínimo 3 y máximo 20 caracteres alfanuméricos, sin espacios                                      |
+| EstadoA              | Estado del artículo; solo puede ser 'Enviado', 'Revision' o 'Publicado'                                                                               |
+| id_site              | Identificador; debe tener 11 caracteres numéricos                                                                                                     |
+| site_latitud         | Latitud siguiendo el estándar WGS84                                                                                                                   |
+| site_longitud        | Longitud siguiendo el estándar WGS84                                                                                                                  |
+| site_altitude        | Altitud siguiendo el estándar WGS84                                                                                                                   |
+| site_locality        | Localidad; debe tener como mínimo 3 y como máximo 40 caracteres alfabéticos                                                                           |
+| site_provider_login  | Login del proveedor del sitio; debe tener como mínimo 7 y como máximo 30 caracteres alfanuméricos sin espacios ni acentos                             |
+| site_north_photo     | Foto hacia el norte; debe ser JPG, tamaño máximo 2000000G. Nombre con mínimo 3 y máximo 50 caracteres alfanuméricos sin espacios                      |
+| site_south_photo     | Foto hacia el sur; debe ser JPG, tamaño máximo 2000000G. Nombre con mínimo 3 y máximo 50 caracteres alfanuméricos sin espacios                        |
+| site_east_photo      | Foto hacia el este; debe ser JPG, tamaño máximo 2000000G. Nombre con mínimo 3 y máximo 50 caracteres alfanuméricos sin espacios                       |
+| site_west_photo      | Foto hacia el oeste; debe ser JPG, tamaño máximo 2000000G. Nombre con mínimo 3 y máximo 50 caracteres alfanuméricos sin espacios                      |
