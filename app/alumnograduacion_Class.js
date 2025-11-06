@@ -183,25 +183,115 @@ class alumnograduacion extends EntidadAbstracta{
 	}
 	/*formato nif o nie con letras válidas para los números*/
 	ADD_alumnograduacion_dni_validation(){
-		if (!(this.validations.min_size('dni',9))){
-			this.dom.mostrar_error_campo('dni','dni_min_size_KO');
-			return "dni_min_size_KO";
+		if (!(this.validations.min_size('alumnograduacion_dni',9))){
+			this.dom.mostrar_error_campo('alumnograduacion_dni','alumnograduacion_dni_min_size_KO');
+			return "alumnograduacion_dni_min_size_KO";
 		}
-		if (!(this.validations.max_size('dni',9))){
-			this.dom.mostrar_error_campo('dni','dni_max_size_KO');
-			return "dni_max_size_KO";
+		if (!(this.validations.max_size('alumnograduacion_dni',9))){
+			this.dom.mostrar_error_campo('alumnograduacion_dni','alumnograduacion_dni_max_size_KO');
+			return "alumnograduacion_dni_max_size_KO";
 		}
 				
 		var resp = this.personalize_dni_nie();
 		console.log(resp);
 		if (!(resp === true)){
-			this.dom.mostrar_error_campo('dni',resp);
+			this.dom.mostrar_error_campo('alumnograduacion_dni',resp);
 			return resp;
 		}
 		
-		this.dom.mostrar_exito_campo('dni');
+		this.dom.mostrar_exito_campo('alumnograduacion_dni');
 		return true;
 	}
+
+	/**
+	 * 
+	 * test dni format in the regular expression
+	 * @param {string} 
+	 * @return {bool} true is regular expression is satified false otherwise  
+	 * */ 
+
+	personalize_dni_nie(){
+		
+		var dni = document.getElementById('alumnograduacion_dni').value;
+		if (this.personalize_dni_format() == true){
+			if (!(this.personalize_validate_dni(dni))){
+				return "alumnograduacion_dni_validate_KO";
+			}
+		}
+		else{
+			if (this.personalize_nie_format() === true){
+					if (!(this.personalize_validate_nie(dni))){
+						return "alumnograduacion_nie_validate_KO";
+					}
+			}
+			else{
+				return "alumnograduacion_dni_nie_format_KO";
+			}
+		}
+
+		return true;
+
+	}
+	/**
+	 * get dni as parameter, split letter and numbers, calculate
+	 * %23 from number to obtain corresponding letter and compares with letter in dni value
+	 * 
+	 * @param dni value
+	 * @returns true if dni is valid false otherwise
+	 */
+	personalize_dni_format(){
+		
+		if (!(this.validations.format('dni', '[0-9]{8}[A-Z]'))){
+			this.dom.mostrar_error_campo('dni','alumnograduacion_dni_format_KO');
+			return "alumnograduacion_dni_format_KO";
+		}
+		return true;
+
+	}
+
+	personalize_nie_format(){
+		if (!(this.validations.format('alumnograduacion_dni', '[XYZ][0-9]{7}[A-Z]'))){
+			this.dom.mostrar_error_campo('alumnograduacion_dni','alumnograduacion_nie_format_KO');
+			return "alumnograduacion_nie_format_KO";
+		}
+		return true;
+	}
+	personalize_validate_dni(dni){
+		
+		//var dni = document.getElementById('dni').value;
+		var dni_letters = "TRWAGMYFPDXBNJZSQVHLCKE";
+    	var letter = dni_letters.charAt( parseInt( dni, 10 ) % 23 );
+		
+    	return letter == dni.charAt(8);
+	}
+
+	/**
+	 * get nie as parameter, split firts letter, calculate
+	 * the number from this letter and create dni for validating in 
+	 * personalizate method
+	 * 
+	 * @param nie value
+	 * @returns true if nie is valid false otherwise
+	 */
+	personalize_validate_nie(nie){
+		
+		//var nie = document.getElementById('dni').value;
+		// Change the initial letter for the corresponding number and validate as DNI
+		var nie_prefix = nie.charAt( 0 );
+
+		switch (nie_prefix) {
+		case 'X': nie_prefix = 0; break;
+		case 'Y': nie_prefix = 1; break;
+		case 'Z': nie_prefix = 2; break;
+		}
+
+		return this.personalize_validate_dni( nie_prefix + nie.substr(1) );
+	
+	}
+
+	
+
+
 	/*9 dígitos (0-9)*/
 	ADD_alumnograduacion_telefono_validation(){
         if(!this.validations.min_size('alumnograduacion_telefono', 9)){
@@ -694,7 +784,7 @@ class alumnograduacion extends EntidadAbstracta{
 			case 'alumnograduacion_fotoacto':
 				var link = 'error';
 				if (valorentrada !== ''){
-					link = valorentrada+`  <a class="link_alumnograduacion_fotoacto" href="http://193.147.87.202/ET2/filesuploaded/files_alumnograduacion_fotoacto/`+valorentrada+`"><img src="./iconos/FILE.png" /></a>`;
+					link = valorentrada+`  <a class="link_alumnograduacion_fotoacto" href="http://193.147.87.202/ET2/filesuploaded/files_alumnograduacion/`+valorentrada+`"><img src="./iconos/FILE.png" /></a>`;
 				}
 				return link;
 				break;
@@ -704,59 +794,7 @@ class alumnograduacion extends EntidadAbstracta{
 		}
 	}
 
-	//
-	//ADD
-	//
-	ADD_alumnograduacion_login_validation(){return true;}
-	ADD_alumnograduacion_password_validation(){return true;}
 	
-	ADD_alumnograduacion_nombre_validation(){return true;}
-	ADD_alumnograduacion_apellidos_validation(){return true;}
-	ADD_alumnograduacion_titulacion_validation(){return true;}
-	ADD_alumnograduacion_dni_validation(){return true;}
-	ADD_alumnograduacion_telefono_validation(){return true;}
-	ADD_alumnograduacion_email_validation(){return true;}
-	ADD_alumnograduacion_direccion_validation(){return true;}
-	ADD_nuevo_alumnograduacion_fotoacto_validation(){return true;}
-
-
-
-
-	//
-	//EDIT
-	//
-	EDIT_alumnograduacion_login_validation(){return true;}
-	EDIT_alumnograduacion_password_validation(){return true;}
-	EDIT_alumnograduacion_nombre_validation(){return true;}
-	EDIT_alumnograduacion_apellidos_validation(){return true;}
-	EDIT_alumnograduacion_titulacion_validation(){return this.ADD_alumnograduacion_titulacion_validation();}
-	EDIT_alumnograduacion_dni_validation(){return true;}
-	EDIT_alumnograduacion_telefono_validation(){return true;}
-	EDIT_alumnograduacion_email_validation(){return true;}
-	EDIT_alumnograduacion_direccion_validation(){return true;}
-	EDIT_alumnograduacion_fotoacto_validation(){return true;}
-	EDIT_nuevo_alumnograduacion_fotoacto_validation(){return true;}
-
-	
-	//
-	//SEARCH
-	//
-	SEARCH_alumnograduacion_login_validation(){return true;}
-	SEARCH_alumnograduacion_password_validation(){return true;}
-	SEARCH_alumnograduacion_nombre_validation(){return true;}
-	SEARCH_alumnograduacion_apellidos_validation(){return true;}
-	SEARCH_alumnograduacion_titulacion_validation(){return true;}
-	SEARCH_alumnograduacion_dni_validation(){return true;}
-	SEARCH_alumnograduacion_telefono_validation(){return true;}
-	SEARCH_alumnograduacion_direccion_validation(){return true;}
-	SEARCH_alumnograduacion_email_validation(){return true;}
-	SEARCH_alumnograduacion_fotoacto_validation(){return true;}
-	//
-	//submits
-	//
-	ADD_submit_alumnograduacion(){return true;}
-	EDIT_submit_alumnograduacion(){return true;}
-	SEARCH_submit_alumnograduacion(){return true;}
 
 
 

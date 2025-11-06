@@ -1,18 +1,18 @@
 let alumnograduacion_def_tests =[
     ['alumnograduacion', 'alumnograduacion_login', 'input', 1, 'Comprobar tamaño mínimo login', 'ADD', 'alumnograduacion_login_min_size_KO', 'El login es inferior al tamaño mínimo. Debe estar entre 4 y 15 caracteres'],
-    /*['alumnograduacion', 'alumnograduacion_login', 'input', 2, 'Comprobar tamaño máximo login', 'ADD', 'alumnograduacion_login_max_size_KO', 'El login excede el tamaño máximo. Debe estar entre 4 y 15 caracteres'],
+    ['alumnograduacion', 'alumnograduacion_login', 'input', 2, 'Comprobar tamaño máximo login', 'ADD', 'alumnograduacion_login_max_size_KO', 'El login excede el tamaño máximo. Debe estar entre 4 y 15 caracteres'],
     ['alumnograduacion', 'alumnograduacion_login', 'input', 3, 'Comprobar tamaño formato login', 'ADD', 'alumnograduacion_login_format_KO', 'El login no cumple el formato. Debe estar entre 4 y 15 caracteres alfabéticos sin acentos ni ñ'],
     ['alumnograduacion', 'alumnograduacion_login', 'input', 4, 'Comprobar campo válido login', 'ADD', true, ''],
     ['alumnograduacion', 'alumnograduacion_login', 'input', 5, 'Comprobar tamaño mínimo login', 'EDIT', 'alumnograduacion_login_min_size_KO', 'El login es inferior al tamaño mínimo. Debe estar entre 4 y 15 caracteres'],
     ['alumnograduacion', 'alumnograduacion_login', 'input', 6, 'Comprobar tamaño máximo login', 'EDIT', 'alumnograduacion_login_max_size_KO', 'El login excede el tamaño máximo. Debe estar entre 4 y 15 caracteres'],
-    ['alumnograduacion', 'alumnograduacion_login', 'input', 7, 'Comprobar tamaño formato login', 'EDIT', 'alumnograduacion_login_format_KO', 'El login no cumple el formato. Debe estar entre 4 y 15 caracteres alfabéticos sin acentos ni ñ']
+    ['alumnograduacion', 'alumnograduacion_login', 'input', 7, 'Comprobar tamaño formato login', 'EDIT', 'alumnograduacion_login_format_KO', 'El login no cumple el formato. Debe estar entre 4 y 15 caracteres alfabéticos sin acentos ni ñ'],
     ['alumnograduacion', 'alumnograduacion_login', 'input', 8, 'Comprobar campo válido login', 'EDIT', true, ''],
     ['alumnograduacion', 'alumnograduacion_login', 'input', 9, 'Comprobar tamaño máximo login', 'SEARCH', 'alumnograduacion_login_max_size_KO', 'El login excede el tamaño máximo. Debe estar entre 4 y 15 caracteres'],
     ['alumnograduacion', 'alumnograduacion_login', 'input', 10, 'Comprobar tamaño formato login', 'SEARCH', 'alumnograduacion_login_format_KO', 'El login no cumple el formato. Debe estar entre 4 y 15 caracteres alfabéticos sin acentos ni ñ'],
     ['alumnograduacion', 'alumnograduacion_login', 'input', 11, 'Comprobar campo válido login', 'SEARCH', true, ''],
     ['alumnograduacion', 'alumnograduacion_password', 'input', 12, 'Comprobar tamaño mínimo password', 'ADD', 'alumnograduacion_password_min_size_KO', 'La password es inferior al tamaño mínimo. Debe estar entre 8 y 64 caracteres'],
     ['alumnograduacion', 'alumnograduacion_password', 'input', 13, 'Comprobar tamaño máximo password', 'ADD', 'alumnograduacion_password_max_size_KO', 'La password excede al tamaño máximo. Debe estar entre 8 y 64 caracteres'],
-    ['alumnograduacion', 'alumnograduacion_password', 'input', 14, 'Comprobar formato password', 'ADD', 'alumnograduacion_password_format_KO', 'La password no cumple el formato. Debe estar entre 8 y 64 caracteres alfabéticos y espacios, sin acentos ni ñ']
+    ['alumnograduacion', 'alumnograduacion_password', 'input', 14, 'Comprobar formato password', 'ADD', 'alumnograduacion_password_format_KO', 'La password no cumple el formato. Debe estar entre 8 y 64 caracteres alfabéticos y espacios, sin acentos ni ñ'],
     ['alumnograduacion', 'alumnograduacion_password', 'input', 15, 'Comprobar campo válido password', 'ADD', true, ''],
     ['alumnograduacion', 'alumnograduacion_password', 'input', 16, 'Comprobar tamaño mínimo password', 'EDIT', 'alumnograduacion_password_min_size_KO', 'La password es inferior al tamaño mínimo. Debe estar entre 8 y 64 caracteres'],
     ['alumnograduacion', 'alumnograduacion_password', 'input', 17, 'Comprobar tamaño máximo password', 'EDIT', 'alumnograduacion_password_max_size_KO', 'La password excede al tamaño máximo. Debe estar entre 8 y 64 caracteres'],
@@ -21,7 +21,7 @@ let alumnograduacion_def_tests =[
     ['alumnograduacion', 'alumnograduacion_password', 'input', 20, 'Comprobar tamaño máximo password', 'SEARCH', 'alumnograduacion_password_max_size_KO', 'La password excede al tamaño máximo. Debe tener vomo máximo 64 caracteres'],
     ['alumnograduacion', 'alumnograduacion_password', 'input', 21, 'Comprobar formato password', 'SEARCH', 'alumnograduacion_password_format_KO', 'La password no cumple el formato. Debe tener alfabéticos y espacios, sin acentos ni ñ'],
     ['alumnograduacion', 'alumnograduacion_password', 'input', 22, 'Comprobar campo válido password', 'SEARCH', true, ''],
-    ['alumnograduacion', 'alumnograduacion_nombre', 'input', 23, 'Comprobar tamaño mínimo nombre', 'ADD', 'alumnograduacion_nombre_min_size_KO', 'El nombre es inferior al tamaño mínimo. Debe estar entre 2 y 25 caracteres']
+    ['alumnograduacion', 'alumnograduacion_nombre', 'input', 23, 'Comprobar tamaño mínimo nombre', 'ADD', 'alumnograduacion_nombre_min_size_KO', 'El nombre es inferior al tamaño mínimo. Debe estar entre 2 y 25 caracteres'],
     ['alumnograduacion', 'alumnograduacion_nombre', 'input', 24, 'Comprobar tamaño máximo nombre', 'ADD', 'alumnograduacion_nombre_max_size-KO', 'El nombre excede el tamaño máximo. Debe estar entre 2 y 25 caracteres'],
     ['alumnograduacion', 'alumnograduacion_nombre', 'input', 25, 'Comprobar formato nombre', 'ADD', 'alumnograduacion_nombre_format_KO', 'El nombre no cumple el formato. Debe estar entre 2 y 25 caracteres alfabéticos con espacios, acentos y ñ'],
     ['alumnograduacion', 'alumnograduacion_nombre', 'input', 26, 'Comprobar campo válido nombre', 'ADD', true, ''],
@@ -56,7 +56,7 @@ let alumnograduacion_def_tests =[
     ['alumnograduacion', 'alumnograduacion_titulacion', 'select', 55, 'Comprobar campo válido titulación', 'SEARCH', true, ''],
     ['alumnograduacion', 'alumnograduacion_dni', 'input', 56, 'Comprobar tamaño mínimo DNI', 'ADD', 'alumnograduacion_dni_min_size_KO', 'El DNI es inferior al tamaño mínimo. Debe tener 8 dígitos y una letra mayúscula'],
     ['alumnograduacion', 'alumnograduacion_dni', 'input', 57, 'Comprobar tamaño máximo DNI', 'ADD', 'alumnograduacion_dni_max_size_KO', 'El DNI excede el tamaño máximo. Debe tener 8 dígitos y una letra mayúscula'],
-    ['alumnograduacion', 'alumnograduacion_dni', 'input', 58, 'Comprobar formato DNI', 'ADD', 'alumnograduacion_dni_format_KO', 'El DNI no cumple el formato. Debe tener 8 dígitos y una letra mayúscula']
+    ['alumnograduacion', 'alumnograduacion_dni', 'input', 58, 'Comprobar formato DNI', 'ADD', 'alumnograduacion_dni_format_KO', 'El DNI no cumple el formato. Debe tener 8 dígitos y una letra mayúscula'],
     ['alumnograduacion', 'alumnograduacion_dni', 'input', 59, 'Comprobar campo válido DNI', 'ADD', true, ''],
     ['alumnograduacion', 'alumnograduacion_dni', 'input', 60, 'Comprobar tamaño mínimo DNI', 'EDIT', 'alumnograduacion_dni_min_size_KO', 'El DNI es inferior al tamaño mínimo. Debe tener 8 dígitos y una letra mayúscula'],
     ['alumnograduacion', 'alumnograduacion_dni', 'input', 61, 'Comprobar tamaño máximo DNI', 'EDIT', 'alumnograduacion_dni_max_size_KO', 'El DNI excede el tamaño máximo. Debe tener 8 dígitos y una letra mayúscula'],
@@ -65,7 +65,7 @@ let alumnograduacion_def_tests =[
     ['alumnograduacion', 'alumnograduacion_dni', 'input', 64, 'Comprobar tamaño máximo DNI', 'SEARCH', 'alumnograduacion_dni_max_size_KO', 'El DNI excede el tamaño máximo. Debe tener 8 dígitos y una letra mayúscula'],
     ['alumnograduacion', 'alumnograduacion_dni', 'input', 65, 'Comprobar formato DNI', 'SEARCH', 'alumnograduacion_dni_format_KO', 'El DNI no cumple el formato. Debe tener 8 dígitos y una letra mayúscula'],
     ['alumnograduacion', 'alumnograduacion_dni', 'input', 66, 'Comprobar campo válido DNI', 'SEARCH', true, ''],
-    ['alumnograduacion', 'alumnograduacion_telefono', 'input', 67, 'Comprobar tamaño mínimo teléfono', 'ADD', 'alumnograduacion_telefono_min_size_KO', 'El teléfono es inferior al tamaño mínimo. Debe tener 9 dígitos']
+    ['alumnograduacion', 'alumnograduacion_telefono', 'input', 67, 'Comprobar tamaño mínimo teléfono', 'ADD', 'alumnograduacion_telefono_min_size_KO', 'El teléfono es inferior al tamaño mínimo. Debe tener 9 dígitos'],
     ['alumnograduacion', 'alumnograduacion_telefono', 'input', 68, 'Comprobar tamaño máximo teléfono', 'ADD', 'alumnograduacion_telefono_max_size_KO', 'El teléfono excede el tamaño máximo. Debe tener 9 dígitos'],
     ['alumnograduacion', 'alumnograduacion_telefono', 'input', 69, 'Comprobar formato teléfono', 'ADD', 'alumnograduacion_telefono_format_KO', 'El teléfono no cumple el formato. Debe tener 9 dígitos del 0 al 9'],
     ['alumnograduacion', 'alumnograduacion_telefono', 'input', 70, 'Comprobar campo válido teléfono', 'ADD', true, ''],
@@ -77,7 +77,7 @@ let alumnograduacion_def_tests =[
     ['alumnograduacion', 'alumnograduacion_telefono', 'input', 76, 'Comprobar formato teléfono', 'SEARCH', 'alumnograduacion_telefono_format_KO', 'El teléfono no cumple el formato. Debe tener 9 dígitos del 0 al 9'],
     ['alumnograduacion', 'alumnograduacion_telefono', 'input', 77, 'Comprobar campo válido teléfono', 'SEARCH', true, ''],
     ['alumnograduacion', 'alumnograduacion_direccion', 'input', 78, 'Comprobar tamaño mínimo dirección', 'ADD', 'alumnograduacion_direccion_min_size_KO', 'La dirección es inferior al mínimo número de caracteres permitidos. No puede ser null'],
-    ['alumnograduacion', 'alumnograduacion_direccion', 'input', 79, 'Comprobar tamaño máximo dirección', 'ADD', 'alumnograduacion_direccion_max_size_KO', 'La dirección excede el máximo número de caracteres permitidos. Debe ser inferior a 100 caracteres']
+    ['alumnograduacion', 'alumnograduacion_direccion', 'input', 79, 'Comprobar tamaño máximo dirección', 'ADD', 'alumnograduacion_direccion_max_size_KO', 'La dirección excede el máximo número de caracteres permitidos. Debe ser inferior a 100 caracteres'],
     ['alumnograduacion', 'alumnograduacion_direccion', 'input', 80, 'comprobar formato direccion', 'ADD', 'alumnograduacion_direccion_format_KO', 'La dirección no cumple el formato. Solo puede contener alfanuméricos con acentos, ñ y espacios'],
     ['alumnograduacion', 'alumnograduacion_direccion', 'input', 81, 'Comprobar campo válido dirección', 'ADD', true, ''],
     ['alumnograduacion', 'alumnograduacion_direccion', 'input', 82, 'Comprobar tamaño mínimo dirección', 'EDIT', 'alumnograduacion_direccion_min_size_KO', 'La dirección es inferior al mínimo número de caracteres permitidos. No puede ser null'],
@@ -114,7 +114,7 @@ let alumnograduacion_def_tests =[
     ['alumnograduacion', 'nuevo_alumnograduacion_fotoacto', 'inputfile', 113, 'Comprobar fichero válido', 'EDIT', true, ''],
     ['alumnograduacion', 'alumnograduacion_fotoacto', 'input', 114, 'Comprobar tamaño máximo de nombre de búsqueda', 'SEARCH', 'alumnograduacion_fotoacto_name_max_size_KO', 'El nombre del fichero excede el tamaño máximo. Debe tener menos de 40 caracteres alfabéticos (sin acentos, ñ, ni espacios) y "."'],
     ['alumnograduacion', 'alumnograduacion_fotoacto', 'input', 115, 'Comprobar formato de búsqueda', 'SEARCH', 'alumnograduacion_fotoacto_name_format_KO', 'El nombre del fichero no es correcto. Solo se permiten máximo 40 caracteres alfabéticos (sin acentos, ñ, ni espacios) y "."'], 
-    ['alumnograduacion', 'alumnograduacion_fotoacto', 'input', 116, 'Comprobar búsqueda válida', 'SEARCH', true, ''], */
+    ['alumnograduacion', 'alumnograduacion_fotoacto', 'input', 116, 'Comprobar búsqueda válida', 'SEARCH', true, ''],
     
 
 ]
@@ -123,8 +123,8 @@ let alumnograduacion_def_tests =[
 
 let alumnograduacion_tests_fields =[
     ['alumnograduacion', 'alumnograduacion_login', 1, 1, 'ADD', [{alumnograduacion_login: 'a'}], 'alumnograduacion_login_min_size_KO'],
-    /*['alumnograduacion', 'alumnograduacion_login', 1, 2, 'ADD', [{alumnograduacion_login: 'ada'}], 'alumnograduacion_login_min_size_KO'],
-    ['alumnograduacion', 'alumnograduacion_login', 2, 3, 'ADD', [{alumnograduacion_login: 'a.repeat(15)'}], 'alumnograduacion_login_max_size_KO'],
+    ['alumnograduacion', 'alumnograduacion_login', 1, 2, 'ADD', [{alumnograduacion_login: 'ada'}], 'alumnograduacion_login_min_size_KO'],
+    ['alumnograduacion', 'alumnograduacion_login', 2, 3, 'ADD', [{alumnograduacion_login: 'a'.repeat(16)}], 'alumnograduacion_login_max_size_KO'],
     ['alumnograduacion', 'alumnograduacion_login', 3, 4, 'ADD', [{alumnograduacion_login: 'martiño'}], 'alumnograduacion_login_format_KO'],
     ['alumnograduacion', 'alumnograduacion_login', 3, 5, 'ADD', [{alumnograduacion_login: '#alicia'}], 'alumnograduacion_login_format_KO'],
     ['alumnograduacion', 'alumnograduacion_login', 3, 6, 'ADD', [{alumnograduacion_login: 'maría'}], 'alumnograduacion_login_format_KO'],
@@ -132,13 +132,13 @@ let alumnograduacion_tests_fields =[
     ['alumnograduacion', 'alumnograduacion_login', 4, 8, 'ADD', [{alumnograduacion_login: 'javi'}], true],
     ['alumnograduacion', 'alumnograduacion_login', 5, 9, 'EDIT', [{alumnograduacion_login: 'a'}], 'alumnograduacion_login_min_size_KO'],
     ['alumnograduacion', 'alumnograduacion_login', 5, 10, 'EDIT', [{alumnograduacion_login: 'ada'}], 'alumnograduacion_login_min_size_KO'],
-    ['alumnograduacion', 'alumnograduacion_login', 6, 11, 'EDIT', [{alumnograduacion_login: 'a.repeat(15)'}], 'alumnograduacion_login_max_size_KO'],
+    ['alumnograduacion', 'alumnograduacion_login', 6, 11, 'EDIT', [{alumnograduacion_login: 'a'.repeat(16)}], 'alumnograduacion_login_max_size_KO'],
     ['alumnograduacion', 'alumnograduacion_login', 7, 12, 'EDIT', [{alumnograduacion_login: 'martiño'}], 'alumnograduacion_login_format_KO'],
     ['alumnograduacion', 'alumnograduacion_login', 7, 13, 'EDIT', [{alumnograduacion_login: '#alicia'}], 'alumnograduacion_login_format_KO'],
     ['alumnograduacion', 'alumnograduacion_login', 7, 14, 'EDIT', [{alumnograduacion_login: 'maría'}], 'alumnograduacion_login_format_KO'],
     ['alumnograduacion', 'alumnograduacion_login', 7, 15, 'EDIT', [{alumnograduacion_login: 'sebas22'}], 'alumnograduacion_login_format_KO'],
     ['alumnograduacion', 'alumnograduacion_login', 8, 16, 'EDIT', [{alumnograduacion_login: 'javi'}], true],
-    ['alumnograduacion', 'alumnograduacion_login', 9, 17, 'SEARCH', [{alumnograduacion_login: 'a.repeat(15)'}], 'alumnograduacion_login_max_size_KO'],
+    ['alumnograduacion', 'alumnograduacion_login', 9, 17, 'SEARCH', [{alumnograduacion_login: 'a'.repeat(16)}], 'alumnograduacion_login_max_size_KO'],
     ['alumnograduacion', 'alumnograduacion_login', 10, 18, 'SEARCH', [{alumnograduacion_login: 'martiño'}], 'alumnograduacion_login_format_KO'],
     ['alumnograduacion', 'alumnograduacion_login', 10, 19, 'SEARCH', [{alumnograduacion_login: '#alicia'}], 'alumnograduacion_login_format_KO'],
     ['alumnograduacion', 'alumnograduacion_login', 10, 20, 'SEARCH', [{alumnograduacion_login: 'maría'}], 'alumnograduacion_login_format_KO'],
@@ -146,7 +146,7 @@ let alumnograduacion_tests_fields =[
     ['alumnograduacion', 'alumnograduacion_login', 11, 22, 'SEARCH', [{alumnograduacion_login: 'javi'}], true],
     ['alumnograduacion', 'alumnograduacion_password', 12, 23, 'ADD', [{alumnograduacion_password: 'f'}], 'alumnograduacion_password_min_size_KO'],
     ['alumnograduacion', 'alumnograduacion_password', 12, 24, 'ADD', [{alumnograduacion_password: 'fffffff'}], 'alumnograduacion_password_min_size_KO'],
-    ['alumnograduacion', 'alumnograduacion_password', 13, 25, 'ADD', [{alumnograduacion_password: 'f.repeat(100)'}], 'alumnograduacion_password_max_size_KO'],
+    ['alumnograduacion', 'alumnograduacion_password', 13, 25, 'ADD', [{alumnograduacion_password: 'f'.repeat(100)}], 'alumnograduacion_password_max_size_KO'],
     ['alumnograduacion', 'alumnograduacion_password', 14, 26, 'ADD', [{alumnograduacion_password: '34fifi98t'}], 'alumnograduacion_password_format_KO'],
     ['alumnograduacion', 'alumnograduacion_password', 14, 27, 'ADD', [{alumnograduacion_password: '#midsomar'}], 'alumnograduacion_password_format_KO'],
     ['alumnograduacion', 'alumnograduacion_password', 14, 28, 'ADD', [{alumnograduacion_password: 'San Martiño'}], 'alumnograduacion_password_format_KO'],
@@ -168,33 +168,33 @@ let alumnograduacion_tests_fields =[
     ['alumnograduacion', 'alumnograduacion_password', 22, 44, 'SEARCH', [{alumnograduacion_password: 'rlcfabiadice'}], true],
     ['alumnograduacion', 'alumnograduacion_nombre', 23, 45, 'ADD', [{alumnograduacion_nombre: 'a'}], 'alumnograduacion_nombre_min_size_KO'],
     ['alumnograduacion', 'alumnograduacion_nombre', 23, 46, 'ADD', [{alumnograduacion_nombre: 'a'}], 'alumnograduacion_nombre_min_size_KO'],
-    ['alumnograduacion', 'alumnograduacion_nombre', 24, 47, 'ADD', [{alumnograduacion_nombre: 'a.repeat(26)'}], 'alumnograduacion_nombre_max_size-KO'],
+    ['alumnograduacion', 'alumnograduacion_nombre', 24, 47, 'ADD', [{alumnograduacion_nombre: 'a'.repeat(26)}], 'alumnograduacion_nombre_max_size-KO'],
     ['alumnograduacion', 'alumnograduacion_nombre', 25, 48, 'ADD', [{alumnograduacion_nombre: '#alicia'}], 'alumnograduacion_nombre_format_KO'],
     ['alumnograduacion', 'alumnograduacion_nombre', 25, 49, 'ADD', [{alumnograduacion_nombre: 'sebas22'}], 'alumnograduacion_nombre_format_KO'],
     ['alumnograduacion', 'alumnograduacion_nombre', 26, 50, 'ADD', [{alumnograduacion_nombre: 'Ana María'}], true],
     ['alumnograduacion', 'alumnograduacion_nombre', 27, 51, 'EDIT', [{alumnograduacion_nombre: 'a'}], 'alumnograduacion_nombre_min_size_KO'],
     ['alumnograduacion', 'alumnograduacion_nombre', 27, 52, 'EDIT', [{alumnograduacion_nombre: 'a'}], 'alumnograduacion_nombre_min_size_KO'],
-    ['alumnograduacion', 'alumnograduacion_nombre', 28, 53, 'EDIT', [{alumnograduacion_nombre: 'a.repeat(26)'}], 'alumnograduacion_nombre_max_size-KO'],
+    ['alumnograduacion', 'alumnograduacion_nombre', 28, 53, 'EDIT', [{alumnograduacion_nombre: 'a'.repeat(26)}], 'alumnograduacion_nombre_max_size-KO'],
     ['alumnograduacion', 'alumnograduacion_nombre', 29, 54, 'EDIT', [{alumnograduacion_nombre: '#alicia'}], 'alumnograduacion_nombre_format_KO'],
     ['alumnograduacion', 'alumnograduacion_nombre', 29, 55, 'EDIT', [{alumnograduacion_nombre: 'sebas22'}], 'alumnograduacion_nombre_format_KO'],
     ['alumnograduacion', 'alumnograduacion_nombre', 30, 56, 'EDIT', [{alumnograduacion_nombre: 'Ana María'}], true],
-    ['alumnograduacion', 'alumnograduacion_nombre', 31, 57, 'SEARCH', [{alumnograduacion_nombre: 'a.repeat(26)'}], 'alumnograduacion_nombre_max_size-KO'],
+    ['alumnograduacion', 'alumnograduacion_nombre', 31, 57, 'SEARCH', [{alumnograduacion_nombre: 'a'.repeat(26)}], 'alumnograduacion_nombre_max_size-KO'],
     ['alumnograduacion', 'alumnograduacion_nombre', 32, 58, 'SEARCH', [{alumnograduacion_nombre: '#alicia'}], 'alumnograduacion_nombre_format_KO'],
     ['alumnograduacion', 'alumnograduacion_nombre', 32, 59, 'SEARCH', [{alumnograduacion_nombre: 'sebas22'}], 'alumnograduacion_nombre_format_KO'],
     ['alumnograduacion', 'alumnograduacion_nombre', 33, 60, 'SEARCH', [{alumnograduacion_nombre: 'Ana María'}], true],
     ['alumnograduacion', 'alumnograduacion_apellidos', 34, 61, 'ADD', [{alumnograduacion_apellidos: ''}], 'alumnograduacion_apellidos_min_size_KO'],
     ['alumnograduacion', 'alumnograduacion_apellidos', 34, 62, 'ADD', [{alumnograduacion_apellidos: 'a'}], 'alumnograduacion_apellidos_min_size_KO'],
-    ['alumnograduacion', 'alumnograduacion_apellidos', 35, 63, 'ADD', [{alumnograduacion_apellidos: 'a.repeat(36)'}], 'alumnograduacion_apellidos_max_size_KO'],
+    ['alumnograduacion', 'alumnograduacion_apellidos', 35, 63, 'ADD', [{alumnograduacion_apellidos: 'a'.repeat(36)}], 'alumnograduacion_apellidos_max_size_KO'],
     ['alumnograduacion', 'alumnograduacion_apellidos', 36, 64, 'ADD', [{alumnograduacion_apellidos: '#alicia'}], 'alumnograduacion_apellidos_format_KO'],
     ['alumnograduacion', 'alumnograduacion_apellidos', 36, 65, 'ADD', [{alumnograduacion_apellidos: 'sebas22'}], 'alumnograduacion_apellidos_format_KO'],
     ['alumnograduacion', 'alumnograduacion_apellidos', 37, 66, 'ADD', [{alumnograduacion_apellidos: 'Fernández Rodríguez'}], true],
     ['alumnograduacion', 'alumnograduacion_apellidos', 38, 67, 'ADD', [{alumnograduacion_apellidos: ''}], 'alumnograduacion_apellidos_min_size_KO'],
     ['alumnograduacion', 'alumnograduacion_apellidos', 38, 68, 'ADD', [{alumnograduacion_apellidos: 'a'}], 'alumnograduacion_apellidos_min_size_KO'],
-    ['alumnograduacion', 'alumnograduacion_apellidos', 39, 69, 'EDIT', [{alumnograduacion_apellidos: 'a.repeat(36)'}], 'alumnograduacion_apellidos_max_size_KO'],
+    ['alumnograduacion', 'alumnograduacion_apellidos', 39, 69, 'EDIT', [{alumnograduacion_apellidos: 'a'.repeat(36)}], 'alumnograduacion_apellidos_max_size_KO'],
     ['alumnograduacion', 'alumnograduacion_apellidos', 40, 70, 'EDIT', [{alumnograduacion_apellidos: '#alicia'}], 'alumnograduacion_apellidos_format_KO'],
     ['alumnograduacion', 'alumnograduacion_apellidos', 40, 71, 'EDIT', [{alumnograduacion_apellidos: 'sebas22'}], 'alumnograduacion_apellidos_format_KO'],
     ['alumnograduacion', 'alumnograduacion_apellidos', 41, 72, 'EDIT', [{alumnograduacion_apellidos: 'Fernández Rodríguez'}], true],
-    ['alumnograduacion', 'alumnograduacion_apellidos', 42, 73, 'EDIT', [{alumnograduacion_apellidos: 'a.repeat(36)'}], 'alumnograduacion_apellidos_max_size_KO'],
+    ['alumnograduacion', 'alumnograduacion_apellidos', 42, 73, 'EDIT', [{alumnograduacion_apellidos: 'a'.repeat(36)}], 'alumnograduacion_apellidos_max_size_KO'],
     ['alumnograduacion', 'alumnograduacion_apellidos', 43, 74, 'SEARCH', [{alumnograduacion_apellidos: '#alicia'}], 'alumnograduacion_apellidos_format_KO'],
     ['alumnograduacion', 'alumnograduacion_apellidos', 43, 75, 'SEARCH', [{alumnograduacion_apellidos: 'sebas22'}], 'alumnograduacion_apellidos_format_KO'],
     ['alumnograduacion', 'alumnograduacion_apellidos', 44, 76, 'SEARCH', [{alumnograduacion_apellidos: 'Fernández Rodríguez'}], true],
@@ -288,11 +288,11 @@ let alumnograduacion_tests_fields =[
     ['alumnograduacion', 'alumnograduacion_email', 99, 164, 'SEARCH', [{alumnograduacion_email: 'user@example.com'}], true],
     ['alumnograduacion', 'alumnograduacion_fotoacto', 114, 165, 'SEARCH', [{alumnograduacion_fotoacto: 'foto'.repeat(40)+'.jpg'}], 'alumnograduacion_fotoacto_name_max_size_KO'],
     ['alumnograduacion', 'alumnograduacion_fotoacto', 115, 166, 'SEARCH',[{alumnograduacion_fotoacto: 'fo to . j p g'}], 'alumnograduacion_fotoacto_name_format_KO'],
-    ['alumnograduacion', 'alumnograduacion_fotoacto', 116, 167, 'SEARCH',[{alumnograduacion_fotoacto: 'fotografia'}], true],*/
+    ['alumnograduacion', 'alumnograduacion_fotoacto', 116, 167, 'SEARCH',[{alumnograduacion_fotoacto: 'fotografia'}], true],
 ]
 
 let alumnograduacion_tests_files = [
-    /*['alumnograduacion', 'nuevo_alumnograduacion_fotoacto', 100, 1, 'ADD', 'exists', [], 'nuevo_alumnograduacion_fotoacto_not_exists_KO'],
+   /* ['alumnograduacion', 'nuevo_alumnograduacion_fotoacto', 100, 1, 'ADD', 'exists', [], 'nuevo_alumnograduacion_fotoacto_not_exists_KO'],
     ['alumnograduacion', 'nuevo_alumnograduacion_fotoacto', 101, 2, 'ADD', 'format_name_file', [{format_name_file:'foto niño.jpg'}, {type_file:'img/jpg'}, {max_size_file: 200}], 'nuevo_alumnograduacion_fotoacto_name_format_KO'],
     ['alumnograduacion', 'nuevo_alumnograduacion_fotoacto', 102, 3, 'ADD', 'type_file',[{format_name_file:'foto.png'}, {type_file:'img/png'}, {max_size_file:200}], 'nuevo_alumnograduacion_fotoacto_type_file_KO'],
     ['alumnograduacion', 'nuevo_alumnograduacion_fotoacto', 103, 4, 'ADD', 'max_size_file',[{format_name_file:'foto.jpg'}, {type_file:'img/jpg'}, {max_size_file:2000001}], 'nuevo_alumnograduacion_fotoacto_max_size_file_KO'],
@@ -305,12 +305,12 @@ let alumnograduacion_tests_files = [
     ['alumnograduacion', 'nuevo_alumnograduacion_fotoacto', 110, 11, 'EDIT', 'max_size_file',[{format_name_file:'foto.jpg'}, {type_file:'img/jpg'}, {max_size_file:2000001}], 'nuevo_alumnograduacion_fotoacto_max_size_file_KO'],
     ['alumnograduacion', 'nuevo_alumnograduacion_fotoacto', 111, 12, 'EDIT', 'format_name_file', [{format_name_file:'f.jpg'}, {type_file:'img/jpg'}, {max_size_file:2000000}], 'nuevo_alumnograduacion_fotoacto_name_min_size_KO'],
     ['alumnograduacion', 'nuevo_alumnograduacion_fotoacto', 112, 13, 'EDIT', 'format_name_file', [{format_name_file:'foto'.repeat(21)+'.jpg'}, {type_file:'img/jpg'}, {max_size_file:2000000}], 'nuevo_alumnograduacion_fotoacto_name_max_size_KO'],
-    ['alumnograduacion', 'nuevo_alumnograduacion_fotoacto', 113, 14, 'EDIT', 'valid', [{format_name_file:'foto.jpg'}, {type_file:'img/jpg'}, {max_size_file:2000000}], true],
+    ['alumnograduacion', 'nuevo_alumnograduacion_fotoacto', 113, 14, 'EDIT', 'valid', [{format_name_file:'foto.jpg'}, {type_file:'img/jpg'}, {max_size_file:2000000}], true], */
 
 ]
 
 
-let articulo_def_tests = [
+/*let articulo_def_tests = [
     ['articulo', 'CodigoA', 1, 'Comprobar tamaño mínimo de CodigoA', 'ADD', 'CodigoA_min_size_KO', 'El código del artículodebe tener once caracteres numéricos'],
     ['articulo', 'CodigoA', 2, 'Comprobar tamaño máximo de CodigoA', 'ADD', 'CodigoA_max_size_KO', 'El código del artículo debe tener once caracteres numéricos'],
     ['articulo', 'CodigoA', 3, 'Comprobar formato de CodigoA', 'ADD', 'CodigoA_format_KO', 'El código del artículo solo permite oncce caracteres numéricos'],
@@ -336,5 +336,5 @@ let articulo_def_tests = [
     ['articulo', 'TituloA', 23, 'Comprobar tamaño mínimo de TituloA', 'ADD', 'TituloA_min_size_KO', 'El título del artículo debe tener como mínimo 3 y como máximo 100 caracteres alfanuméricos, incluyendo ñ, acentos y espacios'],
     ['articulo', 'TituloA', 24, 'Comprobar tamaño máximo de TituloA', 'ADD','TituloA_max_size_KO', 'El título del artículo debe tener vomo mínimo 3 y como máximo 100 caracteresalfanuméricos, incluyendo ñ, acentos y espacios'],
     ['articulo', 'TituloA', 25, 'Comprobar formato de TituloA', 'ADD', 'TituloA_format_KO', 'El titulo del artículo debe estar compuesto por caracteres alfanuméricos, incluyendo ñ, acentos y espacios'],
-    ['articulo', 'TituloA', 26, 'Comprobar campo válido TituloA', 'ADD', true, ''], */
-]
+    ['articulo', 'TituloA', 26, 'Comprobar campo válido TituloA', 'ADD', true, ''], 
+]*/
