@@ -82,7 +82,7 @@ class alumnograduacion extends EntidadAbstracta{
 
 			<br>
 
-			<label id="label_alumnograduacion_fotoacto" class="label_alumnograduacion_fotoacto">Foto Persona</label>
+			<label id="label_alumnograduacion_fotoacto" class="label_alumnograduacion_fotoacto">Fotoacto</label>
 			<input type='text' id='alumnograduacion_fotoacto' name='alumnograduacion_fotoacto'></input>
 			<span id="span_error_alumnograduacion_fotoacto"><a id="error_alumnograduacion_fotoacto"></a></span>
 			<a id="link_alumnograduacion_fotoacto" href="http://193.147.87.202/ET2/filesuploaded/files_alumnograduacion_fotoacto/"><img src="./iconos/FILE.png" /></a>
@@ -532,7 +532,7 @@ class alumnograduacion extends EntidadAbstracta{
 		this.dom.assign_property_value('form_iu', 'action', 'javascript:entidad.EDIT();');
 
 		//activar el link al fichero
-		this.dom.assign_property_value('link_alumnograduacion_fotoacto', 'href', 'http://193.147.87.202/ET2/filesuploaded/files_alumnograduacion_fotoacto/'+fila.alumnograduacion_fotoacto);
+		this.dom.assign_property_value('link_alumnograduacion_fotoacto', 'href', 'http://193.147.87.202/ET2/filesuploaded/files_alumnograduacion/'+fila.alumnograduacion_fotoacto);
 		
 
 
@@ -560,14 +560,14 @@ class alumnograduacion extends EntidadAbstracta{
 	
 		this.dom.show_element('Div_IU_form','block');
 		this.dom.remove_class_value('class_contenido_titulo_form','text_contenido_titulo_form');
-		this.dom.assign_class_value('class_contenido_titulo_form', 'text_contenido_titulo_form_persona_DELETE');
+		this.dom.assign_class_value('class_contenido_titulo_form', 'text_contenido_titulo_form_alumnograduacion_DELETE');
 
 		// rellenar y action
 		this.dom.assign_property_value('form_iu', 'action', 'javascript:entidad.DELETE();');
 
 		// poner no visible el campo nuevo_alumnograduacion_fotoacto (solo se puede ver el nombre de fichero)
 		this.dom.hide_element_form('nuevo_alumnograduacion_fotoacto');
-		this.dom.assign_property_value('link_alumnograduacion_fotoacto', 'href', 'http://193.147.87.202/ET2/filesuploaded/files_foto_persona/'+fila.foto_persona);
+		this.dom.assign_property_value('link_alumnograduacion_fotoacto', 'href', 'http://193.147.87.202/ET2/filesuploaded/files_alumnograduacion/'+fila.alumnograduacion_fotoacto);
 		
 		// rellenar valores
 		this.dom.rellenarvaloresform(fila);
@@ -586,14 +586,14 @@ class alumnograduacion extends EntidadAbstracta{
 		document.getElementById('contenedor_IU_form').innerHTML = this.manual_form_creation();
 		this.dom.show_element('Div_IU_form','block');
 		this.dom.remove_class_value('class_contenido_titulo_form', 'text_contenido_titulo_form');
-		this.dom.assign_class_value('class_contenido_titulo_form', 'text_contenido_titulo_form_persona_SHOWCURRENT');
+		this.dom.assign_class_value('class_contenido_titulo_form', 'text_contenido_titulo_form_alumnograduacion_SHOWCURRENT');
 
 		// rellenar y action
 		//this.dom.assign_property_value('form_iu', 'action', 'javascript:entidad.DELETE();');
 
-		// poner no visible el campo nuevo_foto_persona (solo se puede ver el nombre de fichero)
+		// poner no visible el campo nuevo_alumnograduacion_fotoacto (solo se puede ver el nombre de fichero)
 		this.dom.hide_element_form('nuevo_alumnograduacion_fotoacto');
-		this.dom.assign_property_value('link_alumnograduacion_fotoacto', 'href', 'http://193.147.87.202/ET2/filesuploaded/files_foto_persona/'+fila.foto_persona);
+		this.dom.assign_property_value('link_alumnograduacion_fotoacto', 'href', 'http://193.147.87.202/ET2/filesuploaded/files_alumnograduacion/'+fila.alumnograduacion_fotoacto);
 		
 		// rellenar valores
 		this.dom.rellenarvaloresform(fila);
@@ -624,7 +624,7 @@ class alumnograduacion extends EntidadAbstracta{
 		// poner action
 		this.dom.assign_property_value('form_iu', 'action', 'javascript:entidad.ADD();');
 		
-		// poner no visible el campo foto_persona (solo se puede subir fichero)
+		// poner no visible el campo alumnograduacion_fotoacto (solo se puede subir fichero)
 		this.dom.hide_element_form('alumnograduacion_fotoacto');
 		this.dom.hide_element('link_alumnograduacion_fotoacto');
 
@@ -651,7 +651,7 @@ class alumnograduacion extends EntidadAbstracta{
 		document.getElementById('contenedor_IU_form').innerHTML = this.manual_form_creation();
 		this.dom.show_element('Div_IU_form','block');
 		this.dom.remove_class_value('class_contenido_titulo_form', 'text_contenido_titulo_form');
-		this.dom.assign_class_value('class_contenido_titulo_form', 'text_contenido_titulo_form_persona_SEARCH');
+		this.dom.assign_class_value('class_contenido_titulo_form', 'text_contenido_titulo_form_alumnograduacion_SEARCH');
 
 		// poner onsubmit
 		this.dom.assign_property_value('form_iu','onsubmit','return entidad.SEARCH_submit_'+this.nombreentidad);
@@ -659,17 +659,13 @@ class alumnograduacion extends EntidadAbstracta{
 		// poner action
 		this.dom.assign_property_value('form_iu', 'action', 'javascript:entidad.SEARCH();');
 		
-		// poner no visible el campo foto_persona (solo se puede subir fichero)
-		this.dom.hide_element_form('nuevo_foto_persona');
-		this.dom.hide_element('link_foto_persona');
+		// poner no visible el campo alumnograduacion_fotoacto (solo se puede subir fichero)
+		this.dom.hide_element_form('nuevo_alumnograduacion_fotoacto');
+		this.dom.hide_element('link_alumnograduacion_fotoacto');
 
 		// reemplazar enumerados por texto
-		// titulacion_persona que es un select
-		this.dom.replaceSelectXEmptyInput('titulacion_persona');
-		// menu_persona que es un checkbox
-		this.dom.replaceEnumNameXEmptyInput('menu_persona');
-		// genero_persona que es un radio
-		this.dom.replaceEnumNameXEmptyInput('genero_persona');
+		// titulacionque es un select
+		this.dom.replaceSelectXEmptyInput('alumnograduacion_titulacion');
 		
 		// rellenar valores
 		// en SEARCH no hay valores que rellenar
