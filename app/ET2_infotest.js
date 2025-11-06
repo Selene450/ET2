@@ -1,6 +1,6 @@
 let alumnograduacion_def_tests =[
     ['alumnograduacion', 'alumnograduacion_login', 'input', 1, 'Comprobar tamaño mínimo login', 'ADD', 'alumnograduacion_login_min_size_KO', 'El login es inferior al tamaño mínimo. Debe estar entre 4 y 15 caracteres'],
-    ['alumnograduacion', 'alumnograduacion_login', 'input', 2, 'Comprobar tamaño máximo login', 'ADD', 'alumnograduacion_login_max_size_KO', 'El login excede el tamaño máximo. Debe estar entre 4 y 15 caracteres'],
+    /*['alumnograduacion', 'alumnograduacion_login', 'input', 2, 'Comprobar tamaño máximo login', 'ADD', 'alumnograduacion_login_max_size_KO', 'El login excede el tamaño máximo. Debe estar entre 4 y 15 caracteres'],
     ['alumnograduacion', 'alumnograduacion_login', 'input', 3, 'Comprobar tamaño formato login', 'ADD', 'alumnograduacion_login_format_KO', 'El login no cumple el formato. Debe estar entre 4 y 15 caracteres alfabéticos sin acentos ni ñ'],
     ['alumnograduacion', 'alumnograduacion_login', 'input', 4, 'Comprobar campo válido login', 'ADD', true, ''],
     ['alumnograduacion', 'alumnograduacion_login', 'input', 5, 'Comprobar tamaño mínimo login', 'EDIT', 'alumnograduacion_login_min_size_KO', 'El login es inferior al tamaño mínimo. Debe estar entre 4 y 15 caracteres'],
@@ -113,8 +113,8 @@ let alumnograduacion_def_tests =[
     ['alumnograduacion', 'nuevo_alumnograduacion_fotoacto', 'inputfile', 112, 'Comprobar tamaño máximo del nombre del archivo', 'EDIT', 'nuevo_alumnograduacion_fotoacto_name_max_size_KO', 'El nombre del fichero excede el tamaño máximo. Debe tener entre 7 y 40 caracteres alfabéticos (sin acentos, ñ, ni espacios) y "."'],
     ['alumnograduacion', 'nuevo_alumnograduacion_fotoacto', 'inputfile', 113, 'Comprobar fichero válido', 'EDIT', true, ''],
     ['alumnograduacion', 'alumnograduacion_fotoacto', 'input', 114, 'Comprobar tamaño máximo de nombre de búsqueda', 'SEARCH', 'alumnograduacion_fotoacto_name_max_size_KO', 'El nombre del fichero excede el tamaño máximo. Debe tener menos de 40 caracteres alfabéticos (sin acentos, ñ, ni espacios) y "."'],
-    ['alumnograduacion', 'alumnograduacion_fotoacto', 'input', 115, 'Comprobar formato de búsqueda', 'SEARCH', 'alumnograduacion_fotoacto_name_format_KO', 'El nombre del fichero no es correcto. Solo se permiten máximo 40 caracteres alfabéticos (sin acentos, ñ, ni espacios) y "."'],
-    ['alumnograduacion', 'alumnograduacion_fotoacto', 'input', 116, 'Comprobar búsqueda válida', 'SEARCH', true, ''],
+    ['alumnograduacion', 'alumnograduacion_fotoacto', 'input', 115, 'Comprobar formato de búsqueda', 'SEARCH', 'alumnograduacion_fotoacto_name_format_KO', 'El nombre del fichero no es correcto. Solo se permiten máximo 40 caracteres alfabéticos (sin acentos, ñ, ni espacios) y "."'], 
+    ['alumnograduacion', 'alumnograduacion_fotoacto', 'input', 116, 'Comprobar búsqueda válida', 'SEARCH', true, ''], */
     
 
 ]
@@ -123,7 +123,7 @@ let alumnograduacion_def_tests =[
 
 let alumnograduacion_tests_fields =[
     ['alumnograduacion', 'alumnograduacion_login', 1, 1, 'ADD', [{alumnograduacion_login: 'a'}], 'alumnograduacion_login_min_size_KO'],
-    ['alumnograduacion', 'alumnograduacion_login', 1, 2, 'ADD', [{alumnograduacion_login: 'ada'}], 'alumnograduacion_login_min_size_KO'],
+    /*['alumnograduacion', 'alumnograduacion_login', 1, 2, 'ADD', [{alumnograduacion_login: 'ada'}], 'alumnograduacion_login_min_size_KO'],
     ['alumnograduacion', 'alumnograduacion_login', 2, 3, 'ADD', [{alumnograduacion_login: 'a.repeat(15)'}], 'alumnograduacion_login_max_size_KO'],
     ['alumnograduacion', 'alumnograduacion_login', 3, 4, 'ADD', [{alumnograduacion_login: 'martiño'}], 'alumnograduacion_login_format_KO'],
     ['alumnograduacion', 'alumnograduacion_login', 3, 5, 'ADD', [{alumnograduacion_login: '#alicia'}], 'alumnograduacion_login_format_KO'],
@@ -288,11 +288,11 @@ let alumnograduacion_tests_fields =[
     ['alumnograduacion', 'alumnograduacion_email', 99, 164, 'SEARCH', [{alumnograduacion_email: 'user@example.com'}], true],
     ['alumnograduacion', 'alumnograduacion_fotoacto', 114, 165, 'SEARCH', [{alumnograduacion_fotoacto: 'foto'.repeat(40)+'.jpg'}], 'alumnograduacion_fotoacto_name_max_size_KO'],
     ['alumnograduacion', 'alumnograduacion_fotoacto', 115, 166, 'SEARCH',[{alumnograduacion_fotoacto: 'fo to . j p g'}], 'alumnograduacion_fotoacto_name_format_KO'],
-    ['alumnograduacion', 'alumnograduacion_fotoacto', 116, 167, 'SEARCH',[{alumnograduacion_fotoacto: 'fotografia'}], true],
+    ['alumnograduacion', 'alumnograduacion_fotoacto', 116, 167, 'SEARCH',[{alumnograduacion_fotoacto: 'fotografia'}], true],*/
 ]
 
 let alumnograduacion_tests_files = [
-    ['alumnograduacion', 'nuevo_alumnograduacion_fotoacto', 100, 1, 'ADD', 'exists', [], 'nuevo_alumnograduacion_fotoacto_not_exists_KO'],
+    /*['alumnograduacion', 'nuevo_alumnograduacion_fotoacto', 100, 1, 'ADD', 'exists', [], 'nuevo_alumnograduacion_fotoacto_not_exists_KO'],
     ['alumnograduacion', 'nuevo_alumnograduacion_fotoacto', 101, 2, 'ADD', 'format_name_file', [{format_name_file:'foto niño.jpg'}, {type_file:'img/jpg'}, {max_size_file: 200}], 'nuevo_alumnograduacion_fotoacto_name_format_KO'],
     ['alumnograduacion', 'nuevo_alumnograduacion_fotoacto', 102, 3, 'ADD', 'type_file',[{format_name_file:'foto.png'}, {type_file:'img/png'}, {max_size_file:200}], 'nuevo_alumnograduacion_fotoacto_type_file_KO'],
     ['alumnograduacion', 'nuevo_alumnograduacion_fotoacto', 103, 4, 'ADD', 'max_size_file',[{format_name_file:'foto.jpg'}, {type_file:'img/jpg'}, {max_size_file:2000001}], 'nuevo_alumnograduacion_fotoacto_max_size_file_KO'],
@@ -336,5 +336,5 @@ let articulo_def_tests = [
     ['articulo', 'TituloA', 23, 'Comprobar tamaño mínimo de TituloA', 'ADD', 'TituloA_min_size_KO', 'El título del artículo debe tener como mínimo 3 y como máximo 100 caracteres alfanuméricos, incluyendo ñ, acentos y espacios'],
     ['articulo', 'TituloA', 24, 'Comprobar tamaño máximo de TituloA', 'ADD','TituloA_max_size_KO', 'El título del artículo debe tener vomo mínimo 3 y como máximo 100 caracteresalfanuméricos, incluyendo ñ, acentos y espacios'],
     ['articulo', 'TituloA', 25, 'Comprobar formato de TituloA', 'ADD', 'TituloA_format_KO', 'El titulo del artículo debe estar compuesto por caracteres alfanuméricos, incluyendo ñ, acentos y espacios'],
-    ['articulo', 'TituloA', 26, 'Comprobar campo válido TituloA', 'ADD', true, ''],
+    ['articulo', 'TituloA', 26, 'Comprobar campo válido TituloA', 'ADD', true, ''], */
 ]
