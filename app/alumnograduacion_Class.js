@@ -4,9 +4,9 @@ class alumnograduacion extends EntidadAbstracta{
 		super();
 
 		//definicion de atributos a mostrarn en la tabla de muestra de tuplas al entrar en la gestion de la entidad
-		this.columnasamostrar = ['alumnograduacion_login','alumnograduacion_password', 'alumnograduacion_nombre','alumnograduacion_apellidos','alumnograduacion_titulacion','alumnograduacion_dni','alumnograduacion_telefono','alumnograduacion_direccion','alumnograduacion_email'];
+		this.columnasamostrar = ['alumnograduacion_login', 'alumnograduacion_nombre','alumnograduacion_apellidos','alumnograduacion_titulacion','alumnograduacion_dni','alumnograduacion_telefono','alumnograduacion_direccion','alumnograduacion_email'];
 		//definicion de atributos a cambiar su visualización
-		this.mostrarespecial = ['alumnograduacion_fotoacto'];
+		this.mostrarespecial = ['alumnograduacion_password','alumnograduacion_fotoacto'];
 		
 		// definicion de los atributos del formulario (Necesario para test de unidad)
 		this.attributes = [  'alumnograduacion_login',
