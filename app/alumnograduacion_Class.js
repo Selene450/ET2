@@ -1,4 +1,4 @@
-class alumnograduacion extends Validations{
+class alumnograduacion extends EntidadAbstracta{
 
 	constructor(esTest){
 		super();
