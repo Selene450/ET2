@@ -99,7 +99,7 @@ let alumnograduacion_def_tests =[
     ['alumnograduacion', 'alumnograduacion_email', 'input', 98, 'Comprobar formato email', 'SEARCH', 'alumnograduacion_email_format_KO', 'El email no cumple el formato. Debe ser un email válido'],
     ['alumnograduacion', 'alumnograduacion_email', 'input', 99, 'Comprobar campo válido email', 'SEARCH', true, ''],
     ['alumnograduacion', 'nuevo_alumnograduacion_fotoacto', 'inputfile', 100, 'Comprobar existencia del archivo', 'ADD', 'nuevo_alumnograduacion_fotoacto_not_exists_file_KO', 'El fichero no existe. Debe subir una foto'],
-    ['alumnograduacion', 'nuevo_alumnograduacion_fotoacto', 'inputfile', 101, 'Comprobar formato del nombre del archivo', 'ADD', 'nuevo_alumnograduacion_fotoacto_name_format_KO', 'El nombre del fichero no es correcto. Solo se permiten entre 7 y 40 caracteres alfabéticos (sin acentos, ñ, ni espacios) y "."']
+    ['alumnograduacion', 'nuevo_alumnograduacion_fotoacto', 'inputfile', 101, 'Comprobar formato del nombre del archivo', 'ADD', 'nuevo_alumnograduacion_fotoacto_name_format_KO', 'El nombre del fichero no es correcto. Solo se permiten entre 7 y 40 caracteres alfabéticos (sin acentos, ñ, ni espacios) y "."'],
     ['alumnograduacion', 'nuevo_alumnograduacion_fotoacto', 'inputfile', 102, 'Comprobar formato del archivo', 'ADD', 'nuevo_alumnograduacion_fotoacto_type_file_KO', 'El formato del fichero no es correcto. Solo se permiten los formatos: jpg'],
     ['alumnograduacion', 'nuevo_alumnograduacion_fotoacto', 'inputfile', 103, 'Comprobar tamaño del archivo', 'ADD', 'nuevo_alumnograduacion_fotoacto_max_size_file_KO', 'El tamaño del fichero no es correcto. El tamaño máximo permitido es 2MB'],
     ['alumnograduacion', 'nuevo_alumnograduacion_fotoacto', 'inputfile', 104, 'Comprobar tamaño mínimo del nombre del archivo', 'ADD', 'nuevo_alumnograduacion_fotoacto_name_min_size_KO', 'El nombre del fichero es inferior al tamaño mínimo. Debe tener entre 7 y 40 caracteres alfabéticos (sin acentos, ñ, ni espacios) y "."'],
@@ -292,7 +292,7 @@ let alumnograduacion_tests_fields =[
 ]
 
 let alumnograduacion_tests_files = [
-   /* ['alumnograduacion', 'nuevo_alumnograduacion_fotoacto', 100, 1, 'ADD', 'exists', [], 'nuevo_alumnograduacion_fotoacto_not_exists_KO'],
+    ['alumnograduacion', 'nuevo_alumnograduacion_fotoacto', 100, 1, 'ADD', 'exists', [], 'nuevo_alumnograduacion_fotoacto_not_exists_KO'],
     ['alumnograduacion', 'nuevo_alumnograduacion_fotoacto', 101, 2, 'ADD', 'format_name_file', [{format_name_file:'foto niño.jpg'}, {type_file:'img/jpg'}, {max_size_file: 200}], 'nuevo_alumnograduacion_fotoacto_name_format_KO'],
     ['alumnograduacion', 'nuevo_alumnograduacion_fotoacto', 102, 3, 'ADD', 'type_file',[{format_name_file:'foto.png'}, {type_file:'img/png'}, {max_size_file:200}], 'nuevo_alumnograduacion_fotoacto_type_file_KO'],
     ['alumnograduacion', 'nuevo_alumnograduacion_fotoacto', 103, 4, 'ADD', 'max_size_file',[{format_name_file:'foto.jpg'}, {type_file:'img/jpg'}, {max_size_file:2000001}], 'nuevo_alumnograduacion_fotoacto_max_size_file_KO'],
@@ -305,7 +305,7 @@ let alumnograduacion_tests_files = [
     ['alumnograduacion', 'nuevo_alumnograduacion_fotoacto', 110, 11, 'EDIT', 'max_size_file',[{format_name_file:'foto.jpg'}, {type_file:'img/jpg'}, {max_size_file:2000001}], 'nuevo_alumnograduacion_fotoacto_max_size_file_KO'],
     ['alumnograduacion', 'nuevo_alumnograduacion_fotoacto', 111, 12, 'EDIT', 'format_name_file', [{format_name_file:'f.jpg'}, {type_file:'img/jpg'}, {max_size_file:2000000}], 'nuevo_alumnograduacion_fotoacto_name_min_size_KO'],
     ['alumnograduacion', 'nuevo_alumnograduacion_fotoacto', 112, 13, 'EDIT', 'format_name_file', [{format_name_file:'foto'.repeat(21)+'.jpg'}, {type_file:'img/jpg'}, {max_size_file:2000000}], 'nuevo_alumnograduacion_fotoacto_name_max_size_KO'],
-    ['alumnograduacion', 'nuevo_alumnograduacion_fotoacto', 113, 14, 'EDIT', 'valid', [{format_name_file:'foto.jpg'}, {type_file:'img/jpg'}, {max_size_file:2000000}], true], */
+    ['alumnograduacion', 'nuevo_alumnograduacion_fotoacto', 113, 14, 'EDIT', 'valid', [{format_name_file:'foto.jpg'}, {type_file:'img/jpg'}, {max_size_file:2000000}], true], 
 
 ]
 
