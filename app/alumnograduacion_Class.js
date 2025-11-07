@@ -171,7 +171,7 @@ class alumnograduacion extends EntidadAbstracta {
 			this.dom.mostrar_error_campo('alumnograduacion_titulacion', 'alumnograduacion_titulacion_min_size_KO')
 			return 'alumnograduacion_titulacion_min_size_KO'
 		}
-		if (!this.validations.max_size('alumnograduacion_titulacion', 4)) {
+		if (!this.validations.max_size('alumnograduacion_titulacion', 5)) {
 			this.dom.mostrar_error_campo('alumnograduacion_titulacion', 'alumnograduacion_titulacion_max_size_KO')
 			return 'alumnograduacion_titulacion_mimax_size_KO'
 		}
