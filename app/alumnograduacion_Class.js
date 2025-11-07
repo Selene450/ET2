@@ -311,7 +311,7 @@ class alumnograduacion extends EntidadAbstracta {
 	}
 	/*alfanuméricos con acentos y ñ y espacios*/
 	ADD_alumnograduacion_direccion_validation() {
-		if (!this.validations.min_size('alumnograduacion_direccion', 0)) {
+		if (!this.validations.min_size('alumnograduacion_direccion', 1)) {
 			this.dom.mostrar_error_campo('alumnograduacion_direccion', 'alumnograduacion_direccion_min_size_KO')
 			return 'alumnograduacion_direccion_min_size_KO'
 		}
@@ -328,7 +328,7 @@ class alumnograduacion extends EntidadAbstracta {
 	}
 	/*formato email*/
 	ADD_alumnograduacion_email_validation() {
-		if (!this.validations.min_size('alumnograduacion_email', 0)) {
+		if (!this.validations.min_size('alumnograduacion_email', 1)) {
 			this.dom.mostrar_error_campo('alumnograduacion_email', 'alumnograduacion_email_min_size_KO')
 			return 'alumnograduacion_email_min_size_KO'
 		}
@@ -351,13 +351,13 @@ class alumnograduacion extends EntidadAbstracta {
 	ADD_nuevo_alumnograduacion_fotoacto_validation() {
 		if (!(this.validations.not_exist_file('nuevo_alumnograduacion_fotoacto'))) {
 			this.dom.mostrar_error_campo('nuevo_alumnograduacion_fotoacto', 'nuevo_alumnograduacion_fotoacto_not_exist_file_KO');
-			return "nuevo_alumnograduacion_fotoacto_not_exist_file_KO";
+			return "nuevo_alumnograduacion_fotoacto_not_exists_file_KO";
 		}
 		if (!(this.validations.max_size_file('nuevo_alumnograduacion_fotoacto', 2000000))) {
 			this.dom.mostrar_error_campo('nuevo_alumnograduacion_fotoacto', 'nuevo_alumnograduacion_fotoacto_max_size_file_KO');
 			return "nuevo_alumnograduacion_fotoacto_max_size_file_KO";
 		}
-		if (!(this.validations.type_file('nuevo_alumnograduacion_fotoacto', ['image/jpeg']))) {
+		if (!(this.validations.type_file('nuevo_alumnograduacion_fotoacto', ['image/jpg']))) {
 			this.dom.mostrar_error_campo('nuevo_alumnograduacion_fotoacto', 'nuevo_alumnograduacion_fotoacto_type_file_KO');
 			return "nuevo_alumnograduacion_fotoacto_type_file_KO";
 		}
@@ -640,11 +640,11 @@ class alumnograduacion extends EntidadAbstracta {
 	SEARCH_alumnograduacion_fotoacto_validation() {
 		if (!this.validations.max_size('alumnograduacion_fotoacto', 40)) {
 			this.dom.mostrar_error_campo('alumnograduacion_fotoacto', 'alumnograduacion_fotoacto_max_size_KO')
-			return 'alumnograduacion_fotoacto_max_size_KO'
+			return 'alumnograduacion_fotoacto_name_max_size_KO'
 		}
 		if (!this.validations.format('alumnograduacion_fotoacto', '^[A-Za-z0-9.]*$')) {
 			this.dom.mostrar_error_campo('alumnograduacion_fotoacto', 'alumnograduacion_fotoacto_format_KO')
-			return 'alumnograduacion_fotoacto_format_KO'
+			return 'alumnograduacion_fotoacto_name_format_KO'
 		}
 		return true;
 	}
