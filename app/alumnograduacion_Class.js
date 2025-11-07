@@ -408,17 +408,90 @@ class alumnograduacion extends EntidadAbstracta {
 			this.dom.mostrar_error_campo('nuevo_alumnograduacion_fotoacto', 'nuevo_alumnograduacion_fotoacto_max_size_file_KO');
 			return "nuevo_alumnograduacion_fotoacto_max_size_file_KO";
 		}
-		if (!(this.validations.type_file('nuevo_alumnograduacion_fotoacto', ['image/jpg']))) {
+		// Aceptar ambas variantes comunes de MIME para jpeg por compatibilidad con navegadores/tests
+		if (!(this.validations.type_file('nuevo_alumnograduacion_fotoacto', ['image/jpeg','image/jpg']))) {
 			this.dom.mostrar_error_campo('nuevo_alumnograduacion_fotoacto', 'nuevo_alumnograduacion_fotoacto_type_file_KO');
 			return "nuevo_alumnograduacion_fotoacto_type_file_KO";
 		}
-		if (!(this.validations.format_name_file('nuevo_alumnograduacion_fotoacto', '[a-zA-Z.{7,40}]'))) {
-			this.dom.mostrar_error_campo('nuevo_alumnograduacion_fotoacto', 'nuevo_alumnograduacion_fotoacto_format_name_file_KO');
-			return "nuevo_alumnograduacion_fotoacto_format_name_file_KO";
+		// Validación del nombre del fichero: mínimo 7 caracteres
+		if (!this.nuevo_alumnograduacion_fotoacto_name_min_size_validation('nuevo_alumnograduacion_fotoacto')) {
+			return 'nuevo_alumnograduacion_fotoacto_name_min_size_KO';
+		}
+		// Validación del nombre del fichero: máximo 40 caracteres
+		if (!this.nuevo_alumnograduacion_fotoacto_name_max_size_validation('nuevo_alumnograduacion_fotoacto')) {
+			return 'nuevo_alumnograduacion_fotoacto_name_max_size_KO';
+		}
+		if (!(this.validations.format_name_file('nuevo_alumnograduacion_fotoacto', '^[a-zA-Z.]+$'))) {
+			this.dom.mostrar_error_campo('nuevo_alumnograduacion_fotoacto', 'nuevo_alumnograduacion_fotoacto_name_format_KO');
+			return "nuevo_alumnograduacion_fotoacto_name_format_KO";
 		}
 		this.dom.mostrar_exito_campo('nuevo_alumnograduacion_fotoacto');
 		return true;
 
+	}
+
+	/**
+	 * Comprueba que el nombre del fichero subido en 'nuevo_alumnograduacion_fotoacto' no excede
+	 * el número máximo de caracteres especificado.
+	 * Muestra el mensaje de error correspondiente si falla.
+	 *
+	 * @param {number} maxChars - número máximo de caracteres permitidos para el nombre del fichero
+	 * @returns {boolean} true si cumple la restricción, false en caso contrario
+	 */
+	nuevo_alumnograduacion_fotoacto_name_max_size_validation(id) {
+		const input = document.getElementById(id);
+		if (!input) {
+			// Si no existe el input, consideramos que no se puede validar aquí
+			console.error('Input nuevo_alumnograduacion_fotoacto no encontrado');
+			return false;
+		}
+
+		// Si no hay fichero seleccionado, informar de inexistencia (coherente con otras validaciones)
+		if (!(this.validations.not_exist_file('nuevo_alumnograduacion_fotoacto'))) {
+			this.dom.mostrar_error_campo('nuevo_alumnograduacion_fotoacto', 'nuevo_alumnograduacion_fotoacto_not_exists_file_KO');
+			return false;
+		}
+
+		const filename = input.files[0].name;
+		if (filename.length > 40) { // Máximo 40 caracteres según comentarios del código
+			this.dom.mostrar_error_campo('nuevo_alumnograduacion_fotoacto', 'nuevo_alumnograduacion_fotoacto_name_max_size_KO');
+			return false;
+		}
+
+		this.dom.mostrar_exito_campo('nuevo_alumnograduacion_fotoacto');
+		return true;
+	}
+
+	/**
+	 * Comprueba que el nombre del fichero subido tiene al menos el número mínimo
+	 * de caracteres requerido (7 caracteres).
+	 * Muestra el mensaje de error correspondiente si falla.
+	 *
+	 * @param {string} fieldId - ID del campo de fichero a validar
+	 * @returns {boolean} true si cumple la restricción, false en caso contrario
+	 */
+	nuevo_alumnograduacion_fotoacto_name_min_size_validation(fieldId) {
+		const input = document.getElementById(fieldId);
+		if (!input) {
+			// Si no existe el input, consideramos que no se puede validar aquí
+			console.error(`Input ${fieldId} no encontrado`);
+			return false;
+		}
+
+		// Si no hay fichero seleccionado, informar de inexistencia (coherente con otras validaciones)
+		if (!(this.validations.not_exist_file(fieldId))) {
+			this.dom.mostrar_error_campo(fieldId, 'nuevo_alumnograduacion_fotoacto_not_exists_file_KO');
+			return false;
+		}
+
+		const filename = input.files[0].name;
+		if (filename.length < 7) { // Mínimo 7 caracteres según comentarios del código
+			this.dom.mostrar_error_campo(fieldId, 'nuevo_alumnograduacion_fotoacto_name_min_size_KO');
+			return false;
+		}
+
+		this.dom.mostrar_exito_campo(fieldId);
+		return true;
 	}
 
 	ADD_submit_alumnograduacion() {
@@ -485,17 +558,27 @@ class alumnograduacion extends EntidadAbstracta {
 			this.dom.mostrar_exito_campo('nuevo_alumnograduacion_fotoacto');
 			return true;
 		}
-		if (!(this.validations.max_size_file('nuevo_alumnograduacion_fotoacto', 2000))) {
+		// corregir tamaño máximo a 2MB (2000000) — antes estaba 2000 por error
+		if (!(this.validations.max_size_file('nuevo_alumnograduacion_fotoacto', 2000000))) {
 			this.dom.mostrar_error_campo('nuevo_alumnograduacion_fotoacto', 'nuevo_alumnograduacion_fotoacto_max_size_file_KO');
-			return "nuevo_alumnograduacion_fotoacto_max_size_file_KO";
+			return "nuevo_alumnograduacion_fotoacto_max_size_KO";
 		}
-		if (!(this.validations.type_file('nuevo_alumnograduacion_fotoacto', ['image/jpeg']))) {
+		// Aceptar ambas variantes comunes de MIME para jpeg por compatibilidad con navegadores/tests
+		if (!(this.validations.type_file('nuevo_alumnograduacion_fotoacto', ['image/jpeg','image/jpg']))) {
 			this.dom.mostrar_error_campo('nuevo_alumnograduacion_fotoacto', 'nuevo_alumnograduacion_fotoacto_type_file_KO');
 			return "nuevo_alumnograduacion_fotoacto_type_file_KO";
 		}
-		if (!(this.validations.format_name_file('nuevo_alumnograduacion_fotoacto', '[a-zA-Z.{7,40}]'))) {
-			this.dom.mostrar_error_campo('nuevo_alumnograduacion_fotoacto', 'nuevo_alumnograduacion_fotoacto_format_name_file_KO');
-			return "nuevo_alumnograduacion_fotoacto_format_name_file_KO";
+		// Validación del nombre del fichero: mínimo 7 caracteres
+		if (!this.nuevo_alumnograduacion_fotoacto_name_min_size_validation('nuevo_alumnograduacion_fotoacto')) {
+			return 'nuevo_alumnograduacion_fotoacto_name_min_size_KO';
+		}
+		// Validación del nombre del fichero: máximo 40 caracteres
+		if (!this.nuevo_alumnograduacion_fotoacto_name_max_size_validation('nuevo_alumnograduacion_fotoacto')) {
+			return 'nuevo_alumnograduacion_fotoacto_name_max_size_KO';
+		}
+		if (!(this.validations.format_name_file('nuevo_alumnograduacion_fotoacto', '^[a-zA-Z.]+$'))) {
+			this.dom.mostrar_error_campo('nuevo_alumnograduacion_fotoacto', 'nuevo_alumnograduacion_fotoacto_name_format_KO');
+			return "nuevo_alumnograduacion_fotoacto_name_format_KO";
 		}
 		this.dom.mostrar_exito_campo('nuevo_alumnograduacion_fotoacto');
 		return true;
@@ -596,14 +679,31 @@ class alumnograduacion extends EntidadAbstracta {
 	}
 
 	SEARCH_alumnograduacion_titulacion_validation() {
-		if (!this.validations.max_size('alumnograduacion_titulacion', 4)) {
-			this.dom.mostrar_error_campo('alumnograduacion_titulacion', 'alumnograduacion_titulacion_max_size_KO')
-			return 'alumnograduacion_titulacion_max_size_KO'
+		// En SEARCH el campo puede quedar vacío (búsqueda libre). Si viene vacío, es válido.
+		const elem = document.getElementById('alumnograduacion_titulacion');
+		if (!elem) return true;
+		const valor = elem.value;
+		const valoresPermitidos = ['GREI', 'GRIA', 'MEI', 'MIA', 'PCEO'];
+
+		// Permitir vacío en SEARCH
+		if (!valor) {
+			this.dom.mostrar_exito_campo('alumnograduacion_titulacion');
+			return true;
 		}
-		if (!this.validations.format('alumnograduacion_titulacion', '^[A-Za-z]{4}$')) {
-			this.dom.mostrar_error_campo('alumnograduacion_titulacion', 'alumnograduacion_titulacion_format_KO')
-			return 'alumnograduacion_titulacion_format_KO'
+
+		// Comprobar tamaño máximo (más estricto primero)
+		if (valor.length > 4) {
+			this.dom.mostrar_error_campo('alumnograduacion_titulacion', 'alumnograduacion_titulacion_max_size_KO');
+			return 'alumnograduacion_titulacion_max_size_KO';
 		}
+
+		// Comprobar formato: en SEARCH sólo se aceptan los valores del enumerado
+		if (!valoresPermitidos.includes(valor)) {
+			this.dom.mostrar_error_campo('alumnograduacion_titulacion', 'alumnograduacion_titulacion_format_KO');
+			return 'alumnograduacion_titulacion_format_KO';
+		}
+
+		this.dom.mostrar_exito_campo('alumnograduacion_titulacion');
 		return true;
 	}
 
@@ -717,7 +817,7 @@ class alumnograduacion extends EntidadAbstracta {
 			this.dom.mostrar_error_campo('alumnograduacion_fotoacto', 'alumnograduacion_fotoacto_max_size_KO')
 			return 'alumnograduacion_fotoacto_name_max_size_KO'
 		}
-		if (!this.validations.format('alumnograduacion_fotoacto', '^[A-Za-z0-9.]*$')) {
+		if (!this.validations.format('alumnograduacion_fotoacto', '^[A-Za-z.]*$')) {
 			this.dom.mostrar_error_campo('alumnograduacion_fotoacto', 'alumnograduacion_fotoacto_format_KO')
 			return 'alumnograduacion_fotoacto_name_format_KO'
 		}
