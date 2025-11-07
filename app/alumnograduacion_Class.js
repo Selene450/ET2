@@ -171,7 +171,7 @@ class alumnograduacion extends EntidadAbstracta {
 			this.dom.mostrar_error_campo('alumnograduacion_titulacion', 'alumnograduacion_titulacion_min_size_KO')
 			return 'alumnograduacion_titulacion_min_size_KO'
 		}
-		if (!this.validations.max_size('alumnograduacion_titulacion', 5)) {
+		if (!this.validations.max_size('alumnograduacion_titulacion', 4)) {
 			this.dom.mostrar_error_campo('alumnograduacion_titulacion', 'alumnograduacion_titulacion_max_size_KO')
 			return 'alumnograduacion_titulacion_mimax_size_KO'
 		}
@@ -215,13 +215,13 @@ class alumnograduacion extends EntidadAbstracta {
 		var dni = document.getElementById('alumnograduacion_dni').value;
 		if (this.personalize_dni_format() == true) {
 			if (!(this.personalize_validate_dni(dni))) {
-				return "alumnograduacion_dni_validate_KO";
+				return "alumnograduacion_dni_nie_format_KO";
 			}
 		}
 		else {
 			if (this.personalize_nie_format() === true) {
 				if (!(this.personalize_validate_nie(dni))) {
-					return "alumnograduacion_nie_validate_KO";
+					return "alumnograduacion_dni_nie_format_KO";
 				}
 			}
 			else {
@@ -243,7 +243,7 @@ class alumnograduacion extends EntidadAbstracta {
 
 		if (!(this.validations.format('alumnograduacion_dni', '[0-9]{8}[A-Z]'))) {
 			this.dom.mostrar_error_campo('alumnograduacion_dni', 'alumnograduacion_dni_format_KO');
-			return "alumnograduacion_dni_format_KO";
+			return "alumnograduacion_dni_nie_format_KO";
 		}
 		return true;
 
@@ -252,7 +252,7 @@ class alumnograduacion extends EntidadAbstracta {
 	personalize_nie_format() {
 		if (!(this.validations.format('alumnograduacion_dni', '[XYZ][0-9]{7}[A-Z]'))) {
 			this.dom.mostrar_error_campo('alumnograduacion_dni', 'alumnograduacion_nie_format_KO');
-			return "alumnograduacion_nie_format_KO";
+			return "alumnograduacion_dni_nie_format_KO";
 		}
 		return true;
 	}
@@ -328,6 +328,14 @@ class alumnograduacion extends EntidadAbstracta {
 	}
 	/*formato email*/
 	ADD_alumnograduacion_email_validation() {
+		if (!this.validations.min_size('alumnograduacion_email', 0)) {
+			this.dom.mostrar_error_campo('alumnograduacion_email', 'alumnograduacion_email_min_size_KO')
+			return 'alumnograduacion_email_min_size_KO'
+		}
+		if (!this.validations.max_size('alumnograduacion_email', 100)) {
+			this.dom.mostrar_error_campo('alumnograduacion_email', 'alumnograduacion_email_max_size_KO')
+			return 'alumnograduacion_email_max_size_KO'
+		}
 		// Expresión regular razonable para emails (no perfecta pero segura para la mayoría de casos)
 		const emailPattern = '^[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,}$';
 		if (!this.validations.format('alumnograduacion_email', emailPattern)) {
