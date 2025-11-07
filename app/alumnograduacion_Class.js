@@ -31,7 +31,7 @@ class alumnograduacion extends EntidadAbstracta {
 			<br>
 			
 			<label class="label_alumnograduacion_password">Contraseña</label>
-			<input type='text' id='alumnograduacion_password' name='alumnograduacion_password' onblur=" return entidad.ADD_alumnograduacion_password_validation();"></input>
+			<input type='password' id='alumnograduacion_password' name='alumnograduacion_password' onblur=" return entidad.ADD_alumnograduacion_password_validation();"></input>
 			<span id="span_error_alumnograduacion_password" ><a id="error_alumnograduacion_password"></a></span>
 			<br>
 			
@@ -47,7 +47,7 @@ class alumnograduacion extends EntidadAbstracta {
 			<br>
 
 			<label class="label_alumnograduacion_titulacion">Titulacion</label>
-			<select id='alumnograduacion_titulacion' name='alumnograduacion_titulacion'></input>
+			<select id='alumnograduacion_titulacion' name='alumnograduacion_titulacion'>
 				<option value="GREI">GREI</option>
 				<option value="GRIA">GRIA</option>
 				<option value="MEI">MEI</option>
@@ -115,20 +115,55 @@ class alumnograduacion extends EntidadAbstracta {
 	}
 	/*alfabéticos y espacios sin acentos ni ñ, min 8 max 100 */
 	ADD_alumnograduacion_password_validation() {
-		if (!this.validations.min_size('alumnograduacion_password', 8)) {
+		if (!this.min_size_password(document.getElementById('alumnograduacion_password').value)) {
 			this.dom.mostrar_error_campo('alumnograduacion_password', 'alumnograduacion_password_min_size_KO')
 			return 'alumnograduacion_password_min_size_KO'
 		}
-		if (!this.validations.max_size('alumnograduacion_password', 100)) {
+		if (!this.max_size_password(document.getElementById('alumnograduacion_password').value)) {
 			this.dom.mostrar_error_campo('alumnograduacion_password', 'alumnograduacion_password_max_size_KO')
 			return 'alumnograduacion_password_max_size_KO'
 		}
-		if (!(this.validations.format('alumnograduacion_password', '^[A-Za-z ]*$'))) {
+		if (!(this.format_password(document.getElementById('alumnograduacion_password').value))) {
 			return 'alumnograduacion_password_format_KO'
 		}
 		this.dom.mostrar_exito_campo('alumnograduacion_password');
 		return true
 	}
+
+	min_size_password(password) {
+		// Validar nulos y vacíos
+		if (!password) return false;
+
+		// Comprobar longitud mínima (8)
+		if (password.length < 8) return false;
+
+		return true;
+	}
+
+	max_size_password(password) {
+		// Validar nulos y vacíos
+		if (!password) return false;
+
+		// Comprobar longitud máxima (100)
+		if (password.length > 100) return false;
+
+		return true;
+	}
+
+	format_password(password) {
+		// 1. Verificar que no es null/undefined
+		if (!password) return false;
+
+		// 2. Expresión regular para verificar solo letras y espacios
+		// ^ inicio de string
+		// $ fin de string
+		// [a-zA-Z ] solo letras (mayúsculas y minúsculas) y espacios
+		// + uno o más caracteres
+		const regex = /^[a-zA-Z ]+$/;
+
+		return regex.test(password);
+	}
+
 	/*alfabéticos con acentos, ñ y espacios, min 2 max 25*/
 	ADD_alumnograduacion_nombre_validation() {
 		if (!this.validations.min_size('alumnograduacion_nombre', 2)) {
@@ -167,19 +202,35 @@ class alumnograduacion extends EntidadAbstracta {
 	}
 	/*valores posibles: 'GREI','GRIA','MEI','MIA','PCEO'*/
 	ADD_alumnograduacion_titulacion_validation() {
-		if (!this.validations.min_size('alumnograduacion_titulacion', 3)) {
-			this.dom.mostrar_error_campo('alumnograduacion_titulacion', 'alumnograduacion_titulacion_min_size_KO')
-			return 'alumnograduacion_titulacion_min_size_KO'
+		const titulacion = document.getElementById('alumnograduacion_titulacion').value;
+		const valoresPermitidos = ['GREI', 'GRIA', 'MEI', 'MIA', 'PCEO'];
+		
+		// Verificar que no está vacío
+		if (!titulacion) {
+			this.dom.mostrar_error_campo('alumnograduacion_titulacion', 'alumnograduacion_titulacion_min_size_KO');
+			return 'alumnograduacion_titulacion_min_size_KO';
 		}
-		if (!this.validations.max_size('alumnograduacion_titulacion', 4)) {
-			this.dom.mostrar_error_campo('alumnograduacion_titulacion', 'alumnograduacion_titulacion_max_size_KO')
-			return 'alumnograduacion_titulacion_mimax_size_KO'
+
+		// Verificar longitud máxima primero
+		if (titulacion.length > 4) {
+			this.dom.mostrar_error_campo('alumnograduacion_titulacion', 'alumnograduacion_titulacion_max_size_KO');
+			return 'alumnograduacion_titulacion_max_size_KO';
 		}
-		if (!(['GREI', 'GRIA', 'MEI', 'MIA', 'PCEO'].includes(alumnograduacion_titulacion))) {
-			this.dom.mostrar_error_campo('alumnograduacion_titulacion', 'alumnograduacion_titulacion_format_KO')
-			return 'alumnograduacion_titulacion_format_KO'
+
+		// Verificar longitud mínima
+		if (titulacion.length < 3) {
+			this.dom.mostrar_error_campo('alumnograduacion_titulacion', 'alumnograduacion_titulacion_min_size_KO');
+			return 'alumnograduacion_titulacion_min_size_KO';
 		}
-		return true
+
+		// Verificar que es uno de los valores permitidos
+		if (!valoresPermitidos.includes(titulacion)) {
+			this.dom.mostrar_error_campo('alumnograduacion_titulacion', 'alumnograduacion_titulacion_format_KO');
+			return 'alumnograduacion_titulacion_format_KO';
+		}
+
+		this.dom.mostrar_exito_campo('alumnograduacion_titulacion');
+		return true;
 	}
 	/*formato nif o nie con letras válidas para los números*/
 	ADD_alumnograduacion_dni_validation() {
@@ -484,14 +535,38 @@ class alumnograduacion extends EntidadAbstracta {
 	}
 
 	SEARCH_alumnograduacion_password_validation() {
-		if (!this.validations.max_size('alumnograduacion_password', 100)) {
+		if (!this.search_max_size_password(document.getElementById('alumnograduacion_password').value)) {
 			this.dom.mostrar_error_campo('alumnograduacion_password', 'alumnograduacion_password_max_size_KO')
 			return 'alumnograduacion_password_max_size_KO'
 		}
-		if (!(this.validations.format('alumnograduacion_password', '^[A-Za-z ]*$'))) {
+		if (!(this.search_format_password(document.getElementById('alumnograduacion_password').value))) {
 			return 'alumnograduacion_password_format_KO'
 		}
 		return true;
+	}
+
+	search_max_size_password(password) {
+		// Validar nulos y vacíos
+		if (!password) return false;
+
+		// Comprobar longitud máxima (64)
+		if (password.length > 100) return false;
+
+		return true;
+	}
+
+	search_format_password(password) {
+		// 1. Verificar que no es null/undefined
+		if (!password) return false;
+
+		// 2. Expresión regular para verificar solo letras y espacios
+		// ^ inicio de string
+		// $ fin de string
+		// [a-zA-Z ] solo letras (mayúsculas y minúsculas) y espacios
+		// + uno o más caracteres
+		const regex = /^[a-zA-Z ]*$/;
+
+		return regex.test(password);
 	}
 
 	SEARCH_alumnograduacion_nombre_validation() {
