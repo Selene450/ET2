@@ -70,13 +70,13 @@ class articulo extends EntidadAbstracta {
 
 			<br>
 
-            <label class="label_FechaPublicacionR">Email</label>
+            <label class="label_FechaPublicacionR">Fecha de publicación</label>
 			<input type='date' id='FechaPublicacionR' name='FechaPublicacionR'></input>
 			<span id="span_error_FechaPublicacionR" ><a id="error_FechaPublicacionR"></a></span>
 
 			<br>
 
-			<label id="label_FicheropdfA" class="label_FicheropdfA">Fotoacto</label>
+			<label id="label_FicheropdfA" class="label_FicheropdfA">Fichero pdf del artículo</label>
 			<input type='text' id='FicheropdfA' name='FicheropdfA'></input>
 			<span id="span_error_FicheropdfA"><a id="error_FicheropdfA"></a></span>
 			<a id="link_FicheropdfA" href="http://193.147.87.202/ET2/filesuploaded/files_FicheropdfA/"><img src="./iconos/FILE.png" /></a>
@@ -128,7 +128,7 @@ class articulo extends EntidadAbstracta {
             this.dom.mostrar_error_campo('AutoresA', 'AutoresA_max_size_KO');
             return "AutoresA_max_size_KO";
         }
-        if(!this.validations.format('AutoresA', '[a-zA-ZñÑáéíóúÁÉÍÓÚ ]')) {
+        if(!this.validations.format('AutoresA', '^[a-zA-ZñÑáéíóúÁÉÍÓÚ ]+$')) {
             this.dom.mostrar_error_campo('AutoresA', 'AutoresA_format_KO');
             return "AutoresA_format_KO";
         }
@@ -145,7 +145,7 @@ class articulo extends EntidadAbstracta {
             this.dom.mostrar_error_campo('TituloA', 'TituloA_max_size_KO');
             return "TituloA_max_size_KO";
         }
-        if(!this.validations.format('TituloA', '[a-zA-ZñÑáéíóúÁÉÍÓÚ0-9 ]')) {
+        if(!this.validations.format('TituloA', '^[a-zA-ZñÑáéíóúÁÉÍÓÚ0-9 ]+$')) {
             this.dom.mostrar_error_campo('TituloA', 'TituloA_format_KO');
             return "TituloA_format_KO";
         }
@@ -162,7 +162,7 @@ class articulo extends EntidadAbstracta {
             this.dom.mostrar_error_campo('TituloR', 'TituloR_max_size_KO');
             return "TituloR_max_size_KO";
         }
-        if(!this.validations.format('TituloR', '[a-zA-ZñÑáéíóúÁÉÍÓÚ ]')) {
+        if(!this.validations.format('TituloR', '^[a-zA-ZñÑáéíóúÁÉÍÓÚ ]+$')) {
             this.dom.mostrar_error_campo('TituloR', 'TituloR_format_KO');
             return "TituloR_format_KO";
         }
@@ -171,7 +171,7 @@ class articulo extends EntidadAbstracta {
     }
 
     ADD_ISSN_validation() {
-        if(!this.validations.format('ISSN', '^\d{4}-\d{4}$')) {
+        if(!this.validations.format('ISSN', '^\\d{4}-\\d{3}[\\dX]$')) {
             this.dom.mostrar_error_campo('ISSN', 'ISSN_format_KO');
             return "ISSN_format_KO";
         }
@@ -184,7 +184,7 @@ class articulo extends EntidadAbstracta {
             this.dom.mostrar_error_campo('VolumenR', 'VolumenR_min_size_KO');
             return "VolumenR_min_size_KO";
         }
-        if(!(this.validations.max_size('VolumenR', 9999))) {
+        if(!(this.validations.max_size('VolumenR', 4))) {
             this.dom.mostrar_error_campo('VolumenR', 'VolumenR_max_size_KO');
             return "VolumenR_max_size_KO";
         }
@@ -201,7 +201,7 @@ class articulo extends EntidadAbstracta {
             this.dom.mostrar_error_campo('PagIniA', 'PagIniA_min_size_KO');
             return "PagIniA_min_size_KO";
         }
-        if(!(this.validations.max_size('PagIniA', 9999))) {
+        if(!(this.validations.max_size('PagIniA', 4))) {
             this.dom.mostrar_error_campo('PagIniA', 'PagIniA_max_size_KO');
             return "PagIniA_max_size_KO";
         }
@@ -218,7 +218,7 @@ class articulo extends EntidadAbstracta {
             this.dom.mostrar_error_campo('PagFinA', 'PagFinA_min_size_KO');
             return "PagFinA_min_size_KO";
         }
-        if(!(this.validations.max_size('PagFinA', 9999))) {
+        if(!(this.validations.max_size('PagFinA', 4))) {
             this.dom.mostrar_error_campo('PagFinA', 'PagFinA_max_size_KO');
             return "PagFinA_max_size_KO";
         }
@@ -231,7 +231,7 @@ class articulo extends EntidadAbstracta {
     }
 
     ADD_FechaPublicacionR_validation() {
-        if(!this.validations.format('FechaPublicacionR', '^(0[1-9]|[12]\d|3[01])[-/.](0[1-9]|1[0-2])\x01(\d{4})$')) {
+        if(!(this.validations.format('FechaPublicacionR', '^(\\d{4})-(0[1-9]|1[0-2])-(0[1-9]|[12]\\d|3[01])$'))) {
             this.dom.mostrar_error_campo('FechaPublicacionR', 'FechaPublicacionR_format_KO');
             return "FechaPublicacionR_format_KO";
         }
@@ -241,29 +241,29 @@ class articulo extends EntidadAbstracta {
     }
 
     ADD_nuevo_FicheropdfA_validation() {
-        if(!(this.validations.not_exist_file('FicheropdfA'))) {
-            this.dom.mostrar_error_campo('FicheropdfA', 'FicheropdfA_not_exists_file_KO');
-            return "FicheropdfA_not_exists_file_KO";
+        if((this.validations.not_exist_file('nuevo_FicheropdfA'))) {
+            this.dom.mostrar_error_campo('nuevo_FicheropdfA', 'nuevo_FicheropdfA_not_exists_file_KO');
+            return "nuevo_FicheropdfA_not_exists_file_KO";
         }
-        if(!(this.validations.max_size('FicheropdfA', 200000000))) {
-            this.dom.mostrar_error_campo('FicheropdfA', 'FicheropdfA_max_size_KO');
-            return "FicheropdfA_max_size_KO";
+        if(!(this.validations.max_size('nuevo_FicheropdfA', 200000000))) {
+            this.dom.mostrar_error_campo('nuevo_FicheropdfA', 'nuevo_FicheropdfA_max_size_KO');
+            return "nuevo_FicheropdfA_max_size_KO";
         }
-        if(!this.validations.type_file('FicheropdfA', 'APLICATION/pdf')) {
-            this.dom.mostrar_error_campo('FicheropdfA', 'FicheropdfA_type_file_KO');
-            return "FicheropdfA_type_file_KO";
+        if(!this.validations.type_file('nuevo_FicheropdfA', 'APLICATION/pdf')) {
+            this.dom.mostrar_error_campo('nuevo_FicheropdfA', 'nuevo_FicheropdfA_type_file_KO');
+            return "nuevo_FicheropdfA_type_file_KO";
         }
         if(!(this.personalized_nuevo_FicheropdfA_name_min_size_validation('FicheropdfA'))) {
-            this.dom.mostrar_error_campo('FicheropdfA', 'FicheropdfA_name_min_size_KO');
-            return "FicheropdfA_name_min_size_KO";
+            this.dom.mostrar_error_campo('nuevo_FicheropdfA', 'nuevo_FicheropdfA_name_min_size_KO');
+            return "nuevo_FicheropdfA_name_min_size_KO";
         }
         if(!(this.personalized_nuevo_FicheropdfA_name_max_size_validation('FicheropdfA'))) {
-            this.dom.mostrar_error_campo('FicheropdfA', 'FicheropdfA_name_max_size_KO');
-            return "FicheropdfA_name_max_size_KO";
+            this.dom.mostrar_error_campo('nuevo_FicheropdfA', 'nuevo_FicheropdfA_name_max_size_KO');
+            return "nuevo_FicheropdfA_name_max_size_KO";
         }
-        if(!(this.validations.format_name_file('FicheropdfA', '[a-zA-Z0-9ñÑáéíóúÁÉÍÓÚ.]'))) {
-            this.dom.mostrar_error_campo('FicheropdfA', 'FicheropdfA_format_name_file_KO');
-            return "FicheropdfA_format_name_file_KO";
+        if(!(this.validations.format_name_file('nuevo_FicheropdfA', '^[a-zA-Z0-9ñÑáéíóúÁÉÍÓÚ.]+$'))) {
+            this.dom.mostrar_error_campo('nuevo_FicheropdfA', 'nuevo_FicheropdfA_format_name_file_KO');
+            return "nuevo_FicheropdfA_format_name_file_KO";
         }
         
         this.dom.mostrar_exito_campo('FicheropdfA');
@@ -308,7 +308,7 @@ class articulo extends EntidadAbstracta {
         (this.ADD_TituloA_validation) &
         (this.ADD_TituloR_validation) &
         (this.ADD_ISSN_validation) &
-        (this.ADD_VolumnenR_validation) &
+        (this.ADD_VolumenR_validation) &
         (this.ADD_PagIniA_validation) &
         (this.ADD_PagFinA_validation) &
         (this.ADD_FechaPublicacionR_validation) &
@@ -362,31 +362,31 @@ class articulo extends EntidadAbstracta {
     }
 
     EDIT_nuevo_FicheropdfA_validation() {
-        if(!(this.validations.not_exist_file('FicheropdfA'))) {
+        if((this.validations.not_exist_file('nuevo_FicheropdfA'))) {
             return true;
         }
-        if(!(this.validations.max_size('FicheropdfA', 200000000))) {
-            this.dom.mostrar_error_campo('FicheropdfA', 'FicheropdfA_max_size_KO');
-            return "FicheropdfA_max_size_KO";
+        if(!(this.validations.max_size('nuevo_FicheropdfA', 2000000))) {
+            this.dom.mostrar_error_campo('nuevo_FicheropdfA', 'nuevo_FicheropdfA_max_size_KO');
+            return "nuevo_FicheropdfA_max_size_KO";
         }
-        if(!this.validations.type_file('FicheropdfA', 'APLICATION/pdf')) {
-            this.dom.mostrar_error_campo('FicheropdfA', 'FicheropdfA_type_file_KO');
-            return "FicheropdfA_type_file_KO";
+        if(!this.validations.type_file('nuevo_FicheropdfA', 'APLICATION/pdf')) {
+            this.dom.mostrar_error_campo('nuevo_FicheropdfA', 'nuevo_FicheropdfA_type_file_KO');
+            return "nuevo_FicheropdfA_type_file_KO";
         }
-        if(!(this.personalized_nuevo_FicheropdfA_name_min_size_validation('FicheropdfA'))) {
-            this.dom.mostrar_error_campo('FicheropdfA', 'FicheropdfA_name_min_size_KO');
-            return "FicheropdfA_name_min_size_KO";
+        if(!(this.personalized_nuevo_FicheropdfA_name_min_size_validation('nuevo_FicheropdfA'))) {
+            this.dom.mostrar_error_campo('nuevo_FicheropdfA', 'nuevo_FicheropdfA_name_min_size_KO');
+            return "nuevo_FicheropdfA_name_min_size_KO";
         }
-        if(!(this.personalized_nuevo_FicheropdfA_name_max_size_validation('FicheropdfA'))) {
-            this.dom.mostrar_error_campo('FicheropdfA', 'FicheropdfA_name_max_size_KO');
-            return "FicheropdfA_name_max_size_KO";
+        if(!(this.personalized_nuevo_FicheropdfA_name_max_size_validation('nuevo_FicheropdfA'))) {
+            this.dom.mostrar_error_campo('nuevo_FicheropdfA', 'nuevo_FicheropdfA_name_max_size_KO');
+            return "nuevo_FicheropdfA_name_max_size_KO";
         }
-        if(!(this.validations.format_name_file('FicheropdfA', '[a-zA-Z0-9ñÑáéíóúÁÉÍÓÚ.]'))) {
-            this.dom.mostrar_error_campo('FicheropdfA', 'FicheropdfA_format_name_file_KO');
-            return "FicheropdfA_format_name_file_KO";
+        if(!(this.validations.format_name_file('nuevo_FicheropdfA', '^[a-zA-Z0-9ñÑáéíóúÁÉÍÓÚ.]+$'))) {
+            this.dom.mostrar_error_campo('nuevo_FicheropdfA', 'nuevo_FicheropdfA_format_name_file_KO');
+            return "nuevo_FicheropdfA_format_name_file_KO";
         }
         
-        this.dom.mostrar_exito_campo('FicheropdfA');
+        this.dom.mostrar_exito_campo('nuevo_FicheropdfA');
         return true;
     }
 
@@ -397,7 +397,7 @@ class articulo extends EntidadAbstracta {
         (this.EDIT_TituloA_validation) &
         (this.EDIT_TituloR_validation) &
         (this.EDIT_ISSN_validation) &
-        (this.EDIT_VolumnenR_validation) &
+        (this.EDIT_VolumenR_validation) &
         (this.EDIT_PagIniA_validation) &
         (this.EDIT_PagFinA_validation) &
         (this.EDIT_FechaPublicacionR_validation) &
@@ -415,7 +415,7 @@ class articulo extends EntidadAbstracta {
             this.dom.mostrar_error_campo('CodigoA', 'CodigoA_max_size_KO');
             return "CodigoA_max_size_KO";
         }
-        if(!this.validations.format('CodigoA', '[0-9]')) {
+        if(!this.validations.format('CodigoA', '^[0-9]+$')) {
             this.dom.mostrar_error_campo('CodigoA', 'CodigoA_format_KO');
             return "CodigoA_format_KO";
         }
@@ -428,7 +428,7 @@ class articulo extends EntidadAbstracta {
             this.dom.mostrar_error_campo('AutoresA', 'AutoresA_max_size_KO');
             return "AutoresA_max_size_KO";
         }
-        if(!this.validations.format('AutoresA', '[a-zA-ZñÑáéíóúÁÉÍÓÚ ]')) {
+        if(!this.validations.format('AutoresA', '^[a-zA-ZñÑáéíóúÁÉÍÓÚ ]+$')) {
             this.dom.mostrar_error_campo('AutoresA', 'AutoresA_format_KO');
             return "AutoresA_format_KO";
         }
@@ -441,7 +441,7 @@ class articulo extends EntidadAbstracta {
             this.dom.mostrar_error_campo('TituloA', 'TituloA_max_size_KO');
             return "TituloA_max_size_KO";
         }
-        if(!this.validations.format('TituloA', '[a-zA-ZñÑáéíóúÁÉÍÓÚ0-9 ]')) {
+        if(!this.validations.format('TituloA', '^[a-zA-ZñÑáéíóúÁÉÍÓÚ0-9 ]+$')) {
             this.dom.mostrar_error_campo('TituloA', 'TituloA_format_KO');
             return "TituloA_format_KO";
         }
@@ -454,7 +454,7 @@ class articulo extends EntidadAbstracta {
             this.dom.mostrar_error_campo('TituloR', 'TituloR_max_size_KO');
             return "TituloR_max_size_KO";
         }
-        if(!this.validations.format('TituloR', '[a-zA-ZñÑáéíóúÁÉÍÓÚ ]')) {
+        if(!this.validations.format('TituloR', '^[a-zA-ZñÑáéíóúÁÉÍÓÚ ]+$')) {
             this.dom.mostrar_error_campo('TituloR', 'TituloR_format_KO');
             return "TituloR_format_KO";
         }
@@ -463,7 +463,7 @@ class articulo extends EntidadAbstracta {
     }
 
     SEARCH_ISSN_validation() {
-        if(!this.validations.format('ISSN', '^[0-9]-[0-9]$')) {
+        if(!this.validations.format('ISSN', '^\\d{4}-\\d{3}[\\dX]$')) {
             this.dom.mostrar_error_campo('ISSN', 'ISSN_format_KO');
             return "ISSN_format_KO";
         }
@@ -472,7 +472,7 @@ class articulo extends EntidadAbstracta {
     }
 
     SEARCH_VolumenR_validation() {
-        if(!(this.validations.max_size('VolumenR', 9999))) {
+        if(!(this.validations.max_size('VolumenR', 4))) {
             this.dom.mostrar_error_campo('VolumenR', 'VolumenR_max_size_KO');
             return "VolumenR_max_size_KO";
         }
@@ -485,11 +485,11 @@ class articulo extends EntidadAbstracta {
     }
 
     SEARCH_PagIniA_validation() {
-        if(!(this.validations.max_size('PagIniA', 9999))) {
+        if(!(this.validations.max_size('PagIniA', 4))) {
             this.dom.mostrar_error_campo('PagIniA', 'PagIniA_max_size_KO');
             return "PagIniA_max_size_KO";
         }
-        if(!this.validations.format('PagIniA', '^[0-9]+$')) {
+        if(!this.validations.format('PagIniA', '^[0-9-]+$')) {
             this.dom.mostrar_error_campo('PagIniA', 'PagIniA_format_KO');
             return "PagIniA_format_KO";
         }
@@ -498,7 +498,7 @@ class articulo extends EntidadAbstracta {
     }
 
     SEARCH_PagFinA_validation() {
-        if(!(this.validations.max_size('PagFinA', 9999))) {
+        if(!(this.validations.max_size('PagFinA', 4))) {
             this.dom.mostrar_error_campo('PagFinA', 'PagFinA_max_size_KO');
             return "PagFinA_max_size_KO";
         }
@@ -511,7 +511,7 @@ class articulo extends EntidadAbstracta {
     }
 
     SEARCH_FechaPublicacionR_validation() {
-        if(!this.validations.format('FechaPublicacionR', '^(0[1-9]|[12]\d|3[01])[-/.](0[1-9]|1[0-2])\x01(\d{4})$')) {
+        if(!this.validations.format('FechaPublicacionR', '^(\\d{4})-(0[1-9]|1[0-2])-(0[1-9]|[12]\\d|3[01])$')) {
             this.dom.mostrar_error_campo('FechaPublicacionR', 'FechaPublicacionR_format_KO');
             return "FechaPublicacionR_format_KO";
         }
@@ -525,7 +525,7 @@ class articulo extends EntidadAbstracta {
             this.dom.mostrar_error_campo('FicheropdfA', 'FicheropdfA_max_size_KO');
             return "FicheropdfA_max_size_KO";
         }
-        if(!this.validations.format('FicheropdfA', '[a-zA-Z0-9ñÑáéíóúÁÉÍÓÚ.]')) {
+        if(!this.validations.format('FicheropdfA', '^[a-zA-Z0-9ñÑáéíóúÁÉÍÓÚ.]+$')) {
             this.dom.mostrar_error_campo('FicheropdfA', 'FicheropdfA_format_KO');
             return "FicheropdfA_format_KO";
         }
@@ -551,7 +551,7 @@ class articulo extends EntidadAbstracta {
         (this.SEARCH_TituloA_validation) &
         (this.SEARCH_TituloR_validation) &
         (this.SEARCH_ISSN_validation) &
-        (this.SEARCH_VolumnenR_validation) &
+        (this.SEARCH_VolumenR_validation) &
         (this.SEARCH_PagIniA_validation) &
         (this.SEARCH_PagFinA_validation) &
         (this.SEARCH_FechaPublicacionR_validation) &
