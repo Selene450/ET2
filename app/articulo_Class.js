@@ -241,7 +241,7 @@ class articulo extends EntidadAbstracta {
     }
 
     ADD_nuevo_FicheropdfA_validation() {
-        if((this.validations.not_exist_file('nuevo_FicheropdfA'))) {
+        if(!(this.validations.not_exist_file('nuevo_FicheropdfA'))) {
             this.dom.mostrar_error_campo('nuevo_FicheropdfA', 'nuevo_FicheropdfA_not_exists_file_KO');
             return "nuevo_FicheropdfA_not_exists_file_KO";
         }
@@ -362,7 +362,7 @@ class articulo extends EntidadAbstracta {
     }
 
     EDIT_nuevo_FicheropdfA_validation() {
-        if((this.validations.not_exist_file('nuevo_FicheropdfA'))) {
+        if(!(this.validations.not_exist_file('nuevo_FicheropdfA'))) {
             return true;
         }
         if(!(this.validations.max_size('nuevo_FicheropdfA', 2000000))) {

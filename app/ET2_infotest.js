@@ -522,7 +522,7 @@ let articulo_tests_files = [
     ['articulo', 'nuevo_FicheropdfA', 90, 1, 'ADD', 'exists', [], 'nuevo_FicheropdfA_not_exists_file_KO'],
     ['articulo', 'nuevo_FicheropdfA', 91, 2, 'ADD', 'type_file', [{format_name_file: 'articulo.pdf'}, {type_file: 'image/jpeg'}, {max_size_file: 200}], 'nuevo_FicheropdfA_type_file_KO'],
     ['articulo', 'nuevo_FicheropdfA', 92, 3, 'ADD', 'max_size', [{format_name_file: 'articulo.pdf'}, {type_file:'aplication/pdf'}, {max_size_file: 2000001}], 'nuevo_FicheropdfA_max_size_file_KO'],
-    ['articulo', 'nuevo_FicheropdfA', 93, 4, 'ADD', 'name_min_size', [{format_name_file: 'a.pdf'}, {type_file:'aplication/pdf'}, {max_size_file: 2000000}], 'nuevo_FicheropdfA_name_min_size_KO'],
+    ['articulo', 'nuevo_FicheropdfA', 93, 4, 'ADD', 'name_min_size', [{format_name_file: 'a.pdf'}, {type_file:'aplication/pdf'}, {max_size_file: 200000}], 'nuevo_FicheropdfA_name_min_size_KO'],
     ['articulo', 'nuevo_FicheropdfA', 94, 5, 'ADD', 'name_max_size', [{format_name_file: 'a'.repeat(21)+'.pdf'}, {type_file:'aplication/pdf'}, {max_size_file: 2000000}], 'nuevo_FicheropdfA_name_max_size_KO'],
     ['articulo', 'nuevo_FicheropdfA', 95, 6, 'ADD', 'name_format', [{format_name_file: 'articulo @2024.pdf'}, {type_file:'aplication/pdf'}, {max_size_file: 2000000}], 'nuevo_FicheropdfA_name_format_KO'],
     ['articulo', 'nuevo_FicheropdfA', 96, 7, 'ADD', 'valid_file', [{format_name_file: 'articulo2024.pdf'}, {type_file:'aplication/pdf'}, {max_size_file: 2000000}], true],
