@@ -414,11 +414,11 @@ class alumnograduacion extends EntidadAbstracta {
 			return "nuevo_alumnograduacion_fotoacto_type_file_KO";
 		}
 		// Validación del nombre del fichero: mínimo 7 caracteres
-		if (!this.nuevo_alumnograduacion_fotoacto_name_min_size_validation('nuevo_alumnograduacion_fotoacto')) {
+		if (!this.personalize_nuevo_alumnograduacion_fotoacto_name_min_size_validation('nuevo_alumnograduacion_fotoacto')) {
 			return 'nuevo_alumnograduacion_fotoacto_name_min_size_KO';
 		}
 		// Validación del nombre del fichero: máximo 40 caracteres
-		if (!this.nuevo_alumnograduacion_fotoacto_name_max_size_validation('nuevo_alumnograduacion_fotoacto')) {
+		if (!this.personalize_nuevo_alumnograduacion_fotoacto_name_max_size_validation('nuevo_alumnograduacion_fotoacto')) {
 			return 'nuevo_alumnograduacion_fotoacto_name_max_size_KO';
 		}
 		if (!(this.validations.format_name_file('nuevo_alumnograduacion_fotoacto', '^[a-zA-Z.]+$'))) {
@@ -438,27 +438,13 @@ class alumnograduacion extends EntidadAbstracta {
 	 * @param {number} maxChars - número máximo de caracteres permitidos para el nombre del fichero
 	 * @returns {boolean} true si cumple la restricción, false en caso contrario
 	 */
-	nuevo_alumnograduacion_fotoacto_name_max_size_validation(id) {
+	personalize_nuevo_alumnograduacion_fotoacto_name_max_size_validation(id) {
 		const input = document.getElementById(id);
-		if (!input) {
-			// Si no existe el input, consideramos que no se puede validar aquí
-			console.error('Input nuevo_alumnograduacion_fotoacto no encontrado');
-			return false;
-		}
-
-		// Si no hay fichero seleccionado, informar de inexistencia (coherente con otras validaciones)
-		if (!(this.validations.not_exist_file('nuevo_alumnograduacion_fotoacto'))) {
-			this.dom.mostrar_error_campo('nuevo_alumnograduacion_fotoacto', 'nuevo_alumnograduacion_fotoacto_not_exists_file_KO');
-			return false;
-		}
-
 		const filename = input.files[0].name;
-		if (filename.length > 40) { // Máximo 40 caracteres según comentarios del código
-			this.dom.mostrar_error_campo('nuevo_alumnograduacion_fotoacto', 'nuevo_alumnograduacion_fotoacto_name_max_size_KO');
+		if (filename.length > 40) { // Máximo 40 caracteres
 			return false;
 		}
 
-		this.dom.mostrar_exito_campo('nuevo_alumnograduacion_fotoacto');
 		return true;
 	}
 
@@ -470,27 +456,13 @@ class alumnograduacion extends EntidadAbstracta {
 	 * @param {string} fieldId - ID del campo de fichero a validar
 	 * @returns {boolean} true si cumple la restricción, false en caso contrario
 	 */
-	nuevo_alumnograduacion_fotoacto_name_min_size_validation(fieldId) {
+	personalize_nuevo_alumnograduacion_fotoacto_name_min_size_validation(fieldId) {
 		const input = document.getElementById(fieldId);
-		if (!input) {
-			// Si no existe el input, consideramos que no se puede validar aquí
-			console.error(`Input ${fieldId} no encontrado`);
-			return false;
-		}
-
-		// Si no hay fichero seleccionado, informar de inexistencia (coherente con otras validaciones)
-		if (!(this.validations.not_exist_file(fieldId))) {
-			this.dom.mostrar_error_campo(fieldId, 'nuevo_alumnograduacion_fotoacto_not_exists_file_KO');
-			return false;
-		}
 
 		const filename = input.files[0].name;
-		if (filename.length < 7) { // Mínimo 7 caracteres según comentarios del código
-			this.dom.mostrar_error_campo(fieldId, 'nuevo_alumnograduacion_fotoacto_name_min_size_KO');
+		if (filename.length < 7) { // Mínimo 7 caracteres
 			return false;
 		}
-
-		this.dom.mostrar_exito_campo(fieldId);
 		return true;
 	}
 
@@ -569,11 +541,11 @@ class alumnograduacion extends EntidadAbstracta {
 			return "nuevo_alumnograduacion_fotoacto_type_file_KO";
 		}
 		// Validación del nombre del fichero: mínimo 7 caracteres
-		if (!this.nuevo_alumnograduacion_fotoacto_name_min_size_validation('nuevo_alumnograduacion_fotoacto')) {
+		if (!this.personalize_nuevo_alumnograduacion_fotoacto_name_min_size_validation('nuevo_alumnograduacion_fotoacto')) {
 			return 'nuevo_alumnograduacion_fotoacto_name_min_size_KO';
 		}
 		// Validación del nombre del fichero: máximo 40 caracteres
-		if (!this.nuevo_alumnograduacion_fotoacto_name_max_size_validation('nuevo_alumnograduacion_fotoacto')) {
+		if (!this.personalize_nuevo_alumnograduacion_fotoacto_name_max_size_validation('nuevo_alumnograduacion_fotoacto')) {
 			return 'nuevo_alumnograduacion_fotoacto_name_max_size_KO';
 		}
 		if (!(this.validations.format_name_file('nuevo_alumnograduacion_fotoacto', '^[a-zA-Z.]+$'))) {
@@ -1026,6 +998,10 @@ class alumnograduacion extends EntidadAbstracta {
 					link = valorentrada + `  <a class="link_alumnograduacion_fotoacto" href="http://193.147.87.202/ET2/filesuploaded/files_alumnograduacion/` + valorentrada + `"><img src="./iconos/FILE.png" /></a>`;
 				}
 				return link;
+				break;
+			case 'alumnograduacion_passord':
+				var ocultar = '********';
+				return ocultar;
 				break;
 			case 'default':
 				alert('no existe mostrar especial para ese atributo');
