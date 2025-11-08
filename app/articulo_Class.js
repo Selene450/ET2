@@ -245,11 +245,11 @@ class articulo extends EntidadAbstracta {
             this.dom.mostrar_error_campo('nuevo_FicheropdfA', 'nuevo_FicheropdfA_not_exists_file_KO');
             return "nuevo_FicheropdfA_not_exists_file_KO";
         }
-        if(!(this.validations.max_size('nuevo_FicheropdfA', 200000000))) {
+        if(!(this.validations.max_size_file('nuevo_FicheropdfA', 200000000))) {
             this.dom.mostrar_error_campo('nuevo_FicheropdfA', 'nuevo_FicheropdfA_max_size_KO');
             return "nuevo_FicheropdfA_max_size_KO";
         }
-        if(!this.validations.type_file('nuevo_FicheropdfA', 'APLICATION/pdf')) {
+        if(!this.validations.type_file('nuevo_FicheropdfA', 'application/pdf')) {
             this.dom.mostrar_error_campo('nuevo_FicheropdfA', 'nuevo_FicheropdfA_type_file_KO');
             return "nuevo_FicheropdfA_type_file_KO";
         }
@@ -272,7 +272,7 @@ class articulo extends EntidadAbstracta {
     }
 
     personalized_nuevo_FicheropdfA_name_min_size_validation(id) {
-        const input = document.getElementById(fieldId);
+        const input = document.getElementById(id);
 		const filename = input.files[0].name;
 		if (filename.length < 3) { // Mínimo 3 caracteres
 			return false;
@@ -365,11 +365,11 @@ class articulo extends EntidadAbstracta {
         if(!(this.validations.not_exist_file('nuevo_FicheropdfA'))) {
             return true;
         }
-        if(!(this.validations.max_size('nuevo_FicheropdfA', 2000000))) {
+        if(!(this.validations.max_size_file('nuevo_FicheropdfA', 2000000))) {
             this.dom.mostrar_error_campo('nuevo_FicheropdfA', 'nuevo_FicheropdfA_max_size_KO');
             return "nuevo_FicheropdfA_max_size_KO";
         }
-        if(!this.validations.type_file('nuevo_FicheropdfA', 'APLICATION/pdf')) {
+        if(!this.validations.type_file('nuevo_FicheropdfA', 'application/pdf')) {
             this.dom.mostrar_error_campo('nuevo_FicheropdfA', 'nuevo_FicheropdfA_type_file_KO');
             return "nuevo_FicheropdfA_type_file_KO";
         }
