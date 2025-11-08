@@ -245,28 +245,28 @@ class articulo extends EntidadAbstracta {
             this.dom.mostrar_error_campo('nuevo_FicheropdfA', 'nuevo_FicheropdfA_not_exists_file_KO');
             return "nuevo_FicheropdfA_not_exists_file_KO";
         }
-        if(!(this.validations.max_size_file('nuevo_FicheropdfA', 200000000))) {
-            this.dom.mostrar_error_campo('nuevo_FicheropdfA', 'nuevo_FicheropdfA_max_size_KO');
-            return "nuevo_FicheropdfA_max_size_KO";
+        if(!(this.validations.max_size_file('nuevo_FicheropdfA', 2000000))) {
+            this.dom.mostrar_error_campo('nuevo_FicheropdfA', 'nuevo_FicheropdfA_max_size_file_KO');
+            return "nuevo_FicheropdfA_max_size_file_KO";
         }
-        if(!this.validations.type_file('nuevo_FicheropdfA', 'application/pdf')) {
+        if(!this.validations.type_file('nuevo_FicheropdfA', ['application/pdf'])) {
             this.dom.mostrar_error_campo('nuevo_FicheropdfA', 'nuevo_FicheropdfA_type_file_KO');
             return "nuevo_FicheropdfA_type_file_KO";
         }
-        if(!(this.personalized_nuevo_FicheropdfA_name_min_size_validation('FicheropdfA'))) {
+        if(!(this.personalized_nuevo_FicheropdfA_name_min_size_validation('nuevo_FicheropdfA'))) {
             this.dom.mostrar_error_campo('nuevo_FicheropdfA', 'nuevo_FicheropdfA_name_min_size_KO');
             return "nuevo_FicheropdfA_name_min_size_KO";
         }
-        if(!(this.personalized_nuevo_FicheropdfA_name_max_size_validation('FicheropdfA'))) {
+        if(!(this.personalized_nuevo_FicheropdfA_name_max_size_validation('nuevo_FicheropdfA'))) {
             this.dom.mostrar_error_campo('nuevo_FicheropdfA', 'nuevo_FicheropdfA_name_max_size_KO');
             return "nuevo_FicheropdfA_name_max_size_KO";
         }
         if(!(this.validations.format_name_file('nuevo_FicheropdfA', '^[a-zA-Z0-9ñÑáéíóúÁÉÍÓÚ.]+$'))) {
-            this.dom.mostrar_error_campo('nuevo_FicheropdfA', 'nuevo_FicheropdfA_format_name_file_KO');
-            return "nuevo_FicheropdfA_format_name_file_KO";
+            this.dom.mostrar_error_campo('nuevo_FicheropdfA', 'nuevo_FicheropdfA_name_format_KO');
+            return "nuevo_FicheropdfA_name_format_KO";
         }
         
-        this.dom.mostrar_exito_campo('FicheropdfA');
+        this.dom.mostrar_exito_campo('nuevo_FicheropdfA');
         return true;
         
     }
@@ -280,7 +280,7 @@ class articulo extends EntidadAbstracta {
 		return true;
     }
 
-    personalized_nuevpo_FicheropdfA_name_max_size_validation(id) {
+    personalized_nuevo_FicheropdfA_name_max_size_validation(id) {
         const input = document.getElementById(id);
 
 		const filename = input.files[0].name;
@@ -366,10 +366,10 @@ class articulo extends EntidadAbstracta {
             return true;
         }
         if(!(this.validations.max_size_file('nuevo_FicheropdfA', 2000000))) {
-            this.dom.mostrar_error_campo('nuevo_FicheropdfA', 'nuevo_FicheropdfA_max_size_KO');
-            return "nuevo_FicheropdfA_max_size_KO";
+            this.dom.mostrar_error_campo('nuevo_FicheropdfA', 'nuevo_FicheropdfA_max_size_file_KO');
+            return "nuevo_FicheropdfA_max_size_file_KO";
         }
-        if(!this.validations.type_file('nuevo_FicheropdfA', 'application/pdf')) {
+        if(!this.validations.type_file('nuevo_FicheropdfA', ['application/pdf'])) {
             this.dom.mostrar_error_campo('nuevo_FicheropdfA', 'nuevo_FicheropdfA_type_file_KO');
             return "nuevo_FicheropdfA_type_file_KO";
         }
@@ -382,8 +382,8 @@ class articulo extends EntidadAbstracta {
             return "nuevo_FicheropdfA_name_max_size_KO";
         }
         if(!(this.validations.format_name_file('nuevo_FicheropdfA', '^[a-zA-Z0-9ñÑáéíóúÁÉÍÓÚ.]+$'))) {
-            this.dom.mostrar_error_campo('nuevo_FicheropdfA', 'nuevo_FicheropdfA_format_name_file_KO');
-            return "nuevo_FicheropdfA_format_name_file_KO";
+            this.dom.mostrar_error_campo('nuevo_FicheropdfA', 'nuevo_FicheropdfA_name_format_KO');
+            return "nuevo_FicheropdfA_name_format_KO";
         }
         
         this.dom.mostrar_exito_campo('nuevo_FicheropdfA');
