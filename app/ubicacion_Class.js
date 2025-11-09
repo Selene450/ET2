@@ -5,7 +5,7 @@ class ubicacion extends EntidadAbstracta {
 
         this.columnasamostrar = ['id_site', 'site_latitud', 'site_longitud', 'site_altitude', 'site_locality', 'site_provider_login'];
 
-        this.mostrarespecial = ['ssite_north_photo', 'site_south_photo', 'site_east_photo', 'site_west_photo'];
+        this.mostrarespecial = ['site_north_photo', 'site_south_photo', 'site_east_photo', 'site_west_photo'];
 
         this.attributes = [
             'id_site',
@@ -14,7 +14,7 @@ class ubicacion extends EntidadAbstracta {
             'site_altitude',
             'site_locality',
             'site_provider_login',
-            'ssite_north_photo',
+            'site_north_photo',
             'site_south_photo',
             'site_east_photo',
             'site_west_photo'
@@ -57,20 +57,20 @@ class ubicacion extends EntidadAbstracta {
 			
 			<br>
 
-			<label id="label_ssite_north_photo" class="label_ssite_north_photo">Foto hacia el norte</label>
-			<input type='text' id='ssite_north_photo' name='ssite_north_photo'></input>
-			<span id="span_error_ssite_north_photo"><a id="error_ssite_north_photo"></a></span>
-			<a id="link_ssite_north_photo" href="http://193.147.87.202/ET2/filesuploaded/files_ssite_north_photo/"><img src="./iconos/FILE.png" /></a>
+			<label id="label_site_north_photo" class="label_site_north_photo">Foto hacia el norte</label>
+			<input type='text' id='site_north_photo' name='site_north_photo'></input>
+			<span id="span_error_site_north_photo"><a id="error_site_north_photo"></a></span>
+			<a id="link_site_north_photo" href="http://193.147.87.202/ET2/filesuploaded/files_site_north_photo/"><img src="./iconos/FILE.png" /></a>
 			
-			<label id="label_nuevo_ssite_north_photo" class="label_nuevo_ssite_north_photo">Nuevo ubicacion fotoacto</label>
-			<input type='file' id='nuevo_ssite_north_photo' name='nuevo_ssite_north_photo'></input>
-			<span id="span_error_nuevo_ssite_north_photo"><a id="error_nuevo_ssite_north_photo"></a></span>
+			<label id="label_nuevo_site_north_photo" class="label_nuevo_site_north_photo">Nuevo ubicacion fotoacto</label>
+			<input type='file' id='nuevo_site_north_photo' name='nuevo_site_north_photo'></input>
+			<span id="span_error_nuevo_site_north_photo"><a id="error_nuevo_site_north_photo"></a></span>
 			<br>
 
             <label id="label_site_south_photo" class="label_site_south_photo">Foto hacia el sur</label>
             <input type='text' id='site_south_photo' name='site_south_photo'></input>
             <span id="span_error_site_south_photo"><a id="error_site_south_photo"></a></span>
-            <a id="link_site_south_photo" href="http://193.147.87.202/ET2/filesuploaded/files_ssite_north_photo/"><img src="./iconos/FILE.png" /></a>
+            <a id="link_site_south_photo" href="http://193.147.87.202/ET2/filesuploaded/files_site_north_photo/"><img src="./iconos/FILE.png" /></a>
 
             <label id="label_nuevo_site_south_photo" class="label_nuevo_site_south_photo">Nuevo ubicacion fotoacto</label>
             <input type='file' id='nuevo_site_south_photo' name='nuevo_site_south_photo'></input>
@@ -80,7 +80,7 @@ class ubicacion extends EntidadAbstracta {
             <label id="label_site_east_photo" class="label_site_east_photo">Foto hacia el este</label>
             <input type='text' id='site_east_photo' name='site_east_photo'></input>
             <span id="span_error_site_east_photo"><a id="error_site_east_photo"></a></span>
-            <a id="link_site_east_photo" href="http://193.147.87.202/ET2/filesuploaded/files_ssite_north_photo/"><img src="./iconos/FILE.png" /></a>
+            <a id="link_site_east_photo" href="http://193.147.87.202/ET2/filesuploaded/files_site_north_photo/"><img src="./iconos/FILE.png" /></a>
 
             <label id="label_nuevo_site_east_photo" class="label_nuevo_site_east_photo">Nuevo ubicacion fotoacto</label>
             <input type='file' id='nuevo_site_east_photo' name='nuevo_site_east_photo'></input>
@@ -90,7 +90,7 @@ class ubicacion extends EntidadAbstracta {
             <label id="label_site_west_photo" class="label_site_west_photo">Foto hacia el oeste</label>
             <input type='text' id='site_west_photo' name='site_west_photo'></input>
             <span id="span_error_site_west_photo"><a id="error_site_west_photo"></a></span>
-            <a id="link_site_west_photo" href="http://193.147.87.202/ET2/filesuploaded/files_ssite_north_photo/"><img src="./iconos/FILE.png" /></a>
+            <a id="link_site_west_photo" href="http://193.147.87.202/ET2/filesuploaded/files_site_north_photo/"><img src="./iconos/FILE.png" /></a>
 
             <label id="label_nuevo_site_west_photo" class="label_nuevo_site_west_photo">Nuevo ubicacion fotoacto</label>
             <input type='file' id='nuevo_site_west_photo' name='nuevo_site_west_photo'></input>
@@ -107,8 +107,8 @@ class ubicacion extends EntidadAbstracta {
     }
 
     ADD_id_site_validation() {
-        if (!(this.validations.min_size('id_site', 1))) {
-            this.dom.mostrar_error_campo('is_site', 'd_site_min_size_KO');
+        if (!(this.validations.min_size('id_site', 11))) {
+            this.dom.mostrar_error_campo('id_site', 'id_site_min_size_KO');
             return "id_site_min_size_KO";
         }
         if (!(this.validations.max_size('id_site', 11))) {
@@ -124,54 +124,97 @@ class ubicacion extends EntidadAbstracta {
     }
 
     ADD_site_latitud_validation() {
-        if (!(this.validations.min_size('site_latitud', -90))) {
-            this.dom.mostrar_error_campo('site_latitud', 'site_latitud_min_size_KO');
-            return "site_latitud_min_size_KO";
-        }
-        if (!(this.validations.max_size('site_latitud', 90))) {
-            this.dom.mostrar_error_campo('site_latitud', 'site_latitud_max_size_KO');
-            return "site_latitud_max_size_KO";
-        }
-        if (!(this.validations.format('site_latitud', '^\d{1,3}\.\d{6}$'))) {
+        if (!(this.validations.format('site_latitud', '^[+-]?\\d{1,3}\\.\\d{6}$'))) {
             this.dom.mostrar_error_campo('site_latitud', 'site_latitud_format_KO');
             return "site_latitud_format_KO";
         }
+        if (!(this.personalize_latitud_min_value('site_latitud', -90))) {
+            this.dom.mostrar_error_campo('site_latitud', 'site_latitud_min_size_KO');
+            return "site_latitud_min_size_KO";
+        }
+        if (!(this.personalize_latitud_max_value('site_latitud', 90))) {
+            this.dom.mostrar_error_campo('site_latitud', 'site_latitud_max_size_KO');
+            return "site_latitud_max_size_KO";
+        }
+
         this.dom.mostrar_exito_campo('site_latitud');
         return true;
     }
 
+    personalize_latitud_min_value(id, min) {
+        const el = document.getElementById(id);
+        if (!el) return false;
+        const value = Number(el.value);
+        return value >= min;
+    }
+
+    personalize_latitud_max_value(id, max) {
+        const el = document.getElementById(id);
+        if (!el) return false;
+        const value = Number(el.value);
+        return value <= max;
+    }
+
     ADD_site_longitud_validation() {
-        if (!(this.validations.min_size('site_longitud', -180))) {
+        if (!(this.validations.format('site_longitud', '^[+-]?\\d{1,3}\\.\\d{6}$'))) {
+            this.dom.mostrar_error_campo('site_longitud', 'site_longitud_format_KO');
+            return "site_longitud_format_KO";
+        }
+        if (!(this.personalize_longitud_min_value('site_longitud', -180))) {
             this.dom.mostrar_error_campo('site_longitud', 'site_longitud_min_size_KO');
             return "site_longitud_min_size_KO";
         }
-        if (!(this.validations.max_size('site_longitud', 180))) {
+        if (!(this.personalize_longitud_max_value('site_longitud', 180))) {
             this.dom.mostrar_error_campo('site_longitud', 'site_longitud_max_size_KO');
             return "site_longitud_max_size_KO";
-        }
-        if (!(this.validations.format('site_longitud', '^[-]?[0-9]{1,3}[.][0-9]{6}+$'))) {
-            this.dom.mostrar_error_campo('site_longitud', 'site_longitud_format_KO');
-            return "site_longitud_format_KO";
         }
         this.dom.mostrar_exito_campo('site_longitud');
         return true;
     }
 
-    ADD_site_atitude_validation() {
-        if (!(this.validations.min_size('site_altitude', -465))) {
-            this.dom.mostrar_error_campo('site_altitude', 'site_altitude_min_size_KO');
-            return "site_altitude_min_size_KO";
-        }
-        if (!(this.validations.max_size('site_altitude', 8850))) {
-            this.dom.mostrar_error_campo('site_altitude', 'site_altitude_max_size_KO');
-            return "site_altitude_max_size_KO";
-        }
-        if (!(this.validations.format('site_altitude', '^[-]?[0-9]{1,5}+$'))) {
+    personalize_longitud_min_value(id, min) {
+        const el = document.getElementById(id);
+        if (!el) return false;
+        const value = Number(el.value);
+        return value >= min;
+    }
+
+    personalize_longitud_max_value(id, max) {
+        const el = document.getElementById(id);
+        if (!el) return false;
+        const value = Number(el.value);
+        return value <= max;
+    }
+
+    ADD_site_altitude_validation() {
+        if (!(this.validations.format('site_altitude', '^[-]?[0-9]+$'))) {
             this.dom.mostrar_error_campo('site_altitude', 'site_altitude_format_KO');
             return "site_altitude_format_KO";
         }
+        if (!(this.personalize_altitude_min_value('site_altitude', -465))) {
+            this.dom.mostrar_error_campo('site_altitude', 'site_altitude_min_size_KO');
+            return "site_altitude_min_size_KO";
+        }
+        if (!(this.personalize_altitude_max_value('site_altitude', 8848))) {
+            this.dom.mostrar_error_campo('site_altitude', 'site_altitude_max_size_KO');
+            return "site_altitude_max_size_KO";
+        }
         this.dom.mostrar_exito_campo('site_altitude');
         return true;
+    }
+
+    personalize_altitude_min_value(id, min) {
+        const el = document.getElementById(id);
+        if (!el) return false;
+        const value = Number(el.value);
+        return value >= min;
+    }
+
+    personalize_altitude_max_value(id, max) {
+        const el = document.getElementById(id);
+        if (!el) return false;
+        const value = Number(el.value);
+        return value <= max;
     }
 
     ADD_site_locality_validation() {
@@ -208,7 +251,7 @@ class ubicacion extends EntidadAbstracta {
         return true;
     }
 
-    ADD_site_north_photo_validation() {
+    ADD_nuevo_site_north_photo_validation() {
         if (!(this.validations.not_exist_file('nuevo_site_north_photo'))) {
             this.dom.mostrar_error_campo('nuevo_site_north_photo', 'nuevo_site_north_photo_not_exists_file_KO');
             return "nuevo_site_north_photo_not_exists_file_KO";
@@ -256,7 +299,7 @@ class ubicacion extends EntidadAbstracta {
         return true;
     }
 
-    ADD_site_south_photo_validation() {
+    ADD_nuevo_site_south_photo_validation() {
         if (!(this.validations.not_exist_file('nuevo_site_south_photo'))) {
             this.dom.mostrar_error_campo('nuevo_site_south_photo', 'nuevo_site_south_photo_not_exists_file_KO');
             return "nuevo_site_south_photo_not_exists_file_KO";
@@ -265,7 +308,7 @@ class ubicacion extends EntidadAbstracta {
             this.dom.mostrar_error_campo('nuevo_site_south_photo', 'nuevo_site_south_photo_max_size_file_KO');
             return "nuevo_site_south_photo_max_size_file_KO";
         }
-        if (!this.validations.type_file('nuevo_site_south_photo', ['application/pdf'])) {
+        if (!this.validations.type_file('nuevo_site_south_photo', ['image/jpeg'])) {
             this.dom.mostrar_error_campo('nuevo_site_south_photo', 'nuevo_site_south_photo_type_file_KO');
             return "nuevo_site_south_photo_type_file_KO";
         }
@@ -305,7 +348,7 @@ class ubicacion extends EntidadAbstracta {
     }
 
 
-    ADD_site_east_photo_validation() {
+    ADD_nuevo_site_east_photo_validation() {
         if (!(this.validations.not_exist_file('nuevo_site_east_photo'))) {
             this.dom.mostrar_error_campo('nuevo_site_east_photo', 'nuevo_site_east_photo_not_exists_file_KO');
             return "nuevo_site_east_photo_not_exists_file_KO";
@@ -314,7 +357,7 @@ class ubicacion extends EntidadAbstracta {
             this.dom.mostrar_error_campo('nuevo_site_east_photo', 'nuevo_site_east_photo_max_size_file_KO');
             return "nuevo_site_east_photo_max_size_file_KO";
         }
-        if (!this.validations.type_file('nuevo_site_east_photo', ['application/pdf'])) {
+        if (!this.validations.type_file('nuevo_site_east_photo', ['image/jpeg'])) {
             this.dom.mostrar_error_campo('nuevo_site_east_photo', 'nuevo_site_east_photo_type_file_KO');
             return "nuevo_site_east_photo_type_file_KO";
         }
@@ -353,7 +396,7 @@ class ubicacion extends EntidadAbstracta {
         return true;
     }
 
-    ADD_site_west_photo_validation() {
+    ADD_nuevo_site_west_photo_validation() {
         if (!(this.validations.not_exist_file('nuevo_site_west_photo'))) {
             this.dom.mostrar_error_campo('nuevo_site_west_photo', 'nuevo_site_west_photo_not_exists_file_KO');
             return "nuevo_site_west_photo_not_exists_file_KO";
@@ -362,7 +405,7 @@ class ubicacion extends EntidadAbstracta {
             this.dom.mostrar_error_campo('nuevo_site_west_photo', 'nuevo_site_west_photo_max_size_file_KO');
             return "nuevo_site_west_photo_max_size_file_KO";
         }
-        if (!this.validations.type_file('nuevo_site_west_photo', ['application/pdf'])) {
+        if (!this.validations.type_file('nuevo_site_west_photo', ['image/jpeg'])) {
             this.dom.mostrar_error_campo('nuevo_site_west_photo', 'nuevo_site_west_photo_type_file_KO');
             return "nuevo_site_west_photo_type_file_KO";
         }
@@ -408,10 +451,10 @@ class ubicacion extends EntidadAbstracta {
             (this.ADD_site_atitude_validation) &
             (this.ADD_site_locality_validation) &
             (this.ADD_site_provider_login_validation) &
-            (this.ADD_site_north_photo_validation) &
-            (this.ADD_site_south_photo_validation) &
-            (this.ADD_site_east_photo_validation) &
-            (this.ADD_site_west_photo_validation)
+            (this.ADD_nuevo_site_north_photo_validation) &
+            (this.ADD_nuevo_site_south_photo_validation) &
+            (this.ADD_nuevo_site_east_photo_validation) &
+            (this.ADD_nuevo_site_west_photo_validation)
         ];
         result = Boolean(result);
 
@@ -430,8 +473,8 @@ class ubicacion extends EntidadAbstracta {
         return this.ADD_site_longitud_validation();
     }
 
-    EDIT_site_atitude_validation() {
-        return this.ADD_site_atitude_validation();
+    EDIT_site_altitude_validation() {
+        return this.ADD_site_altitude_validation();
     }
 
     EDIT_site_locality_validation() {
@@ -442,7 +485,7 @@ class ubicacion extends EntidadAbstracta {
         return this.ADD_site_provider_login_validation();
     }
 
-     EDIT_site_north_photo_validation() {
+    EDIT_nuevo_site_north_photo_validation() {
         if (!(this.validations.not_exist_file('nuevo_site_north_photo'))) {
             return true;
         }
@@ -472,7 +515,7 @@ class ubicacion extends EntidadAbstracta {
     }
 
 
-    EDIT_site_south_photo_validation() {
+    EDIT_nuevo_site_south_photo_validation() {
         if (!(this.validations.not_exist_file('nuevo_site_south_photo'))) {
             return true;
         }
@@ -480,7 +523,7 @@ class ubicacion extends EntidadAbstracta {
             this.dom.mostrar_error_campo('nuevo_site_south_photo', 'nuevo_site_south_photo_max_size_file_KO');
             return "nuevo_site_south_photo_max_size_file_KO";
         }
-        if (!this.validations.type_file('nuevo_site_south_photo', ['application/pdf'])) {
+        if (!this.validations.type_file('nuevo_site_south_photo', ['image/jpeg'])) {
             this.dom.mostrar_error_campo('nuevo_site_south_photo', 'nuevo_site_south_photo_type_file_KO');
             return "nuevo_site_south_photo_type_file_KO";
         }
@@ -503,7 +546,7 @@ class ubicacion extends EntidadAbstracta {
 
 
 
-    EDIT_site_east_photo_validation() {
+    EDIT_nuevo_site_east_photo_validation() {
         if (!(this.validations.not_exist_file('nuevo_site_east_photo'))) {
             return true;
         }
@@ -511,7 +554,7 @@ class ubicacion extends EntidadAbstracta {
             this.dom.mostrar_error_campo('nuevo_site_east_photo', 'nuevo_site_east_photo_max_size_file_KO');
             return "nuevo_site_east_photo_max_size_file_KO";
         }
-        if (!this.validations.type_file('nuevo_site_east_photo', ['application/pdf'])) {
+        if (!this.validations.type_file('nuevo_site_east_photo', ['image/jpeg'])) {
             this.dom.mostrar_error_campo('nuevo_site_east_photo', 'nuevo_site_east_photo_type_file_KO');
             return "nuevo_site_east_photo_type_file_KO";
         }
@@ -534,7 +577,7 @@ class ubicacion extends EntidadAbstracta {
 
 
 
-    EDIT_site_west_photo_validation() {
+    EDIT_nuevo_site_west_photo_validation() {
         if (!(this.validations.not_exist_file('nuevo_site_west_photo'))) {
             return true;
         }
@@ -542,7 +585,7 @@ class ubicacion extends EntidadAbstracta {
             this.dom.mostrar_error_campo('nuevo_site_west_photo', 'nuevo_site_west_photo_max_size_file_KO');
             return "nuevo_site_west_photo_max_size_file_KO";
         }
-        if (!this.validations.type_file('nuevo_site_west_photo', ['application/pdf'])) {
+        if (!this.validations.type_file('nuevo_site_west_photo', ['image/jpeg'])) {
             this.dom.mostrar_error_campo('nuevo_site_west_photo', 'nuevo_site_west_photo_type_file_KO');
             return "nuevo_site_west_photo_type_file_KO";
         }
@@ -568,13 +611,13 @@ class ubicacion extends EntidadAbstracta {
             (this.EDIT_id_site_validation) &
             (this.EDIT_site_latitud_validation) &
             (this.EDIT_site_longitud_validation) &
-            (this.EDIT_site_atitude_validation) &
+            (this.EDIT_site_altitude_validation) &
             (this.EDIT_site_locality_validation) &
             (this.EDIT_site_provider_login_validation) &
-            (this.EDIT_site_north_photo_validation) &
-            (this.EDIT_site_south_photo_validation) &
-            (this.EDIT_site_east_photo_validation) &
-            (this.EDIT_site_west_photo_validation)
+            (this.EDIT_nuevo_site_north_photo_validation) &
+            (this.EDIT_nuevo_site_south_photo_validation) &
+            (this.EDIT_nuevo_site_east_photo_validation) &
+            (this.EDIT_nuevo_site_west_photo_validation)
         ];
         result = Boolean(result);
 
@@ -595,39 +638,40 @@ class ubicacion extends EntidadAbstracta {
     }
 
     SEARCH_site_latitud_validation() {
-        if (!(this.validations.max_size('site_latitud', 90))) {
-            this.dom.mostrar_error_campo('site_latitud', 'site_latitud_max_size_KO');
-            return "site_latitud_max_size_KO";
-        }
-        if (!(this.validations.format('site_latitud', '^[-]?[0-9]{1,3}[.][0-9]{6}+$'))) {
+        if (!(this.validations.format('site_latitud', '^[+-]?\\d{1,3}\\.\\d{6}$'))) {
             this.dom.mostrar_error_campo('site_latitud', 'site_latitud_format_KO');
             return "site_latitud_format_KO";
+        }
+        if (!(this.personalize_latitud_max_value('site_latitud', 90))) {
+            this.dom.mostrar_error_campo('site_latitud', 'site_latitud_max_size_KO');
+            return "site_latitud_max_size_KO";
         }
         this.dom.mostrar_exito_campo('site_latitud');
         return true;
     }
 
     SEARCH_site_longitud_validation() {
-        if (!(this.validations.max_size('site_longitud', 180))) {
-            this.dom.mostrar_error_campo('site_longitud', 'site_longitud_max_size_KO');
-            return "site_longitud_max_size_KO";
-        }
-        if (!(this.validations.format('site_longitud', '^\d{1,3}\.\d{6}$'))) {
+        if (!(this.validations.format('site_longitud', '^[+-]?\\d{1,3}\\.\\d{6}$'))) {
             this.dom.mostrar_error_campo('site_longitud', 'site_longitud_format_KO');
             return "site_longitud_format_KO";
         }
+        if (!(this.personalize_longitud_max_value('site_longitud', 180))) {
+            this.dom.mostrar_error_campo('site_longitud', 'site_longitud_max_size_KO');
+            return "site_longitud_max_size_KO";
+        }
+
         this.dom.mostrar_exito_campo('site_longitud');
         return true;
     }
 
     SEARCH_site_altitude_validation() {
-        if (!(this.validations.max_size('site_altitude', 8850))) {
-            this.dom.mostrar_error_campo('site_altitude', 'site_altitude_max_size_KO');
-            return "site_altitude_max_size_KO";
-        }
-        if (!(this.validations.format('site_altitude', '^[-]?[0-9]{1,5}+$'))) {
+        if (!(this.validations.format('site_altitude', '^[-]?[0-9]+$'))) {
             this.dom.mostrar_error_campo('site_altitude', 'site_altitude_format_KO');
             return "site_altitude_format_KO";
+        }
+        if (!(this.personalize_altitude_max_value('site_altitude', 8848))) {
+            this.dom.mostrar_error_campo('site_altitude', 'site_altitude_max_size_KO');
+            return "site_altitude_max_size_KO";
         }
         this.dom.mostrar_exito_campo('site_altitude');
         return true;
@@ -661,12 +705,12 @@ class ubicacion extends EntidadAbstracta {
 
     SEARCH_site_north_photo_validation() {
         if (!(this.validations.max_size('site_north_photo', 50))) {
-            this.dom.mostrar_error_campo('site_north_photo', 'site_north_photo_max_size_KO');
-            return "site_north_photo_max_size_KO";
+            this.dom.mostrar_error_campo('site_north_photo', 'site_north_photo_name_max_size_KO');
+            return "site_north_photo_name_max_size_KO";
         }
         if (!(this.validations.format('site_north_photo', '^[a-zA-Z0-9ñÑáéíóúÁÉÍÓÚ.]+$'))) {
-            this.dom.mostrar_error_campo('site_north_photo', 'site_north_photo_format_KO');
-            return "site_north_photo_format_KO";
+            this.dom.mostrar_error_campo('site_north_photo', 'site_north_photo_name_format_KO');
+            return "site_north_photo_name_format_KO";
         }
         this.dom.mostrar_exito_campo('site_north_photo');
         return true;
@@ -674,12 +718,12 @@ class ubicacion extends EntidadAbstracta {
 
     SEARCH_site_south_photo_validation() {
         if (!(this.validations.max_size('site_south_photo', 50))) {
-            this.dom.mostrar_error_campo('site_south_photo', 'site_south_photo_max_size_KO');
-            return "site_south_photo_max_size_KO";
+            this.dom.mostrar_error_campo('site_south_photo', 'site_south_photo_name_max_size_KO');
+            return "site_south_photo_name_max_size_KO";
         }
         if (!(this.validations.format('site_south_photo', '^[a-zA-Z0-9ñÑáéíóúÁÉÍÓÚ.]+$'))) {
-            this.dom.mostrar_error_campo('site_south_photo', 'site_south_photo_format_KO');
-            return "site_south_photo_format_KO";
+            this.dom.mostrar_error_campo('site_south_photo', 'site_south_photo_name_format_KO');
+            return "site_south_photo_name_format_KO";
         }
         this.dom.mostrar_exito_campo('site_south_photo');
         return true;
@@ -687,12 +731,12 @@ class ubicacion extends EntidadAbstracta {
 
     SEARCH_site_east_photo_validation() {
         if (!(this.validations.max_size('site_east_photo', 50))) {
-            this.dom.mostrar_error_campo('site_east_photo', 'site_east_photo_max_size_KO');
-            return "site_east_photo_max_size_KO";
+            this.dom.mostrar_error_campo('site_east_photo', 'site_east_photo_name_max_size_KO');
+            return "site_east_photo_name_max_size_KO";
         }
         if (!(this.validations.format('site_east_photo', '^[a-zA-Z0-9ñÑáéíóúÁÉÍÓÚ.]+$'))) {
-            this.dom.mostrar_error_campo('site_east_photo', 'site_east_photo_format_KO');
-            return "site_east_photo_format_KO";
+            this.dom.mostrar_error_campo('site_east_photo', 'site_east_photo_name_format_KO');
+            return "site_east_photo_name_format_KO";
         }
         this.dom.mostrar_exito_campo('site_east_photo');
         return true;
@@ -700,12 +744,12 @@ class ubicacion extends EntidadAbstracta {
 
     SEARCH_site_west_photo_validation() {
         if (!(this.validations.max_size('site_west_photo', 50))) {
-            this.dom.mostrar_error_campo('site_west_photo', 'site_west_photo_max_size_KO');
-            return "site_west_photo_max_size_KO";
+            this.dom.mostrar_error_campo('site_west_photo', 'site_west_photo_name_max_size_KO');
+            return "site_west_photo_name_max_size_KO";
         }
         if (!(this.validations.format('site_west_photo', '^[a-zA-Z0-9ñÑáéíóúÁÉÍÓÚ.]+$'))) {
-            this.dom.mostrar_error_campo('site_west_photo', 'site_west_photo_format_KO');
-            return "site_west_photo_format_KO";
+            this.dom.mostrar_error_campo('site_west_photo', 'site_west_photo_fname_ormat_KO');
+            return "site_west_photo_name_format_KO";
         }
         this.dom.mostrar_exito_campo('site_west_photo');
         return true;
@@ -716,7 +760,7 @@ class ubicacion extends EntidadAbstracta {
             (this.SEARCH_id_site_validation) &
             (this.SEARCH_site_latitud_validation) &
             (this.SEARCH_site_longitud_validation) &
-            (this.SEARCH_site_atitude_validation) &
+            (this.SEARCH_site_altitude_validation) &
             (this.SEARCH_site_locality_validation) &
             (this.SEARCH_site_provider_login_validation) &
             (this.SEARCH_site_north_photo_validation) &
@@ -729,240 +773,240 @@ class ubicacion extends EntidadAbstracta {
         return result;
     }
 
-     createForm_EDIT(fila) {
+    createForm_EDIT(fila) {
 
-		// limpiar poner titulo y poner visible el formulario
-		document.getElementById('contenedor_IU_form').innerHTML = this.manual_form_creation();
-		this.dom.show_element('Div_IU_form', 'block');
+        // limpiar poner titulo y poner visible el formulario
+        document.getElementById('contenedor_IU_form').innerHTML = this.manual_form_creation();
+        this.dom.show_element('Div_IU_form', 'block');
 
-		this.dom.remove_class_value('class_contenido_titulo_form', 'text_contenido_titulo_form');
-		this.dom.assign_class_value('class_contenido_titulo_form', 'text_contenido_titulo_form_ubicacion_EDIT');
+        this.dom.remove_class_value('class_contenido_titulo_form', 'text_contenido_titulo_form');
+        this.dom.assign_class_value('class_contenido_titulo_form', 'text_contenido_titulo_form_ubicacion_EDIT');
 
-		// rellenar onsubmit y action
-		this.dom.assign_property_value('form_iu', 'onsubmit', 'return entidad.EDIT_submit_' + this.nombreentidad);
-		this.dom.assign_property_value('form_iu', 'action', 'javascript:entidad.EDIT();');
+        // rellenar onsubmit y action
+        this.dom.assign_property_value('form_iu', 'onsubmit', 'return entidad.EDIT_submit_' + this.nombreentidad);
+        this.dom.assign_property_value('form_iu', 'action', 'javascript:entidad.EDIT();');
 
-		//activar el link al fichero
-		this.dom.assign_property_value('link_site_north_photo', 'href', 'http://193.147.87.202/ET2/filesuploaded/files_ubicacion/' + fila.site_north_photo);
+        //activar el link al fichero
+        this.dom.assign_property_value('link_site_north_photo', 'href', 'http://193.147.87.202/ET2/filesuploaded/files_ubicacion/' + fila.site_north_photo);
 
 
 
-		// rellenar valores
-		this.dom.rellenarvaloresform(fila);
+        // rellenar valores
+        this.dom.rellenarvaloresform(fila);
 
-		// poner las validaciones
-		this.dom.colocarvalidaciones('form_iu', 'EDIT');
+        // poner las validaciones
+        this.dom.colocarvalidaciones('form_iu', 'EDIT');
 
-		// poner inactivos los campos correspondientes
-		this.dom.assign_property_value('ubicacion_dni', 'readonly', 'true');
-		this.dom.assign_property_value('site_north_photo', 'readonly', 'true');
+        // poner inactivos los campos correspondientes
+        this.dom.assign_property_value('ubicacion_dni', 'readonly', 'true');
+        this.dom.assign_property_value('site_north_photo', 'readonly', 'true');
 
-		// colocar boton de submit
-		this.dom.colocarboton('EDIT');
+        // colocar boton de submit
+        this.dom.colocarboton('EDIT');
 
-		setLang();
+        setLang();
 
-	}
+    }
 
-	createForm_DELETE(fila) {
+    createForm_DELETE(fila) {
 
-		// limpiar y poner visible el formulario
-		document.getElementById('contenedor_IU_form').innerHTML = this.manual_form_creation();
+        // limpiar y poner visible el formulario
+        document.getElementById('contenedor_IU_form').innerHTML = this.manual_form_creation();
 
-		this.dom.show_element('Div_IU_form', 'block');
-		this.dom.remove_class_value('class_contenido_titulo_form', 'text_contenido_titulo_form');
-		this.dom.assign_class_value('class_contenido_titulo_form', 'text_contenido_titulo_form_ubicacion_DELETE');
+        this.dom.show_element('Div_IU_form', 'block');
+        this.dom.remove_class_value('class_contenido_titulo_form', 'text_contenido_titulo_form');
+        this.dom.assign_class_value('class_contenido_titulo_form', 'text_contenido_titulo_form_ubicacion_DELETE');
 
-		// rellenar y action
-		this.dom.assign_property_value('form_iu', 'action', 'javascript:entidad.DELETE();');
+        // rellenar y action
+        this.dom.assign_property_value('form_iu', 'action', 'javascript:entidad.DELETE();');
 
-		// poner no visible el campo nuevo_site_north_photo (solo se puede ver el nombre de fichero)
-		this.dom.hide_element_form('nuevo_site_north_photo');
-		this.dom.assign_property_value('link_site_north_photo', 'href', 'http://193.147.87.202/ET2/filesuploaded/files_ubicacion/' + fila.site_north_photo);
+        // poner no visible el campo nuevo_site_north_photo (solo se puede ver el nombre de fichero)
+        this.dom.hide_element_form('nuevo_site_north_photo');
+        this.dom.assign_property_value('link_site_north_photo', 'href', 'http://193.147.87.202/ET2/filesuploaded/files_ubicacion/' + fila.site_north_photo);
         // poner no visible el campo nuevo_site_south_photo (solo se puede ver el nombre de fichero)
-		this.dom.hide_element_form('nuevo_site_south_photo');
-		this.dom.assign_property_value('link_site_south_photo', 'href', 'http://193.147.87.202/ET2/filesuploaded/files_ubicacion/' + fila.site_south_photo);
+        this.dom.hide_element_form('nuevo_site_south_photo');
+        this.dom.assign_property_value('link_site_south_photo', 'href', 'http://193.147.87.202/ET2/filesuploaded/files_ubicacion/' + fila.site_south_photo);
         // poner no visible el campo nuevo_site_east_photo (solo se puede ver el nombre de fichero)
-		this.dom.hide_element_form('nuevo_site_east_photo');
-		this.dom.assign_property_value('link_site_east_photo', 'href', 'http://193.147.87.202/ET2/filesuploaded/files_ubicacion/' + fila.site_east_photo);
+        this.dom.hide_element_form('nuevo_site_east_photo');
+        this.dom.assign_property_value('link_site_east_photo', 'href', 'http://193.147.87.202/ET2/filesuploaded/files_ubicacion/' + fila.site_east_photo);
         // poner no visible el campo nuevo_site_west_photo (solo se puede ver el nombre de fichero)
         this.dom.hide_element_form('nuevo_site_west_photo');
         this.dom.assign_property_value('link_site_west_photo', 'href', 'http://193.147.87.202/ET2/filesuploaded/files_ubicacion/' + fila.site_west_photo);
-		// rellenar valores
-		this.dom.rellenarvaloresform(fila);
+        // rellenar valores
+        this.dom.rellenarvaloresform(fila);
 
-		// poner inactivos los campos correspondientes
-		this.dom.colocartodosreadonly('form_iu');
+        // poner inactivos los campos correspondientes
+        this.dom.colocartodosreadonly('form_iu');
 
-		// colocar boton de submit
-		this.dom.colocarboton('DELETE');
+        // colocar boton de submit
+        this.dom.colocarboton('DELETE');
 
-		setLang();
-	}
+        setLang();
+    }
 
-	createForm_SHOWCURRENT(fila) {
-		// limpiar y poner visible el formulario
-		document.getElementById('contenedor_IU_form').innerHTML = this.manual_form_creation();
-		this.dom.show_element('Div_IU_form', 'block');
-		this.dom.remove_class_value('class_contenido_titulo_form', 'text_contenido_titulo_form');
-		this.dom.assign_class_value('class_contenido_titulo_form', 'text_contenido_titulo_form_ubicacion_SHOWCURRENT');
+    createForm_SHOWCURRENT(fila) {
+        // limpiar y poner visible el formulario
+        document.getElementById('contenedor_IU_form').innerHTML = this.manual_form_creation();
+        this.dom.show_element('Div_IU_form', 'block');
+        this.dom.remove_class_value('class_contenido_titulo_form', 'text_contenido_titulo_form');
+        this.dom.assign_class_value('class_contenido_titulo_form', 'text_contenido_titulo_form_ubicacion_SHOWCURRENT');
 
-		// rellenar y action
-		//this.dom.assign_property_value('form_iu', 'action', 'javascript:entidad.DELETE();');
+        // rellenar y action
+        //this.dom.assign_property_value('form_iu', 'action', 'javascript:entidad.DELETE();');
 
-		// poner no visible el campo nuevo_site_north_photo (solo se puede ver el nombre de fichero)
-		this.dom.hide_element_form('nuevo_site_north_photo');
-		this.dom.assign_property_value('link_site_north_photo', 'href', 'http://193.147.87.202/ET2/filesuploaded/files_ubicacion/' + fila.site_north_photo);
+        // poner no visible el campo nuevo_site_north_photo (solo se puede ver el nombre de fichero)
+        this.dom.hide_element_form('nuevo_site_north_photo');
+        this.dom.assign_property_value('link_site_north_photo', 'href', 'http://193.147.87.202/ET2/filesuploaded/files_ubicacion/' + fila.site_north_photo);
         // poner no visible el campo nuevo_site_south_photo (solo se puede ver el nombre de fichero)
-		this.dom.hide_element_form('nuevo_site_south_photo');
-		this.dom.assign_property_value('link_site_south_photo', 'href', 'http://193.147.87.202/ET2/filesuploaded/files_ubicacion/' + fila.site_south_photo);
+        this.dom.hide_element_form('nuevo_site_south_photo');
+        this.dom.assign_property_value('link_site_south_photo', 'href', 'http://193.147.87.202/ET2/filesuploaded/files_ubicacion/' + fila.site_south_photo);
         // poner no visible el campo nuevo_site_east_photo (solo se puede ver el nombre de fichero)
-		this.dom.hide_element_form('nuevo_site_east_photo');
-		this.dom.assign_property_value('link_site_east_photo', 'href', 'http://193.147.87.202/ET2/filesuploaded/files_ubicacion/' + fila.site_east_photo);
+        this.dom.hide_element_form('nuevo_site_east_photo');
+        this.dom.assign_property_value('link_site_east_photo', 'href', 'http://193.147.87.202/ET2/filesuploaded/files_ubicacion/' + fila.site_east_photo);
         // poner no visible el campo nuevo_site_west_photo (solo se puede ver el nombre de fichero)
         this.dom.hide_element_form('nuevo_site_west_photo');
         this.dom.assign_property_value('link_site_west_photo', 'href', 'http://193.147.87.202/ET2/filesuploaded/files_ubicacion/' + fila.site_west_photo);
 
-		// rellenar valores
-		this.dom.rellenarvaloresform(fila);
+        // rellenar valores
+        this.dom.rellenarvaloresform(fila);
 
-		// poner inactivos los campos correspondientes
-		this.dom.colocartodosreadonly('form_iu');
+        // poner inactivos los campos correspondientes
+        this.dom.colocartodosreadonly('form_iu');
 
-		// colocar boton de submit
-		//this.colocarboton('SHOWCURRENT');
+        // colocar boton de submit
+        //this.colocarboton('SHOWCURRENT');
 
-		setLang();
+        setLang();
 
-	}
+    }
 
-	createForm_ADD() {
+    createForm_ADD() {
 
-		// poner titulo al formulario
+        // poner titulo al formulario
 
-		// limpiar y poner visible el formulario
-		document.getElementById('contenedor_IU_form').innerHTML = this.manual_form_creation();
-		this.dom.show_element('Div_IU_form', 'block');
-		this.dom.remove_class_value('class_contenido_titulo_form', 'text_contenido_titulo_form');
-		this.dom.assign_class_value('class_contenido_titulo_form', 'text_contenido_titulo_form_ubicacion_ADD');
+        // limpiar y poner visible el formulario
+        document.getElementById('contenedor_IU_form').innerHTML = this.manual_form_creation();
+        this.dom.show_element('Div_IU_form', 'block');
+        this.dom.remove_class_value('class_contenido_titulo_form', 'text_contenido_titulo_form');
+        this.dom.assign_class_value('class_contenido_titulo_form', 'text_contenido_titulo_form_ubicacion_ADD');
 
-		// poner onsubmit
-		this.dom.assign_property_value('form_iu', 'onsubmit', 'return entidad.ADD_submit_' + this.nombreentidad + '()');
+        // poner onsubmit
+        this.dom.assign_property_value('form_iu', 'onsubmit', 'return entidad.ADD_submit_' + this.nombreentidad + '()');
 
-		// poner action
-		this.dom.assign_property_value('form_iu', 'action', 'javascript:entidad.ADD();');
+        // poner action
+        this.dom.assign_property_value('form_iu', 'action', 'javascript:entidad.ADD();');
 
-		// poner no visible el campo site_north_photo (solo se puede subir fichero)
-		this.dom.hide_element_form('site_north_photo');
-		this.dom.hide_element('link_site_north_photo');
+        // poner no visible el campo site_north_photo (solo se puede subir fichero)
+        this.dom.hide_element_form('site_north_photo');
+        this.dom.hide_element('link_site_north_photo');
         // poner no visible el campo site_south_photo (solo se puede subir fichero)
         this.dom.hide_element_form('site_south_photo');
-		this.dom.hide_element('link_site_south_photo');
+        this.dom.hide_element('link_site_south_photo');
         // poner no visible el campo site_east_photo (solo se puede subir fichero)
         this.dom.hide_element_form('site_east_photo');
-		this.dom.hide_element('link_site_east_photo');
+        this.dom.hide_element('link_site_east_photo');
         // poner no visible el campo site_west_photo (solo se puede subir fichero)
         this.dom.hide_element_form('site_west_photo');
-		this.dom.hide_element('link_site_west_photo');
+        this.dom.hide_element('link_site_west_photo');
 
-		// rellenar valores
-		// en ADD no hay valores que rellenar
+        // rellenar valores
+        // en ADD no hay valores que rellenar
 
-		// poner las validaciones
-		this.dom.colocarvalidaciones('form_iu', 'ADD');
+        // poner las validaciones
+        this.dom.colocarvalidaciones('form_iu', 'ADD');
 
-		// poner inactivos los campos correspondientes
-		// en ADD no hay inactivos... si hubiese un autoincremental ya no se mostraria
+        // poner inactivos los campos correspondientes
+        // en ADD no hay inactivos... si hubiese un autoincremental ya no se mostraria
 
-		// colocar boton de submit
-		this.dom.colocarboton('ADD');
+        // colocar boton de submit
+        this.dom.colocarboton('ADD');
 
-		setLang();
-	}
+        setLang();
+    }
 
-	createForm_SEARCH() {
+    createForm_SEARCH() {
 
-		// poner titulo al formulario
+        // poner titulo al formulario
 
-		// limpiar y poner visible el formulario
-		document.getElementById('contenedor_IU_form').innerHTML = this.manual_form_creation();
-		this.dom.show_element('Div_IU_form', 'block');
-		this.dom.remove_class_value('class_contenido_titulo_form', 'text_contenido_titulo_form');
-		this.dom.assign_class_value('class_contenido_titulo_form', 'text_contenido_titulo_form_ubicacion_SEARCH');
+        // limpiar y poner visible el formulario
+        document.getElementById('contenedor_IU_form').innerHTML = this.manual_form_creation();
+        this.dom.show_element('Div_IU_form', 'block');
+        this.dom.remove_class_value('class_contenido_titulo_form', 'text_contenido_titulo_form');
+        this.dom.assign_class_value('class_contenido_titulo_form', 'text_contenido_titulo_form_ubicacion_SEARCH');
 
-		// poner onsubmit
-		this.dom.assign_property_value('form_iu', 'onsubmit', 'return entidad.SEARCH_submit_' + this.nombreentidad);
+        // poner onsubmit
+        this.dom.assign_property_value('form_iu', 'onsubmit', 'return entidad.SEARCH_submit_' + this.nombreentidad);
 
-		// poner action
-		this.dom.assign_property_value('form_iu', 'action', 'javascript:entidad.SEARCH();');
+        // poner action
+        this.dom.assign_property_value('form_iu', 'action', 'javascript:entidad.SEARCH();');
 
-		// poner no visible el campo site_north_photo (solo se puede subir fichero)
-		this.dom.hide_element_form('site_north_photo');
-		this.dom.hide_element('link_site_north_photo');
+        // poner no visible el campo site_north_photo (solo se puede subir fichero)
+        this.dom.hide_element_form('site_north_photo');
+        this.dom.hide_element('link_site_north_photo');
         // poner no visible el campo site_south_photo (solo se puede subir fichero)
         this.dom.hide_element_form('site_south_photo');
-		this.dom.hide_element('link_site_south_photo');
+        this.dom.hide_element('link_site_south_photo');
         // poner no visible el campo site_east_photo (solo se puede subir fichero)
         this.dom.hide_element_form('site_east_photo');
-		this.dom.hide_element('link_site_east_photo');
+        this.dom.hide_element('link_site_east_photo');
         // poner no visible el campo site_west_photo (solo se puede subir fichero)
         this.dom.hide_element_form('site_west_photo');
-		this.dom.hide_element('link_site_west_photo');
+        this.dom.hide_element('link_site_west_photo');
 
-		// reemplazar enumerados por texto
-		// titulacionque es un select
-		this.dom.replaceSelectXEmptyInput('EstadoA');
+        // reemplazar enumerados por texto
+        // titulacionque es un select
+        this.dom.replaceSelectXEmptyInput('EstadoA');
 
-		// rellenar valores
-		// en SEARCH no hay valores que rellenar
+        // rellenar valores
+        // en SEARCH no hay valores que rellenar
 
-		// poner las validaciones
-		this.dom.colocarvalidaciones('form_iu', 'SEARCH');
+        // poner las validaciones
+        this.dom.colocarvalidaciones('form_iu', 'SEARCH');
 
-		// colocar boton de submit
-		this.dom.colocarboton('SEARCH');
+        // colocar boton de submit
+        this.dom.colocarboton('SEARCH');
 
-		setLang();
+        setLang();
 
-	}
+    }
 
 
     mostrarcambioatributo(atributo, valorentrada) {
 
-		switch (atributo) {
-			case 'site_north_photo':
-				var link = 'error';
-				if (valorentrada !== '') {
-					link = valorentrada + `  <a class="link_alumnograduacion_fotoacto" href="http://193.147.87.202/ET2/filesuploaded/files_ubicacion/` + valorentrada + `"><img src="./iconos/FILE.png" /></a>`;
-				}
-				return link;
-				break;
-			case 'site_south_photo':
-				var link = 'error';
-				if (valorentrada !== '') {
-					link = valorentrada + `  <a class="link_alumnograduacion_fotoacto" href="http://193.147.87.202/ET2/filesuploaded/files_ubicacion/` + valorentrada + `"><img src="./iconos/FILE.png" /></a>`;
-				}
-				return link;
-				break;
+        switch (atributo) {
+            case 'site_north_photo':
+                var link = 'error';
+                if (valorentrada !== '') {
+                    link = valorentrada + `  <a class="link_alumnograduacion_fotoacto" href="http://193.147.87.202/ET2/filesuploaded/files_ubicacion/` + valorentrada + `"><img src="./iconos/FILE.png" /></a>`;
+                }
+                return link;
+                break;
+            case 'site_south_photo':
+                var link = 'error';
+                if (valorentrada !== '') {
+                    link = valorentrada + `  <a class="link_alumnograduacion_fotoacto" href="http://193.147.87.202/ET2/filesuploaded/files_ubicacion/` + valorentrada + `"><img src="./iconos/FILE.png" /></a>`;
+                }
+                return link;
+                break;
             case 'site_east_photo':
                 var link = 'error';
-				if (valorentrada !== '') {
-					link = valorentrada + `  <a class="link_alumnograduacion_fotoacto" href="http://193.147.87.202/ET2/filesuploaded/files_ubicacion/` + valorentrada + `"><img src="./iconos/FILE.png" /></a>`;
-				}
-				return link;
-				break;
+                if (valorentrada !== '') {
+                    link = valorentrada + `  <a class="link_alumnograduacion_fotoacto" href="http://193.147.87.202/ET2/filesuploaded/files_ubicacion/` + valorentrada + `"><img src="./iconos/FILE.png" /></a>`;
+                }
+                return link;
+                break;
             case 'site_west_photo':
                 var link = 'error';
-				if (valorentrada !== '') {
-					link = valorentrada + `  <a class="link_alumnograduacion_fotoacto" href="http://193.147.87.202/ET2/filesuploaded/files_ubicacion/` + valorentrada + `"><img src="./iconos/FILE.png" /></a>`;
-				}
-				return link;
-				break;
-			case 'default':
-				alert('no existe mostrar especial para ese atributo');
-				break;
-		}
-	}
+                if (valorentrada !== '') {
+                    link = valorentrada + `  <a class="link_alumnograduacion_fotoacto" href="http://193.147.87.202/ET2/filesuploaded/files_ubicacion/` + valorentrada + `"><img src="./iconos/FILE.png" /></a>`;
+                }
+                return link;
+                break;
+            case 'default':
+                alert('no existe mostrar especial para ese atributo');
+                break;
+        }
+    }
 
 
 
