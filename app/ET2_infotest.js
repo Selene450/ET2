@@ -673,7 +673,7 @@ let ubicacion_def_tests = [
     ['ubicacion', 'site_west_photo', 'input', 134, 'Comprobar campo válido site_west_photo en búsqueda', 'SEARCH', true, ''],
 ]
 
-let ubicacion_test_fields = [
+let ubicacion_tests_fields = [
     ['ubicacion', 'id_site', 1, 1, 'ADD', [{id_site: '111'}], 'id_site_min_size_KO' ],
     ['ubicacion', 'id_site', 2, 2, 'ADD', [{id_site: '1'.repeat(30)}], 'id_site_max_size_KO' ],
     ['ubicacion', 'id_site', 3, 3, 'ADD', [{id_site: 'site@123'}], 'id_site_format_KO' ],
@@ -754,7 +754,7 @@ let ubicacion_test_fields = [
     ['ubicacion', 'site_west_photo', 134, 78, 'SEARCH', [{site_west_photo: 'foto.jpg'}], true],
 ]
 
-let ubicacion_test_files = [
+let ubicacion_tests_files = [
     ['ubicacion', 'nuevo_site_north_photo', 67, 1, 'ADD', 'exists', [], 'nuevo_site_north_photo_not_exists_file_KO' ],
     ['ubicacion', 'nuevo_site_north_photo', 68, 2, 'ADD', 'type', [{format_name_file:'foto.jpg'}, {type_file: 'image/png'}, {max_size_file: 200}], 'nuevo_site_north_photo_type_file_KO' ],
     ['ubicacion', 'nuevo_site_north_photo', 69, 3, 'ADD', 'max_size', [{format_name_file:'foto.jpg'}, {type_file: 'image/jpeg'}, {max_size_file: 2000001}], 'nuevo_site_north_photo_max_size_file_KO' ],

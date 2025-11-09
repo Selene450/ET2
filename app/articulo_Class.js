@@ -3,9 +3,9 @@ class articulo extends EntidadAbstracta {
     constructor(esTest) {
         super();
 
-        this.columnasamostrar = [ 'CodigoA', 'AuoresA', 'TituloA', 'TituloR', 'ISSN','VolumenR', 'PagIniA', 'PagFinA', 'FechaPublicacionR', 'EstadoA'];
+        this.columnasamostrar = [ 'CodigoA', 'AuoresA', 'TituloA', 'TituloR', 'ISSN','VolumenR', 'PagIniA', 'PagFinA', 'EstadoA'];
 
-        this.mostrarespecial = ['FicheropdfA'];
+        this.mostrarespecial = ['FechaPublicacionR', 'FicheropdfA'];
 
         this.attributes = [
             'CodigoA', 
