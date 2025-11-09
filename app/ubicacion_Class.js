@@ -612,7 +612,7 @@ class ubicacion extends EntidadAbstracta {
             this.dom.mostrar_error_campo('site_longitud', 'site_longitud_max_size_KO');
             return "site_longitud_max_size_KO";
         }
-        if (!(this.validations.format('site_longitud', '^[-]?[0-9]{1,3}[.][0-9]{6}+$'))) {
+        if (!(this.validations.format('site_longitud', '^\d{1,3}\.\d{6}$'))) {
             this.dom.mostrar_error_campo('site_longitud', 'site_longitud_format_KO');
             return "site_longitud_format_KO";
         }
@@ -620,7 +620,7 @@ class ubicacion extends EntidadAbstracta {
         return true;
     }
 
-    SEARCH_site_atitude_validation() {
+    SEARCH_site_latitud_validation() {
         if (!(this.validations.max_size('site_altitude', 8850))) {
             this.dom.mostrar_error_campo('site_altitude', 'site_altitude_max_size_KO');
             return "site_altitude_max_size_KO";
