@@ -620,7 +620,7 @@ class ubicacion extends EntidadAbstracta {
         return true;
     }
 
-    SEARCH_site_latitud_validation() {
+    SEARCH_site_altitude_validation() {
         if (!(this.validations.max_size('site_altitude', 8850))) {
             this.dom.mostrar_error_campo('site_altitude', 'site_altitude_max_size_KO');
             return "site_altitude_max_size_KO";
