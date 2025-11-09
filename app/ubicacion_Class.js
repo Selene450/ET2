@@ -25,7 +25,7 @@ class ubicacion extends EntidadAbstracta {
         var form_content = `
         <form id="form_iu" action="http://193.147.87.202/procesaform.php" method="POST" enctype="multipart/form-data" onsubmit="return entidad.ADD_submit_ubicacion();" class='formulario'>
 
-			<label class="label_id_site">Id de ña ubicación</label>
+			<label class="label_id_site">Id de la ubicación</label>
 			<input type='text' id='id_site' name='id_site' onblur=" return entidad.ADD_id_site_validation();"></input>
 			<span id="span_error_id_site"><a id="error_id_site"></a></span>
 			<br>
@@ -62,7 +62,7 @@ class ubicacion extends EntidadAbstracta {
 			<span id="span_error_site_north_photo"><a id="error_site_north_photo"></a></span>
 			<a id="link_site_north_photo" href="http://193.147.87.202/ET2/filesuploaded/files_site_north_photo/"><img src="./iconos/FILE.png" /></a>
 			
-			<label id="label_nuevo_site_north_photo" class="label_nuevo_site_north_photo">Nuevo ubicacion fotoacto</label>
+			<label id="label_nuevo_site_north_photo" class="label_nuevo_site_north_photo">Nueva foto hacia el norte</label>
 			<input type='file' id='nuevo_site_north_photo' name='nuevo_site_north_photo'></input>
 			<span id="span_error_nuevo_site_north_photo"><a id="error_nuevo_site_north_photo"></a></span>
 			<br>
@@ -72,7 +72,7 @@ class ubicacion extends EntidadAbstracta {
             <span id="span_error_site_south_photo"><a id="error_site_south_photo"></a></span>
             <a id="link_site_south_photo" href="http://193.147.87.202/ET2/filesuploaded/files_site_north_photo/"><img src="./iconos/FILE.png" /></a>
 
-            <label id="label_nuevo_site_south_photo" class="label_nuevo_site_south_photo">Nuevo ubicacion fotoacto</label>
+            <label id="label_nuevo_site_south_photo" class="label_nuevo_site_south_photo">Nueva foto hacia el sur</label>
             <input type='file' id='nuevo_site_south_photo' name='nuevo_site_south_photo'></input>
             <span id="span_error_nuevo_site_south_photo"><a id="error_nuevo_site_south_photo"></a></span>
             <br>
@@ -82,7 +82,7 @@ class ubicacion extends EntidadAbstracta {
             <span id="span_error_site_east_photo"><a id="error_site_east_photo"></a></span>
             <a id="link_site_east_photo" href="http://193.147.87.202/ET2/filesuploaded/files_site_north_photo/"><img src="./iconos/FILE.png" /></a>
 
-            <label id="label_nuevo_site_east_photo" class="label_nuevo_site_east_photo">Nuevo ubicacion fotoacto</label>
+            <label id="label_nuevo_site_east_photo" class="label_nuevo_site_east_photo">Nueva foto hacia el este</label>
             <input type='file' id='nuevo_site_east_photo' name='nuevo_site_east_photo'></input>
             <span id="span_error_nuevo_site_east_photo"><a id="error_nuevo_site_east_photo"></a></span>
             <br>
@@ -92,7 +92,7 @@ class ubicacion extends EntidadAbstracta {
             <span id="span_error_site_west_photo"><a id="error_site_west_photo"></a></span>
             <a id="link_site_west_photo" href="http://193.147.87.202/ET2/filesuploaded/files_site_north_photo/"><img src="./iconos/FILE.png" /></a>
 
-            <label id="label_nuevo_site_west_photo" class="label_nuevo_site_west_photo">Nuevo ubicacion fotoacto</label>
+            <label id="label_nuevo_site_west_photo" class="label_nuevo_site_west_photo">Nueva foto hacia el oeste</label>
             <input type='file' id='nuevo_site_west_photo' name='nuevo_site_west_photo'></input>
             <span id="span_error_nuevo_site_west_photo"><a id="error_nuevo_site_west_photo"></a></span>
             <br>

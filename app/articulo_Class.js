@@ -81,7 +81,7 @@ class articulo extends EntidadAbstracta {
 			<span id="span_error_FicheropdfA"><a id="error_FicheropdfA"></a></span>
 			<a id="link_FicheropdfA" href="http://193.147.87.202/ET2/filesuploaded/files_FicheropdfA/"><img src="./iconos/FILE.png" /></a>
 			
-			<label id="label_nuevo_FicheropdfA" class="label_nuevo_FicheropdfA">Nuevo articulo fotoacto</label>
+			<label id="label_nuevo_FicheropdfA" class="label_nuevo_FicheropdfA">Nuevo articulo</label>
 			<input type='file' id='nuevo_FicheropdfA' name='nuevo_FicheropdfA'></input>
 			<span id="span_error_nuevo_FicheropdfA"><a id="error_nuevo_FicheropdfA"></a></span>
 			<br>
