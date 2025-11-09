@@ -14,8 +14,8 @@
 | id_site              | Identificador; debe tener 11 caracteres numéricos                                                                                                     |
 | site_latitud         | Latitud siguiendo el estándar WGS84                                                                                                                   |
 | site_longitud        | Longitud siguiendo el estándar WGS84                                                                                                                  |
-| site_altitude        | Altitud siguiendo el estándar WGS84                                                                                                                   |
-| site_locality        | Localidad; debe tener como mínimo 3 y como máximo 40 caracteres alfabéticos                                                                           |
+| site_altitude        | Altitud respecto al eje WGS84                                                                                                                 |
+| site_locality        | Localidad; debe tener como mínimo 3 y como máximo 40 caracteres alfabéticos incluyendo ñ, acentos y espacios                                                                           |
 | site_provider_login  | Login del proveedor del sitio; debe tener como mínimo 7 y como máximo 30 caracteres alfanuméricos sin espacios ni acentos                             |
 | site_north_photo     | Foto hacia el norte; debe ser JPG, tamaño máximo 2000000G. Nombre con mínimo 3 y máximo 50 caracteres alfanuméricos sin espacios                      |
 | site_south_photo     | Foto hacia el sur; debe ser JPG, tamaño máximo 2000000G. Nombre con mínimo 3 y máximo 50 caracteres alfanuméricos sin espacios                        |
