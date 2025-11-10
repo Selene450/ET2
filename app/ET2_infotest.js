@@ -302,7 +302,7 @@ let alumnograduacion_tests_files = [
     ['alumnograduacion', 'nuevo_alumnograduacion_fotoacto', 107, 8, 'EDIT', 'exists', [], true],
     ['alumnograduacion', 'nuevo_alumnograduacion_fotoacto', 108, 9, 'EDIT', 'format_name_file', [{format_name_file:'foto niño.jpg'}, {type_file:'image/jpeg'}, {max_size_file: 200}], 'nuevo_alumnograduacion_fotoacto_name_format_KO'],
     ['alumnograduacion', 'nuevo_alumnograduacion_fotoacto', 109, 10, 'EDIT', 'type_file',[{format_name_file:'foto.png'}, {type_file:'image/png'}, {max_size_file:200}], 'nuevo_alumnograduacion_fotoacto_type_file_KO'],
-    ['alumnograduacion', 'nuevo_alumnograduacion_fotoacto', 110, 11, 'EDIT', 'max_size_file',[{format_name_file:'foto.jpg'}, {type_file:'image/jpeg'}, {max_size_file:2000001}], 'nuevo_alumnograduacion_fotoacto_max_size_KO'],
+    ['alumnograduacion', 'nuevo_alumnograduacion_fotoacto', 110, 11, 'EDIT', 'max_size_file',[{format_name_file:'foto.jpg'}, {type_file:'image/jpeg'}, {max_size_file:2000001}], 'nuevo_alumnograduacion_fotoacto_max_size_file_KO'],
     ['alumnograduacion', 'nuevo_alumnograduacion_fotoacto', 111, 12, 'EDIT', 'format_name_file', [{format_name_file:'f.jpg'}, {type_file:'image/jpeg'}, {max_size_file:2000000}], 'nuevo_alumnograduacion_fotoacto_name_min_size_KO'],
     ['alumnograduacion', 'nuevo_alumnograduacion_fotoacto', 112, 13, 'EDIT', 'format_name_file', [{format_name_file:'foto'.repeat(21)+'.jpg'}, {type_file:'image/jpeg'}, {max_size_file:200000}], 'nuevo_alumnograduacion_fotoacto_name_max_size_KO'],
     ['alumnograduacion', 'nuevo_alumnograduacion_fotoacto', 113, 14, 'EDIT', 'valid', [{format_name_file:'foto.jpg'}, {type_file:'image/jpeg'}, {max_size_file:200000}], true], 

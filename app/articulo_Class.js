@@ -7,6 +7,7 @@ class articulo extends EntidadAbstracta {
 
         this.mostrarespecial = ['FechaPublicacionR', 'FicheropdfA'];
 
+
         this.attributes = [
             'CodigoA', 
             'AuoresA', 
@@ -671,6 +672,8 @@ class articulo extends EntidadAbstracta {
 		this.dom.assign_property_value('form_iu', 'action', 'javascript:entidad.ADD();');
 
 		// poner no visible el campo FicheropdfA (solo se puede subir fichero)
+
+        this.dom.hide_element_form('CodigoA');
 		this.dom.hide_element_form('FicheropdfA');
 		this.dom.hide_element('link_FicheropdfA');
 

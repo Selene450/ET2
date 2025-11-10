@@ -533,7 +533,7 @@ class alumnograduacion extends EntidadAbstracta {
 		// corregir tamaño máximo a 2MB (2000000) — antes estaba 2000 por error
 		if (!(this.validations.max_size_file('nuevo_alumnograduacion_fotoacto', 2000000))) {
 			this.dom.mostrar_error_campo('nuevo_alumnograduacion_fotoacto', 'nuevo_alumnograduacion_fotoacto_max_size_file_KO');
-			return "nuevo_alumnograduacion_fotoacto_max_size_KO";
+			return "nuevo_alumnograduacion_fotoacto_max_size_file_KO";
 		}
 		// Aceptar ambas variantes comunes de MIME para jpeg por compatibilidad con navegadores/tests
 		if (!(this.validations.type_file('nuevo_alumnograduacion_fotoacto', ['image/jpeg','image/jpg']))) {
@@ -999,7 +999,7 @@ class alumnograduacion extends EntidadAbstracta {
 				}
 				return link;
 				break;
-			case 'alumnograduacion_passord':
+			case 'alumnograduacion_password':
 				var ocultar = '********';
 				return ocultar;
 				break;
