@@ -66,6 +66,20 @@ var textos_ES = {
 	'FicheropdfA': 'Fichero pdf del artículo',
 	'nuevo_FicheropdfA': 'Nuevo fichero pdf del artículo',
 	'EstadoA': 'Estado del artículo',
+	'id_site': 'ID',
+	'site_latitud': 'Latitud',
+	'site_longitud': 'Longitud',
+	'site_altitude': 'Altitud',
+	'site_locality': 'Localidad',
+	'site_provider_login': 'Login del proveedor',
+	'site_north_photo': 'Foto hacia el norte',
+	'site_south_photo': 'Foto hacia el sur',
+	'site_east_photo': 'Foto hacia el este',
+	'site_west_photo': 'Foto hacia el oeste',
+	'nuevo_site_north_photo': 'Nueva foto hacia el norte',
+	'nuevo_site_south_photo': 'Nueva foto hacia el sur',
+	'nuevo_site_east_photo': 'Nueva foto hacia el este',
+	'nuevo_site_west_photo': 'Nueva foto hacia el oeste',
 
 	// labels
 	'label_alumnograduacion_alumnograduacion_dni': 'Dni',
@@ -88,6 +102,20 @@ var textos_ES = {
 	'label_FicheropdfA': 'Fichero pdf del artículo',
 	'label_nuevo_FicheropdfA': 'Nuevo fichero pdf del artículo',
 	'label_EstadoA': 'Estado del artículo',
+	'label_id_site': 'ID',
+	'label_site_latitud': 'Latitud',
+	'label_site_longitud': 'Longitud',
+	'label_site_altitude': 'Altitud',
+	'label_site_locality': 'Localidad',
+	'label_site_provider_login': 'Login del proveedor',
+	'label_site_north_photo': 'Foto hacia el norte',
+	'label_site_south_photo': 'Foto hacia el sur',
+	'label_site_east_photo': 'Foto hacia el este',
+	'label_site_west_photo': 'Foto hacia el oeste',
+	'label_nuevo_site_north_photo': 'Nueva foto hacia el norte',
+	'label_nuevo_site_south_photo': 'Nueva foto hacia el sur',
+	'label_nuevo_site_east_photo': 'Nueva foto hacia el este',
+	'label_nuevo_site_west_photo': 'Nueva foto hacia el oeste',
 
 	// errores validaciones formulario alumnograduacion
 	// ADD/EDIT
@@ -148,11 +176,11 @@ var textos_ES = {
 
 	//SEARCH
 	// foto alumnograduacion
-	'alumnograduacion_fotoacto_name_max_size_KO':'El tamaño de la foto excede el máximo permitido.',
+	'alumnograduacion_fotoacto_name_max_size_KO':'El tamaño del nombre de la foto excede el máximo permitido.',
 	'alumnograduacion_fotoacto_name_format_KO':'Formato de nombre incorrecto, solo permite caracteres alfanuméricos sin espacios.',
 	
 
-	// errores validaciones formulario alumnograduacion
+	// errores validaciones formulario articulo
 	// ADD/EDIT
 
 	//CodigoA
@@ -163,12 +191,12 @@ var textos_ES = {
 	//AutoresA
 	'AutoresA_min_size_KO': 'El nombre de los autores debe tener un mínimo de 7 y un máximo de 200 caracteres alfabéticos, incluyendo ñ acentos y espacios',
 	'AutoresA_max_size_KO': 'El nombre de los autores debe tener un mínimo de 7 y un máximo de 200 caracteres alfabéticos, incluyendo ñ acentos y espacios',
-	'AutoresA_format_Ko': 'El nombre de los autores solo permite caracteres alfabéticos incluyendo ñ, acentos y espacios',
+	'AutoresA_format_KO': 'El nombre de los autores solo permite caracteres alfabéticos incluyendo ñ, acentos y espacios',
 
 	//TituloA
 	'TituloA_min_size_KO': 'El título del  artículo debe tener un mínimo de 3 y un máximo 100 caracteres alfanuméricos, incluyendo ñ, acentos y espacios',
 	'TituloA_max_size_KO': 'El título del  artículo debe tener un mínimo de 3 y un máximo 100 caracteres alfanuméricos, incluyendo ñ, acentos y espacios',
-	'TituloA_min_size_KO': 'El título del  artículo solo permite caracteres alfanuméricos, incluyendo ñ, acentos y espacios',
+	'TituloA_format_KO': 'El título del  artículo solo permite caracteres alfanuméricos, incluyendo ñ, acentos y espacios',
 
 	//TituloR
 	'TituloR_min_size_KO': 'El título de la revista debe tener como mínimo 3 y como máximo 100 caracteres alfabéticos, incluyendo ñ, acentos y espacios',
@@ -202,7 +230,88 @@ var textos_ES = {
 	'nuevo_FicheropdfA_max_size_file_KO': 'El archivo es demasiado grandem solo se permiten archivos de, como máximo, 2MB',
 	'nuevo_FicheropdfA_name_min_size_KO': 'El nombre del fichero es demasiado corto. Debe tener entre 3 y 20 caracteres alfanuméricos incluyendo ñ, acentos y ".". Sin espacios',
 	'nuevo_FicheropdfA_name_max_size_KO': 'El nombre del fichero es demasiado corto. Debe tener entre 3 y 20 caracteres alfanuméricos incluyendo ñ, acentos y ".". Sin espacios',
-	'nuevo_FicheropdfA_format_name_KO': 'El nombre del fichero solo permite caracteres alfanuméricos incluyendo ñ, acentos y ".". Sin espacios',
+	'nuevo_FicheropdfA_name_format_KO': 'El nombre del fichero solo permite caracteres alfanuméricos incluyendo ñ, acentos y ".". Sin espacios',
+
+	//SEARCH
+	'FicheropdfA_max_size_KO': 'El nombre del fichero que buscas supera el máximo de 20 caracteres',
+	'FicheropdfA_format_KO': 'El formato del nombre del fichero que buscas es incorrecto, solo permite caracteres alfanuméricos incluyendo ñ, acentos y ".". Sin espacios',
+
+	// errores validaciones formulario ubicación
+	// ADD/EDIT
+
+	//id_site
+	'id_site_min_size_KO': 'El ID debe tener 11 dígitos',
+	'id_site_max_size_KO': 'El ID debe tener 11 dígitos',
+	'id_site_format_KO': 'El ID solompermite dígitos',
+
+	//site_latitud
+	'site_latitud_min_size_KO': 'La lattitud debe ser un número decimal superior a -90.000000',
+	'site_latitud_max_size_KO': 'La lattitud debe ser un número decimal inferior a 90.000000',
+	'site_latitud_format_KO': 'La latitud debe ser un dígito de tres cifras enteras y seis cifras decimales separadas por un punto, con signo negativo si es sur',
+
+	//site_longitud
+	'site_longitud_min_size_KO': 'La longitud debe ser un número decimal superior a -180.000000',
+	'site_longitud_max_size_KO': 'La longitud debe ser un número decimal inferior a 180.000000',
+	'site_longitud_format_KO': 'La longitud debe ser un dígito de tres cifras enteras y seis cifras decimales separadas por un punto, con signo negativo si es oeste',
+
+	//site_altitude
+	'site_altitude_min_size_KO': 'La altitud debe ser un número entero superior a -465',
+	'site_altitude_max_size_KO': 'La altitud debe ser un número entero inferior a 8848',
+	'site_altitude_format_KO': 'La altitud debe ser un número',
+
+	//site_locality                                                                         |
+	'site_locality_min_size_KO': 'La localidad es inferior al mínimo permitido, debe tener como mínimo 3 y como máximo 40 caracteres alfabéticos incluyendo ñ, acentos y espacios ',
+	'site_locality_max_size_KO': 'La localidad es superior al máxio permitido, debe tener como mínimo 3 y como máximo 40 caracteres alfabéticos incluyendo ñ, acentos y espacios ',
+	'site_locality_format_KO': 'La localidad tiene un formato erróneo, solo permite caracteres alfabéticos incluyendo ñ, acentos y espacios',
+
+	//site_provider_login
+	'site_provider_login_min_size_KO': 'El login es inferior al mínimo, debe tener como mínimo 7 y como máximo 30 caracteres alfanuméricos sin espacios ni acentos',
+	'site_provider_login_max_size_KO': 'El login es superior al máximo, debe tener como mínimo 7 y como máximo 30 caracteres alfanuméricos sin espacios ni acentos',
+	'site_provider_login_format_KO': 'El login no cumple el formato, debe estar formado por caracteres alfanuméricos sin espacios ni acentos',
+
+	//nuevo_site_north_photo
+	'nuevo_site_north_photo_not exists_file_KO': 'La imagen hacia el norte que deseas subir no existe',
+	'nuevo_site_north_photo_type_file_KO': 'La imagen hacia el norte no cumple con el tipo de fichero, debe ser un JPG',
+	'nuevo_site_north_photo_max_size_file_KO': 'La imagen hacia el norte supera el tamaño máximo permitido, debe ser inferior a 2MB',
+	'nuevo_site_north_photo_name_min_size_KO': 'El nombre de la imagen hacia el norte es inferior al mínimo, debe tener mínimo 3 y máximo 50 caracteres alfanuméricos sin espacios',
+	'nuevo_site_north_photo_name_max_size_KO': 'El nombre de la imagen hacia el norte es superior al máximo, debe tener mínimo 3 y máximo 50 caracteres alfanuméricos sin espacios',
+	'nuevo_site_north_photo_name_format_KO': 'El nombre de la imagen hacia el norte no cumple el formato, debe tener caracteres alfanuméricos incluído el "." sin espacios',
+
+	//nuevo_site_south_photo
+	'nuevo_site_south_photo_not exists_file_KO': 'La imagen hacia el sur que deseas subir no existe',
+	'nuevo_site_south_photo_type_file_KO': 'La imagen hacia el sur no cumple con el tipo de fichero, debe ser un JPG',
+	'nuevo_site_south_photo_max_size_file_KO': 'La imagen hacia el sur supera el tamaño máximo permitido, debe ser inferior a 2MB',
+	'nuevo_site_south_photo_name_min_size_KO': 'El nombre de la imagen hacia el sur es inferior al mínimo, debe tener mínimo 3 y máximo 50 caracteres alfanuméricos sin espacios',
+	'nuevo_site_south_photo_name_max_size_KO': 'El nombre de la imagen hacia el sur es superior al máximo, debe tener mínimo 3 y máximo 50 caracteres alfanuméricos sin espacios',
+	'nuevo_site_south_photo_name_format_KO': 'El nombre de la imagen hacia el sur no cumple el formato, debe tener caracteres alfanuméricos incluído el "." sin espacios',
+
+	//nuevo_site_east_photo
+	'nuevo_site_east_photo_not exists_file_KO': 'La imagen hacia el este que deseas subir no existe',
+	'nuevo_site_east_photo_type_file_KO': 'La imagen hacia el este no cumple con el tipo de fichero, debe ser un JPG',
+	'nuevo_site_east_photo_max_size_file_KO': 'La imagen hacia el este supera el tamaño máximo permitido, debe ser inferior a 2MB',
+	'nuevo_site_east_photo_name_min_size_KO': 'El nombre de la imagen hacia el este es inferior al mínimo, debe tener mínimo 3 y máximo 50 caracteres alfanuméricos sin espacios',
+	'nuevo_site_east_photo_name_max_size_KO': 'El nombre de la imagen hacia el este es superior al máximo, debe tener mínimo 3 y máximo 50 caracteres alfanuméricos sin espacios',
+	'nuevo_site_east_photo_name_format_KO': 'El nombre de la imagen hacia el este no cumple el formato, debe tener caracteres alfanuméricos incluído el "." sin espacios',
+
+	//nuevo_site_west_photo
+	'nuevo_site_west_photo_not exists_file_KO': 'La imagen hacia el oeste que deseas subir no existe',
+	'nuevo_site_west_photo_type_file_KO': 'La imagen hacia el oeste no cumple con el tipo de fichero, debe ser un JPG',
+	'nuevo_site_west_photo_max_size_file_KO': 'La imagen hacia el oeste supera el tamaño máximo permitido, debe ser inferior a 2MB',
+	'nuevo_site_west_photo_name_min_size_KO': 'El nombre de la imagen hacia el oeste es inferior al mínimo, debe tener mínimo 3 y máximo 50 caracteres alfanuméricos sin espacios',
+	'nuevo_site_west_photo_name_max_size_KO': 'El nombre de la imagen hacia el oeste es superior al máximo, debe tener mínimo 3 y máximo 50 caracteres alfanuméricos sin espacios',
+	'nuevo_site_west_photo_name_format_KO': 'El nombre de la imagen hacia el oeste no cumple el formato, debe tener caracteres alfanuméricos incluído el "." sin espacios',
+
+	// SEARCH
+	'site_north_photo_name_max_size_KO': 'El nombre de la imagen que deseas buscar es superior al límite permitido, debe ser inferior a 50 caracteres',
+	'site_north_photo_name_format_KO': 'El nombre de la imagen no cumple el formato. debe tener caracteres alfanuméricos incluído el "." sin espacios',
+	'site_south_photo_name_max_size_KO': 'El nombre de la imagen que deseas buscar es superior al límite permitido, debe ser inferior a 50 caracteres',
+	'site_south_photo_name_format_KO': 'El nombre de la imagen no cumple el formato. debe tener caracteres alfanuméricos incluído el "." sin espacios',
+	'site_east_photo_name_max_size_KO': 'El nombre de la imagen que deseas buscar es superior al límite permitido, debe ser inferior a 50 caracteres',
+	'site_east_photo_name_format_KO': 'El nombre de la imagen no cumple el formato. debe tener caracteres alfanuméricos incluído el "." sin espacios',
+	'site_west_photo_name_max_size_KO': 'El nombre de la imagen que deseas buscar es superior al límite permitido, debe ser inferior a 50 caracteres',
+	'site_west_photo_name_format_KO': 'El nombre de la imagen no cumple el formato. debe tener caracteres alfanuméricos incluído el "." sin espacios',
+	
+
 
 
 	//errores acciones

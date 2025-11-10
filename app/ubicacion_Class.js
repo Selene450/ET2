@@ -798,7 +798,7 @@ class ubicacion extends EntidadAbstracta {
         this.dom.colocarvalidaciones('form_iu', 'EDIT');
 
         // poner inactivos los campos correspondientes
-        this.dom.assign_property_value('ubicacion_dni', 'readonly', 'true');
+        this.dom.assign_property_value('id_site', 'readonly', 'true');
         this.dom.assign_property_value('site_north_photo', 'readonly', 'true');
 
         // colocar boton de submit
@@ -895,6 +895,9 @@ class ubicacion extends EntidadAbstracta {
 
         // poner action
         this.dom.assign_property_value('form_iu', 'action', 'javascript:entidad.ADD();');
+
+        //poner no visible  el campo id_site porque es autoincrementar
+        this.dom.hide_element_form('id_site');
 
         // poner no visible el campo site_north_photo (solo se puede subir fichero)
         this.dom.hide_element_form('site_north_photo');

@@ -590,7 +590,7 @@ class articulo extends EntidadAbstracta {
 		this.dom.colocarvalidaciones('form_iu', 'EDIT');
 
 		// poner inactivos los campos correspondientes
-		this.dom.assign_property_value('articulo_dni', 'readonly', 'true');
+		this.dom.assign_property_value('CodigoA', 'readonly', 'true');
 		this.dom.assign_property_value('FicheropdfA', 'readonly', 'true');
 
 		// colocar boton de submit
@@ -641,6 +641,7 @@ class articulo extends EntidadAbstracta {
 		// poner no visible el campo nuevo_FicheropdfA (solo se puede ver el nombre de fichero)
 		this.dom.hide_element_form('nuevo_FicheropdfA');
 		this.dom.assign_property_value('link_FicheropdfA', 'href', 'http://193.147.87.202/ET2/filesuploaded/files_articulo/' + fila.FicheropdfA);
+        this.dom.asign_property_value('CodigoA', 'readonly', true)
 
 		// rellenar valores
 		this.dom.rellenarvaloresform(fila);
