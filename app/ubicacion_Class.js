@@ -25,7 +25,7 @@ class ubicacion extends EntidadAbstracta {
         var form_content = `
         <form id="form_iu" action="http://193.147.87.202/procesaform.php" method="POST" enctype="multipart/form-data" onsubmit="return entidad.ADD_submit_ubicacion();" class='formulario'>
 
-			<label id="label_id_site">Id de la ubicación</label>
+			<label class="label_id_site" id="label_id_site">Id de la ubicación</label>
 			<input type='text' id='id_site' name='id_site' onblur=" return entidad.ADD_id_site_validation();"></input>
 			<span id="span_error_id_site"><a id="error_id_site"></a></span>
 			<br>

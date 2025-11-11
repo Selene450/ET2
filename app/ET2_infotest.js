@@ -506,11 +506,11 @@ let articulo_tests_fields = [
     ['articulo', 'PagFinA', 82, 82, 'SEARCH', [{PagFinA: '12A3'}], 'PagFinA_format_KO'],
     ['articulo', 'PagFinA', 83, 83, 'SEARCH', [{PagFinA: '1234'}], true],
     //por la función mosttrarcambioatributo al ususario le aparecerá en formato DD/MM/YYYY, pero para facilitar la comprobación utilizaremos directamente en formato ISO, que es el que devuelve el programa
-    ['articulo', 'FechaPublicacionR', 84, 84, 'ADD', [{FechaPublicacionR: '31-12-2020'}], 'FechaPublicacionR_format_KO'],
+    ['articulo', 'FechaPublicacionR', 84, 84, 'ADD', [{FechaPublicacionR: '31-2020-12'}], 'FechaPublicacionR_format_KO'],
     ['articulo', 'FechaPublicacionR', 85, 85, 'ADD', [{FechaPublicacionR: '2020-12-31'}], true],
-    ['articulo', 'FechaPublicacionR', 86, 86, 'EDIT', [{FechaPublicacionR: '31-12-2020'}], 'FechaPublicacionR_format_KO'],
+    ['articulo', 'FechaPublicacionR', 86, 86, 'EDIT', [{FechaPublicacionR: '31-2020-12'}], 'FechaPublicacionR_format_KO'],
     ['articulo', 'FechaPublicacionR', 87, 87, 'EDIT', [{FechaPublicacionR: '2020-12-31'}], true],
-    ['articulo', 'FechaPublicacionR', 88, 88, 'SEARCH', [{FechaPublicacionR: '31-12-2020'}], 'FechaPublicacionR_format_KO'],
+    ['articulo', 'FechaPublicacionR', 88, 88, 'SEARCH', [{FechaPublicacionR: '31-2020-12'}], true], //porque al ser un date todo lo que no reconozca como formato date lo pone a vacío, entonces en el search lo interpreta como un vacío y hace una búsqueda vacía
     ['articulo', 'FechaPublicacionR', 89, 89, 'SEARCH', [{FechaPublicacionR: '2020-12-31'}], true],
     ['articulo', 'FicheropdfA', 104, 104, 'SEARCH', [{FicheropdfA: 'A'.repeat(21)+'.pdf'}], 'FicheropdfA_max_size_KO'],
     ['articulo', 'FicheropdfA', 105, 105, 'SEARCH', [{FicheropdfA: 'articulo @2024.pdf'}], 'FicheropdfA_format_KO'],

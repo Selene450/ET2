@@ -27,7 +27,7 @@ class articulo extends EntidadAbstracta {
         var form_content= `
         <form id="form_iu" action="http://193.147.87.202/procesaform.php" method="POST" enctype="multipart/form-data" onsubmit="return entidad.ADD_submit_articulo();" class='formulario'>
 
-			<label id="label_CodigoA">Codigo del arículo</label>
+			<label class="label_CodigoA" id="label_CodigoA">Codigo del arículo</label>
 			<input type='text' id='CodigoA' name='CodigoA' onblur=" return entidad.ADD_CodigoA_validation();"></input>
 			<span id="span_error_CodigoA"><a id="error_CodigoA"></a></span>
 			<br>
@@ -530,7 +530,7 @@ class articulo extends EntidadAbstracta {
     SEARCH_FechaPublicacionR_validation() {
         var elem = document.getElementById('FechaPublicacionR').value;
 		if(!elem) return true;
-        if(!this.validations.format('FechaPublicacionR', '^(\\d{4})-(0[1-9]|1[0-2])-(0[1-9]|[12]\\d|3[01])$')) {
+        if(!this.validations.format('FechaPublicacionR', /^(\d{4})-(0[1-9]|1[0-2])-(0[1-9]|[12]\d|3[01])$/)) {
             this.dom.mostrar_error_campo('FechaPublicacionR', 'FechaPublicacionR_format_KO');
             return "FechaPublicacionR_format_KO";
         }
