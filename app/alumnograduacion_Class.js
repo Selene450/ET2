@@ -955,7 +955,7 @@ class alumnograduacion extends EntidadAbstracta {
 		this.dom.assign_class_value('class_contenido_titulo_form', 'text_contenido_titulo_form_alumnograduacion_SEARCH');
 
 		// poner onsubmit
-		this.dom.assign_property_value('form_iu', 'onsubmit', 'return entidad.SEARCH_submit_' + this.nombreentidad);
+		this.dom.assign_property_value('form_iu', 'onsubmit', 'return entidad.SEARCH_submit_' + this.nombreentidad + '()');
 
 		// poner action
 		this.dom.assign_property_value('form_iu', 'action', 'javascript:entidad.SEARCH();');

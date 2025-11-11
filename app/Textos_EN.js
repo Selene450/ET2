@@ -16,7 +16,9 @@ var textos_EN = {
     */
 
     // textos menu
-	'text_menu_alumnograduacion': 'Person Management',
+	'menu_alumnograduacion': 'Student Management',
+	'menu_articulo': 'Article Management',
+	'menu_ubicacion': 'Location Management',
 
     // textos entidad alumnograduacion
 	'text_titulo_page_alumnograduacion' : 'Graduated student Data Management',
@@ -56,7 +58,7 @@ var textos_EN = {
 	'CodigoA': 'Article Code',
 	'AutoresA': 'Authors',
 	'TituloA': 'Title of the article',
-	'TituloR': 'Title of th magazine',
+	'TituloR': 'Title of the magazine',
 	'ISSN': 'ISSN',
 	'VolumenR': 'Volume of the magazine',
 	'PagIniA': 'Initial page of the article',
@@ -84,6 +86,8 @@ var textos_EN = {
 	'nuevo_site_west_photo': 'New West Photo',
 
 	// labels
+	'label_alumnograduacion_login': 'Login',
+	'label_alumnograduacion_password': 'Password',
 	'label_alumnograduacion_dni': 'ID',
 	'label_alumnograduacion_nombre': 'First Name',
 	'label_alumnograduacion_apellidos': 'Last Name',
@@ -147,6 +151,11 @@ var textos_EN = {
     'alumnograduacion_apellidos_min_size_KO': 'Last name too short. Must have more than 4 alphabetic characters or spaces',
     'alumnograduacion_apellidos_max_size_KO': 'Last name too long. Must have less than 20 alphabetic characters or spaces',
     'alumnograduacion_apellidos_format_KO': 'Last name incorrect. Only alphabetic characters and spaces are allowed',
+
+	//alumnograduacion_titulacion
+	'alumnograduacion_titulacion_min_size_KO': 'Studies too short. It must have a minimun of 3 characters',
+	'alumnograduacion_titulacion_max_size_KO': 'Studies too long. It must have 4 characters or less',
+	'alumnograduacion_titulacion_format_KO': 'Wrong studies. Must be one of these: GREI, GRIA, MEI, MIA, PCEO',
 
 
 	// email alumnograduacion

@@ -3,14 +3,14 @@ class articulo extends EntidadAbstracta {
     constructor(esTest) {
         super();
 
-        this.columnasamostrar = [ 'CodigoA', 'AuoresA', 'TituloA', 'TituloR', 'ISSN','VolumenR', 'PagIniA', 'PagFinA', 'EstadoA'];
+        this.columnasamostrar = [ 'CodigoA', 'AutoresA', 'TituloA', 'TituloR', 'ISSN','VolumenR', 'PagIniA', 'PagFinA', 'EstadoA'];
 
         this.mostrarespecial = ['FechaPublicacionR', 'FicheropdfA'];
 
 
         this.attributes = [
             'CodigoA', 
-            'AuoresA', 
+            'AutoresA', 
             'TituloA', 
             'TituloR', 
             'ISSN',
@@ -27,7 +27,7 @@ class articulo extends EntidadAbstracta {
         var form_content= `
         <form id="form_iu" action="http://193.147.87.202/procesaform.php" method="POST" enctype="multipart/form-data" onsubmit="return entidad.ADD_submit_articulo();" class='formulario'>
 
-			<label id="label_codigoA">Codigo del arículo</label>
+			<label id="label_CodigoA">Codigo del arículo</label>
 			<input type='text' id='CodigoA' name='codigoA' onblur=" return entidad.ADD_CodigoA_validation();"></input>
 			<span id="span_error_CodigoA"><a id="error_CodigoA"></a></span>
 			<br>
@@ -704,7 +704,7 @@ class articulo extends EntidadAbstracta {
 		this.dom.assign_class_value('class_contenido_titulo_form', 'text_contenido_titulo_form_articulo_SEARCH');
 
 		// poner onsubmit
-		this.dom.assign_property_value('form_iu', 'onsubmit', 'return entidad.SEARCH_submit_' + this.nombreentidad);
+		this.dom.assign_property_value('form_iu', 'onsubmit', 'return entidad.SEARCH_submit_' + this.nombreentidad + '()');
 
 		// poner action
 		this.dom.assign_property_value('form_iu', 'action', 'javascript:entidad.SEARCH();');

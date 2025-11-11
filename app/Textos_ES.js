@@ -15,9 +15,9 @@ var textos_ES = {
     */
 
     // textos menu
-	'text_menu_alumnograduacion': 'Gestión Alumnograduacion',
-	'text_menu_articulo': 'Gestión Artículo',
-	'text_menu_ubicacion': 'Gestión Ubicación',
+	'menu_alumnograduacion': 'Gestión Alumnograduacion',
+	'menu_articulo': 'Gestión Artículo',
+	'menu_ubicacion': 'Gestión Ubicación',
 
     // textos entidad alumnograduacion
 	'text_titulo_page_alumnograduacion' : 'Gestión de datos alumnograduacion',
@@ -86,7 +86,9 @@ var textos_ES = {
 	'nuevo_site_west_photo': 'Nueva foto hacia el oeste',
 
 	// labels
-	'label_alumnograduacion_alumnograduacion_dni': 'Dni',
+	'label_alumnograduacion_login': 'Login',
+	'label_alumnograduacion_password': 'Contraseña',
+	'label_alumnograduacion_dni': 'Dni',
 	'label_alumnograduacion_nombre': 'Nombre',
 	'label_alumnograduacion_apellidos': 'Apellidos',
 	'label_alumnograduacion_direccion': 'Direction',
