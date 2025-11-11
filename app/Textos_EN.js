@@ -140,7 +140,7 @@ var textos_EN = {
 	// alumnograduacion_dni
 	'alumnograduacion_dni_min_size_KO':'ID number too short. Must have 8 numbers and 1 alphabetical character',
     'alumnograduacion_dni_max_size_KO':'ID number too long. Must have 8 numbers and 1 alphabetical character',
-    'alumnograduacion_dni_format_KO':'Incorrect ID/foreign ID format. ID number 8 digits 1 letter, foreign ID number 1 letter 7 digits 1 letter',
+    'alumnograduacion_dni_nie_format_KO':'Incorrect ID/foreign ID format. ID number 8 digits 1 letter, foreign ID number 1 letter 7 digits 1 letter',
 
     // nombre_alumnograduacion
     'alumnograduacion_nombre_min_size_KO':'Name too short. Must have more than 4 alphabetical characters',
@@ -174,17 +174,17 @@ var textos_EN = {
 	'alumnograduacion_direccion_format_KO':'Wrong address. It must have only alphanumeric characters',
 
 	// nuevo foto alumnograduacion	
-	'nuevo_alumnograduacion_fotoacto_not_exist_file_KO':'The file does not exist. A photo in jpg format must be uploaded.',
+	'nuevo_alumnograduacion_fotoacto_not_exists_file_KO':'The file does not exist. A photo in jpg format must be uploaded.',
 	'nuevo_alumnograduacion_fotoacto_max_size_file_KO':'The file is too big. The file must weight less than 2 MB',
 	'nuevo_alumnograduacion_fotoacto_type_file_KO':'The type of file uploaded is incorrect. It must be JPG',
-	'nuevo_alumnograduacion_fotoacto_format_name_file_KO':'The name of the file does not ful fill the format. It must only have alphanumeric characters without spaces',
-	'nuevo_alumnograduacion_fotoacto_min_size_KO':'The name of the file is too short. It must have 3 characters or more',
-	'nuevo_alumnograduacion_fotoacto_max_size_KO':'The name of the file is too long. It must have 20 characters or less',
+	'nuevo_alumnograduacion_fotoacto_name_format_KO':'The name of the file does not ful fill the format. It must only have alphanumeric characters without spaces',
+	'nuevo_alumnograduacion_fotoacto_name_min_size_KO':'The name of the file is too short. It must have 3 characters or more',
+	'nuevo_alumnograduacion_fotoacto_name_max_size_KO':'The name of the file is too long. It must have 20 characters or less',
 
 	//SEARCH
 	// foto alumnograduacion
-	'alumnograduacion_fotoacto_max_size_KO':'The name of the file you are looking for is too long. It must have 20 characters or less',
-	'alumnograduacion_fotoacto_format_KO':'The name of the file you are looking for does not match the format. It must have alphanumeric characters withoust spaces',
+	'alumnograduacion_fotoacto_name_max_size_KO':'The name of the file you are looking for is too long. It must have 20 characters or less',
+	'alumnograduacion_fotoacto_name_format_KO':'The name of the file you are looking for does not match the format. It must have alphanumeric characters withoust spaces',
 
     // errores validaciones formulario articulo
 	// ADD/EDIT

@@ -783,7 +783,7 @@ class ubicacion extends EntidadAbstracta {
         this.dom.assign_class_value('class_contenido_titulo_form', 'text_contenido_titulo_form_ubicacion_EDIT');
 
         // rellenar onsubmit y action
-        this.dom.assign_property_value('form_iu', 'onsubmit', 'return entidad.EDIT_submit_' + this.nombreentidad);
+        this.dom.assign_property_value('form_iu', 'onsubmit', 'return entidad.EDIT_submit_' + this.nombreentidad + '()');
         this.dom.assign_property_value('form_iu', 'action', 'javascript:entidad.EDIT();');
 
         //activar el link al fichero

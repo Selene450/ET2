@@ -115,22 +115,22 @@ class alumnograduacion extends EntidadAbstracta {
 	}
 	/*alfabéticos y espacios sin acentos ni ñ, min 8 max 100 */
 	ADD_alumnograduacion_password_validation() {
-		if (!this.min_size_password(document.getElementById('alumnograduacion_password').value)) {
+		if (!this.personalize_min_size_password(document.getElementById('alumnograduacion_password').value)) {
 			this.dom.mostrar_error_campo('alumnograduacion_password', 'alumnograduacion_password_min_size_KO')
 			return 'alumnograduacion_password_min_size_KO'
 		}
-		if (!this.max_size_password(document.getElementById('alumnograduacion_password').value)) {
+		if (!this.personalize_max_size_password(document.getElementById('alumnograduacion_password').value)) {
 			this.dom.mostrar_error_campo('alumnograduacion_password', 'alumnograduacion_password_max_size_KO')
 			return 'alumnograduacion_password_max_size_KO'
 		}
-		if (!(this.format_password(document.getElementById('alumnograduacion_password').value))) {
+		if (!(this.personalize_format_password(document.getElementById('alumnograduacion_password').value))) {
 			return 'alumnograduacion_password_format_KO'
 		}
 		this.dom.mostrar_exito_campo('alumnograduacion_password');
 		return true
 	}
 
-	min_size_password(password) {
+	personalize_min_size_password(password) {
 		// Validar nulos y vacíos
 		if (!password) return false;
 
@@ -140,7 +140,7 @@ class alumnograduacion extends EntidadAbstracta {
 		return true;
 	}
 
-	max_size_password(password) {
+	personalize_max_size_password(password) {
 		// Validar nulos y vacíos
 		if (!password) return false;
 
@@ -150,7 +150,7 @@ class alumnograduacion extends EntidadAbstracta {
 		return true;
 	}
 
-	format_password(password) {
+	personalize_format_password(password) {
 		// 1. Verificar que no es null/undefined
 		if (!password) return false;
 
@@ -695,7 +695,7 @@ class alumnograduacion extends EntidadAbstracta {
 	personalize_dni_nie_search() {
 		var dni = document.getElementById('alumnograduacion_dni').value;
 
-		const dniMatch = this.extract_dni_search(dni);
+		const dniMatch = this.personalize_extract_dni_search(dni);
 		if (dniMatch) {
 			if (!this.personalize_validate_dni_search(dniMatch)) {
 				return "alumnograduacion_dni_validate_KO";
@@ -703,7 +703,7 @@ class alumnograduacion extends EntidadAbstracta {
 			return true;
 		}
 
-		const nieMatch = this.extract_nie_search(dni);
+		const nieMatch = this.personalize_extract_nie_search(dni);
 		if (nieMatch) {
 			if (!this.personalize_validate_nie_search(nieMatch)) {
 				return "alumnograduacion_nie_validate_KO";
@@ -715,13 +715,13 @@ class alumnograduacion extends EntidadAbstracta {
 		return "alumnograduacion_dni_nie_format_KO";
 	}
 
-	extract_dni_search(text) {
+	personalize_extract_dni_search(text) {
 		const dniRegex = /([0-9]{8}[A-Z])/;
 		const match = text.match(dniRegex);
 		return match ? match[1] : null;
 	}
 
-	extract_nie_search(text) {
+	personalize_extract_nie_search(text) {
 		const nieRegex = /([XYZ][0-9]{7}[A-Z])/;
 		const match = text.match(nieRegex);
 		return match ? match[1] : null;
@@ -753,7 +753,7 @@ class alumnograduacion extends EntidadAbstracta {
 			this.dom.mostrar_error_campo('alumnograduacion_telefono', 'alumnograduacion_telefono_max_size_KO');
 			return 'alumnograduacion_telefono_max_size_KO';
 		}
-		if (!(this.validations.format('alumnograduacion_telefono', '^[0-9]{9}$'))) {
+		if (!(this.validations.format('alumnograduacion_telefono', '^[0-9]+$'))) {
 			this.dom.mostrar_error_campo('alumnograduacion_telefono', 'alumnograduacion_telefono_format_KO');
 			return 'alumnograduacion_telefono_format_KO'
 		}
@@ -829,7 +829,7 @@ class alumnograduacion extends EntidadAbstracta {
 		this.dom.assign_class_value('class_contenido_titulo_form', 'text_contenido_titulo_form_alumnograduacion_EDIT');
 
 		// rellenar onsubmit y action
-		this.dom.assign_property_value('form_iu', 'onsubmit', 'return entidad.EDIT_submit_' + this.nombreentidad);
+		this.dom.assign_property_value('form_iu', 'onsubmit', 'return entidad.EDIT_submit_' + this.nombreentidad + '()');
 		this.dom.assign_property_value('form_iu', 'action', 'javascript:entidad.EDIT();');
 
 		//activar el link al fichero
