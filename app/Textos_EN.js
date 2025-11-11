@@ -45,25 +45,29 @@ var textos_EN = {
 	// atributos
     'alumnograduacion_login': 'Login',
     'alumnograduacion_password': 'Password',
-	'alumnograduacion_alumnograduacion_dni': 'Identification',
+	'alumnograduacion_dni': 'ID',
     'alumnograduacion_nombre': 'First Name',
     'alumnograduacion_apellidos': 'Last Name',
+	'alumnograduacion_titulacion': 'Studies',
     'alumnograduacion_direccion': 'Address',
     'alumnograduacion_telefono': 'Phone',
     'alumnograduacion_email': 'Email',
     'alumnograduacion_fotoacto': 'Photo',
-	'CodigoA': 'Article Cofe',
-	'AutoresA': 'Aithors',
+	'CodigoA': 'Article Code',
+	'AutoresA': 'Authors',
 	'TituloA': 'Title of the article',
 	'TituloR': 'Title of th magazine',
 	'ISSN': 'ISSN',
 	'VolumenR': 'Volume of the magazine',
 	'PagIniA': 'Initial page of the article',
 	'PagFinA': 'Final page of the article',
-	'FechaPubblicacionR': 'Date of publishing of the magazine',
+	'FechaPublicacionR': 'Date of publishing of the magazine',
 	'FicheropdfA': 'PDF of the article',
 	'nuevo_FicheropdfA': 'New PDF of the article',
 	'EstadoA': 'State of the article',
+	'opcion_enviado': 'Sent',
+	'opcion_revision': 'In revision',
+	'opcion_publicado': 'Published',
 	'id_site': 'ID',
 	'site_latitud': 'Latitude',
 	'site_longitud': 'Length',
@@ -80,15 +84,16 @@ var textos_EN = {
 	'nuevo_site_west_photo': 'New West Photo',
 
 	// labels
-	'label_alumnograduacion_alumnograduacion_dni': 'Identification',
+	'label_alumnograduacion_dni': 'ID',
 	'label_alumnograduacion_nombre': 'First Name',
 	'label_alumnograduacion_apellidos': 'Last Name',
+	'label_alumnograduacion_titulacion': 'Studies',
 	'label_alumnograduacion_direccion': 'Address',
 	'label_alumnograduacion_telefono': 'Phone',
 	'label_alumnograduacion_email': 'Email',
 	'label_alumnograduacion_fotoacto': 'Photo',
 	'label_nuevo_alumnograduacion_fotoacto': 'New Photo',
-	'label_CodigoA': 'Article cofe',
+	'label_CodigoA': 'Article code',
 	'label_AutoresA': 'Authors',
 	'label_TituloA': 'Title of the article',
 	'label_TituloR': 'Title of the magazine',
@@ -96,7 +101,7 @@ var textos_EN = {
 	'label_VolumenR': 'Volume of the magazine',
 	'label_PagIniA': 'Initial page of the article',
 	'label_PagFinA': 'Final page of the article',
-	'label_FechaPubblicacionR': 'Date of publishing of the magazine',
+	'label_FechaPublicacionR': 'Date of publishing of the magazine',
 	'label_FicheropdfA': 'PDF of the article',
 	'label_nuevo_FicheropdfA': 'New PDF of the article',
 	'label_EstadoA': 'State of the article',
@@ -176,9 +181,9 @@ var textos_EN = {
 	// ADD/EDIT
 
 	//CofigoA
-	'CofigoA_min_size_KO': 'The article code must have 11 digits',
-	'CofigoA_max_size_KO' : 'The article code must have 11 digits',
-	'CofigoA_format_KO': 'The article code only permits digits',
+	'CodigoA_min_size_KO': 'The article code must have 11 digits',
+	'CodigoA_max_size_KO' : 'The article code must have 11 digits',
+	'CodigoA_format_KO': 'The article code only permits digits',
 
 	//AutoresA
 	'AutoresA_min_size_KO': 'The name of the authors must have a minimun of 7 and a maximun of 200 alphabetic characters, including ñ, accent marks and spaces',
@@ -217,7 +222,7 @@ var textos_EN = {
 	'FechaPublicacionR_format_KO': 'The date of publishing must have the format DD/MM/AAAA',
 
 	//nuevo_FicheropdfA
-	'nuevo_FicheropdfA_not exists_file_KO': 'The file does not exist',
+	'nuevo_FicheropdfA_not_exists_file_KO': 'The file does not exist',
 	'nuevo_FicheropdfA_type_file_KO': 'The format of the file is wrong. It must be a pdf',
 	'nuevo_FicheropdfA_max_size_file_KO': 'The file is too big. It must be less than 2 MB',
 	'nuevo_FicheropdfA_name_min_size_KO': 'The name of the file is too short. It must have between 3 and 20 alphanumeric characters, including ñ, stress marks and ".". Without spaces',
@@ -252,8 +257,8 @@ var textos_EN = {
 
 	//site_locality                                                                         
 	'site_locality_min_size_KO': 'The Locality is too short, It must have a minimun of 3 and a maximun of 40 alphabetic characters, including ñ, accent marks ans spaces',
-	'site_locality_max_size_KO': 'La Locality es superior al máxio permitido, debe tener como mínimo 3 y como máximo 40 caracteres alfabéticos incluyendo ñ, acentos y espacios ',
-	'site_locality_format_KO': 'La Locality tiene un formato erróneo, solo permite caracteres alfabéticos incluyendo ñ, acentos y espacios',
+	'site_locality_max_size_KO': 'The Locality is too slong, It must have a minimun of 3 and a maximun of 40 alphabetic characters, including ñ, accent marks ans spaces',
+	'site_locality_format_KO': 'The localty is wrong, it can only contain alphabetic characters, including ñ, accent marks ans spaces',
 
 	//site_provider_login
 	'site_provider_login_min_size_KO': 'The login is too short, it must be between 7 and 30 alphanumeric characters without spaces and accent marks',
@@ -261,7 +266,7 @@ var textos_EN = {
 	'site_provider_login_format_KO': 'The login is wrong, it must only contain alphanumeric characters without spaces and accent marks',
 
 	//nuevo_site_north_photo
-	'nuevo_site_north_photo_not exists_file_KO': 'The north photo does not exist',
+	'nuevo_site_north_photo_not_exists_file_KO': 'The north photo does not exist',
 	'nuevo_site_north_photo_type_file_KO': 'The north photo type is wrong. It must be JPG',
 	'nuevo_site_north_photo_max_size_file_KO': 'The north image is too big. It must weight less than 2MB',
 	'nuevo_site_north_photo_name_min_size_KO': 'The name of the north image is too short. it must have between 3 and 50 alphanumeric characters without spaces',
@@ -269,7 +274,7 @@ var textos_EN = {
 	'nuevo_site_north_photo_name_format_KO': 'The name of the north image must contain alphanumeric characters without spaces',
 
 	//nuevo_site_south_photo
-	'nuevo_site_south_photo_not exists_file_KO': 'The south photo does not exist',
+	'nuevo_site_south_photo_not_exists_file_KO': 'The south photo does not exist',
 	'nuevo_site_south_photo_type_file_KO': 'The south photo type is wrong. It must be JPG',
 	'nuevo_site_south_photo_max_size_file_KO': 'The south image is too big. It must weight less than 2MB',
 	'nuevo_site_south_photo_name_min_size_KO': 'The name of the south image is too short. it must have between 3 and 50 alphanumeric characters without spaces',
@@ -277,7 +282,7 @@ var textos_EN = {
 	'nuevo_site_south_photo_name_format_KO': 'The name of the south image must contain alphanumeric characters without spaces',
 
 	//nuevo_site_east_photo
-	'nuevo_site_east_photo_not exists_file_KO': 'The east photo does not exist',
+	'nuevo_site_east_photo_not_exists_file_KO': 'The east photo does not exist',
 	'nuevo_site_east_photo_type_file_KO': 'The east photo type is wrong. It must be JPG',
 	'nuevo_site_east_photo_max_size_file_KO': 'The east image is too big. It must weight less than 2MB',
 	'nuevo_site_east_photo_name_min_size_KO': 'The name of the east image is too short. it must have between 3 and 50 alphanumeric characters without spaces',
@@ -285,7 +290,7 @@ var textos_EN = {
 	'nuevo_site_east_photo_name_format_KO': 'The name of the east image must contain alphanumeric characters without spaces',
 
 	//nuevo_site_west_photo
-	'nuevo_site_west_photo_not exists_file_KO': 'The west photo does not exist',
+	'nuevo_site_west_photo_not_exists_file_KO': 'The west photo does not exist',
 	'nuevo_site_west_photo_type_file_KO': 'The west photo type is wrong. It must be JPG',
 	'nuevo_site_west_photo_max_size_file_KO': 'The west image is too big. It must weight less than 2MB',
 	'nuevo_site_west_photo_name_min_size_KO': 'The name of the west image is too short. it must have between 3 and 50 alphanumeric characters without spaces',

@@ -833,7 +833,7 @@ class alumnograduacion extends EntidadAbstracta {
 		this.dom.assign_property_value('form_iu', 'action', 'javascript:entidad.EDIT();');
 
 		//activar el link al fichero
-		this.dom.assign_property_value('link_alumnograduacion_fotoacto', 'href', 'http://193.147.87.202/ET2/filesuploaded/files_alumnograduacion/' + fila.alumnograduacion_fotoacto);
+		this.dom.assign_property_value('link_alumnograduacion_fotoacto', 'href', 'http://193.147.87.202/ET2/filesuploaded/files_alumnograduacion_fotoacto/' + fila.alumnograduacion_fotoacto);
 
 
 
@@ -868,7 +868,7 @@ class alumnograduacion extends EntidadAbstracta {
 
 		// poner no visible el campo nuevo_alumnograduacion_fotoacto (solo se puede ver el nombre de fichero)
 		this.dom.hide_element_form('nuevo_alumnograduacion_fotoacto');
-		this.dom.assign_property_value('link_alumnograduacion_fotoacto', 'href', 'http://193.147.87.202/ET2/filesuploaded/files_alumnograduacion/' + fila.alumnograduacion_fotoacto);
+		this.dom.assign_property_value('link_alumnograduacion_fotoacto', 'href', 'http://193.147.87.202/ET2/filesuploaded/files_alumnograduacion_fotoacto/' + fila.alumnograduacion_fotoacto);
 
 		// rellenar valores
 		this.dom.rellenarvaloresform(fila);
@@ -894,7 +894,7 @@ class alumnograduacion extends EntidadAbstracta {
 
 		// poner no visible el campo nuevo_alumnograduacion_fotoacto (solo se puede ver el nombre de fichero)
 		this.dom.hide_element_form('nuevo_alumnograduacion_fotoacto');
-		this.dom.assign_property_value('link_alumnograduacion_fotoacto', 'href', 'http://193.147.87.202/ET2/filesuploaded/files_alumnograduacion/' + fila.alumnograduacion_fotoacto);
+		this.dom.assign_property_value('link_alumnograduacion_fotoacto', 'href', 'http://193.147.87.202/ET2/filesuploaded/files_alumnograduacion_fotoacto/' + fila.alumnograduacion_fotoacto);
 
 		// rellenar valores
 		this.dom.rellenarvaloresform(fila);
@@ -998,7 +998,7 @@ class alumnograduacion extends EntidadAbstracta {
 			case 'alumnograduacion_fotoacto':
 				var link = 'error';
 				if (valorentrada !== '') {
-					link = valorentrada + `  <a class="link_alumnograduacion_fotoacto" href="http://193.147.87.202/ET2/filesuploaded/files_alumnograduacion/` + valorentrada + `"><img src="./iconos/FILE.png" /></a>`;
+					link = valorentrada + `  <a class="link_alumnograduacion_fotoacto" href="http://193.147.87.202/ET2/filesuploaded/files_alumnograduacion_fotoacto/` + valorentrada + `"><img src="./iconos/FILE.png" /></a>`;
 				}
 				return link;
 				break;

@@ -1,0 +1,1 @@
+datosgenerales = Array('Ana Álvarez López', 'ET2', 42 );

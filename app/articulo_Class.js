@@ -89,9 +89,9 @@ class articulo extends EntidadAbstracta {
 
             <label class="label_EstadoA">Estado del artículo</label>
             <select id="EstadoA" name="EstadoA">
-                <option value="Enviado">Enviado</option>
-                <option value="Revision">Revisión</option>
-                <option value="Publicado">Publicado</option>
+                <option class="opcion_enviado" value="Enviado">Enviado</option>
+                <option class="opcion_revision" value="Revision">Revisión</option>
+                <option class="opcion_publicado" value="Publicado">Publicado</option>
             </select>
             <span id="span_error_EstadoA" ><a id="error_EstadoA"></a></span>
             <br>
@@ -614,7 +614,7 @@ class articulo extends EntidadAbstracta {
 
 		// poner no visible el campo nuevo_FicheropdfA (solo se puede ver el nombre de fichero)
 		this.dom.hide_element_form('nuevo_FicheropdfA');
-		this.dom.assign_property_value('link_FicheropdfA', 'href', 'http://193.147.87.202/ET2/filesuploaded/files_articulo/' + fila.FicheropdfA);
+		this.dom.assign_property_value('link_FicheropdfA', 'href', 'http://193.147.87.202/ET2/filesuploaded/files_FicheropdfA/' + fila.FicheropdfA);
 
 		// rellenar valores
 		this.dom.rellenarvaloresform(fila);
@@ -640,7 +640,7 @@ class articulo extends EntidadAbstracta {
 
 		// poner no visible el campo nuevo_FicheropdfA (solo se puede ver el nombre de fichero)
 		this.dom.hide_element_form('nuevo_FicheropdfA');
-		this.dom.assign_property_value('link_FicheropdfA', 'href', 'http://193.147.87.202/ET2/filesuploaded/files_articulo/' + fila.FicheropdfA);
+		this.dom.assign_property_value('link_FicheropdfA', 'href', 'http://193.147.87.202/ET2/filesuploaded/files_FicheropdfA/' + fila.FicheropdfA);
         this.dom.asign_property_value('CodigoA', 'readonly', true)
 
 		// rellenar valores
@@ -737,7 +737,7 @@ class articulo extends EntidadAbstracta {
 			case 'FicheropdfA':
 				var link = 'error';
 				if (valorentrada !== '') {
-					link = valorentrada + `  <a class="link_alumnograduacion_fotoacto" href="http://193.147.87.202/ET2/filesuploaded/files_articulo/` + valorentrada + `"><img src="./iconos/FILE.png" /></a>`;
+					link = valorentrada + `  <a class="link_alumnograduacion_fotoacto" href="http://193.147.87.202/ET2/filesuploaded/files_FicheropdfA/` + valorentrada + `"><img src="./iconos/FILE.png" /></a>`;
 				}
 				return link;
 				break;

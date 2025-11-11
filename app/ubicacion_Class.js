@@ -70,7 +70,7 @@ class ubicacion extends EntidadAbstracta {
             <label id="label_site_south_photo" class="label_site_south_photo">Foto hacia el sur</label>
             <input type='text' id='site_south_photo' name='site_south_photo'></input>
             <span id="span_error_site_south_photo"><a id="error_site_south_photo"></a></span>
-            <a id="link_site_south_photo" href="http://193.147.87.202/ET2/filesuploaded/files_site_north_photo/"><img src="./iconos/FILE.png" /></a>
+            <a id="link_site_south_photo" href="http://193.147.87.202/ET2/filesuploaded/files_site_south_photo/"><img src="./iconos/FILE.png" /></a>
 
             <label id="label_nuevo_site_south_photo" class="label_nuevo_site_south_photo">Nueva foto hacia el sur</label>
             <input type='file' id='nuevo_site_south_photo' name='nuevo_site_south_photo'></input>
@@ -80,7 +80,7 @@ class ubicacion extends EntidadAbstracta {
             <label id="label_site_east_photo" class="label_site_east_photo">Foto hacia el este</label>
             <input type='text' id='site_east_photo' name='site_east_photo'></input>
             <span id="span_error_site_east_photo"><a id="error_site_east_photo"></a></span>
-            <a id="link_site_east_photo" href="http://193.147.87.202/ET2/filesuploaded/files_site_north_photo/"><img src="./iconos/FILE.png" /></a>
+            <a id="link_site_east_photo" href="http://193.147.87.202/ET2/filesuploaded/files_site_east_photo/"><img src="./iconos/FILE.png" /></a>
 
             <label id="label_nuevo_site_east_photo" class="label_nuevo_site_east_photo">Nueva foto hacia el este</label>
             <input type='file' id='nuevo_site_east_photo' name='nuevo_site_east_photo'></input>
@@ -90,7 +90,7 @@ class ubicacion extends EntidadAbstracta {
             <label id="label_site_west_photo" class="label_site_west_photo">Foto hacia el oeste</label>
             <input type='text' id='site_west_photo' name='site_west_photo'></input>
             <span id="span_error_site_west_photo"><a id="error_site_west_photo"></a></span>
-            <a id="link_site_west_photo" href="http://193.147.87.202/ET2/filesuploaded/files_site_north_photo/"><img src="./iconos/FILE.png" /></a>
+            <a id="link_site_west_photo" href="http://193.147.87.202/ET2/filesuploaded/files_site_west_photo/"><img src="./iconos/FILE.png" /></a>
 
             <label id="label_nuevo_site_west_photo" class="label_nuevo_site_west_photo">Nueva foto hacia el oeste</label>
             <input type='file' id='nuevo_site_west_photo' name='nuevo_site_west_photo'></input>
@@ -822,16 +822,16 @@ class ubicacion extends EntidadAbstracta {
 
         // poner no visible el campo nuevo_site_north_photo (solo se puede ver el nombre de fichero)
         this.dom.hide_element_form('nuevo_site_north_photo');
-        this.dom.assign_property_value('link_site_north_photo', 'href', 'http://193.147.87.202/ET2/filesuploaded/files_ubicacion/' + fila.site_north_photo);
+        this.dom.assign_property_value('link_site_north_photo', 'href', 'http://193.147.87.202/ET2/filesuploaded/files_site_north_photo/' + fila.site_north_photo);
         // poner no visible el campo nuevo_site_south_photo (solo se puede ver el nombre de fichero)
         this.dom.hide_element_form('nuevo_site_south_photo');
-        this.dom.assign_property_value('link_site_south_photo', 'href', 'http://193.147.87.202/ET2/filesuploaded/files_ubicacion/' + fila.site_south_photo);
+        this.dom.assign_property_value('link_site_south_photo', 'href', 'http://193.147.87.202/ET2/filesuploaded/files_site_south_photo/' + fila.site_south_photo);
         // poner no visible el campo nuevo_site_east_photo (solo se puede ver el nombre de fichero)
         this.dom.hide_element_form('nuevo_site_east_photo');
-        this.dom.assign_property_value('link_site_east_photo', 'href', 'http://193.147.87.202/ET2/filesuploaded/files_ubicacion/' + fila.site_east_photo);
+        this.dom.assign_property_value('link_site_east_photo', 'href', 'http://193.147.87.202/ET2/filesuploaded/files_site_east_photo/' + fila.site_east_photo);
         // poner no visible el campo nuevo_site_west_photo (solo se puede ver el nombre de fichero)
         this.dom.hide_element_form('nuevo_site_west_photo');
-        this.dom.assign_property_value('link_site_west_photo', 'href', 'http://193.147.87.202/ET2/filesuploaded/files_ubicacion/' + fila.site_west_photo);
+        this.dom.assign_property_value('link_site_west_photo', 'href', 'http://193.147.87.202/ET2/filesuploaded/files_site_west_photo/' + fila.site_west_photo);
         // rellenar valores
         this.dom.rellenarvaloresform(fila);
 
@@ -856,16 +856,16 @@ class ubicacion extends EntidadAbstracta {
 
         // poner no visible el campo nuevo_site_north_photo (solo se puede ver el nombre de fichero)
         this.dom.hide_element_form('nuevo_site_north_photo');
-        this.dom.assign_property_value('link_site_north_photo', 'href', 'http://193.147.87.202/ET2/filesuploaded/files_ubicacion/' + fila.site_north_photo);
+        this.dom.assign_property_value('link_site_north_photo', 'href', 'http://193.147.87.202/ET2/filesuploaded/files_site_north_photo/' + fila.site_north_photo);
         // poner no visible el campo nuevo_site_south_photo (solo se puede ver el nombre de fichero)
         this.dom.hide_element_form('nuevo_site_south_photo');
-        this.dom.assign_property_value('link_site_south_photo', 'href', 'http://193.147.87.202/ET2/filesuploaded/files_ubicacion/' + fila.site_south_photo);
+        this.dom.assign_property_value('link_site_south_photo', 'href', 'http://193.147.87.202/ET2/filesuploaded/files_site_south_photo/' + fila.site_south_photo);
         // poner no visible el campo nuevo_site_east_photo (solo se puede ver el nombre de fichero)
         this.dom.hide_element_form('nuevo_site_east_photo');
-        this.dom.assign_property_value('link_site_east_photo', 'href', 'http://193.147.87.202/ET2/filesuploaded/files_ubicacion/' + fila.site_east_photo);
+        this.dom.assign_property_value('link_site_east_photo', 'href', 'http://193.147.87.202/ET2/filesuploaded/files_site_east_photo/' + fila.site_east_photo);
         // poner no visible el campo nuevo_site_west_photo (solo se puede ver el nombre de fichero)
         this.dom.hide_element_form('nuevo_site_west_photo');
-        this.dom.assign_property_value('link_site_west_photo', 'href', 'http://193.147.87.202/ET2/filesuploaded/files_ubicacion/' + fila.site_west_photo);
+        this.dom.assign_property_value('link_site_west_photo', 'href', 'http://193.147.87.202/ET2/filesuploaded/files_site_west_photo/' + fila.site_west_photo);
 
         // rellenar valores
         this.dom.rellenarvaloresform(fila);
@@ -938,7 +938,7 @@ class ubicacion extends EntidadAbstracta {
         this.dom.assign_class_value('class_contenido_titulo_form', 'text_contenido_titulo_form_ubicacion_SEARCH');
 
         // poner onsubmit
-        this.dom.assign_property_value('form_iu', 'onsubmit', 'return entidad.SEARCH_submit_' + this.nombreentidad);
+        this.dom.assign_property_value('form_iu', 'onsubmit', 'return entidad.SEARCH_submit_' + this.nombreentidad + '()');
 
         // poner action
         this.dom.assign_property_value('form_iu', 'action', 'javascript:entidad.SEARCH();');
@@ -955,10 +955,6 @@ class ubicacion extends EntidadAbstracta {
         // poner no visible el campo site_west_photo (solo se puede subir fichero)
         this.dom.hide_element_form('site_west_photo');
         this.dom.hide_element('link_site_west_photo');
-
-        // reemplazar enumerados por texto
-        // titulacionque es un select
-        this.dom.replaceSelectXEmptyInput('EstadoA');
 
         // rellenar valores
         // en SEARCH no hay valores que rellenar
@@ -980,28 +976,28 @@ class ubicacion extends EntidadAbstracta {
             case 'site_north_photo':
                 var link = 'error';
                 if (valorentrada !== '') {
-                    link = valorentrada + `  <a class="link_alumnograduacion_fotoacto" href="http://193.147.87.202/ET2/filesuploaded/files_ubicacion/` + valorentrada + `"><img src="./iconos/FILE.png" /></a>`;
+                    link = valorentrada + `  <a class="link_alumnograduacion_fotoacto" href="http://193.147.87.202/ET2/filesuploaded/files_site_north_photo/` + valorentrada + `"><img src="./iconos/FILE.png" /></a>`;
                 }
                 return link;
                 break;
             case 'site_south_photo':
                 var link = 'error';
                 if (valorentrada !== '') {
-                    link = valorentrada + `  <a class="link_alumnograduacion_fotoacto" href="http://193.147.87.202/ET2/filesuploaded/files_ubicacion/` + valorentrada + `"><img src="./iconos/FILE.png" /></a>`;
+                    link = valorentrada + `  <a class="link_alumnograduacion_fotoacto" href="http://193.147.87.202/ET2/filesuploaded/files_site_south_photo/` + valorentrada + `"><img src="./iconos/FILE.png" /></a>`;
                 }
                 return link;
                 break;
             case 'site_east_photo':
                 var link = 'error';
                 if (valorentrada !== '') {
-                    link = valorentrada + `  <a class="link_alumnograduacion_fotoacto" href="http://193.147.87.202/ET2/filesuploaded/files_ubicacion/` + valorentrada + `"><img src="./iconos/FILE.png" /></a>`;
+                    link = valorentrada + `  <a class="link_alumnograduacion_fotoacto" href="http://193.147.87.202/ET2/filesuploaded/files_site_east_photo/` + valorentrada + `"><img src="./iconos/FILE.png" /></a>`;
                 }
                 return link;
                 break;
             case 'site_west_photo':
                 var link = 'error';
                 if (valorentrada !== '') {
-                    link = valorentrada + `  <a class="link_alumnograduacion_fotoacto" href="http://193.147.87.202/ET2/filesuploaded/files_ubicacion/` + valorentrada + `"><img src="./iconos/FILE.png" /></a>`;
+                    link = valorentrada + `  <a class="link_alumnograduacion_fotoacto" href="http://193.147.87.202/ET2/filesuploaded/files_site_west_photo/` + valorentrada + `"><img src="./iconos/FILE.png" /></a>`;
                 }
                 return link;
                 break;
