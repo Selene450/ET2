@@ -28,7 +28,7 @@ class articulo extends EntidadAbstracta {
         <form id="form_iu" action="http://193.147.87.202/procesaform.php" method="POST" enctype="multipart/form-data" onsubmit="return entidad.ADD_submit_articulo();" class='formulario'>
 
 			<label id="label_CodigoA">Codigo del arículo</label>
-			<input type='text' id='CodigoA' name='codigoA' onblur=" return entidad.ADD_CodigoA_validation();"></input>
+			<input type='text' id='CodigoA' name='CodigoA' onblur=" return entidad.ADD_CodigoA_validation();"></input>
 			<span id="span_error_CodigoA"><a id="error_CodigoA"></a></span>
 			<br>
 			
