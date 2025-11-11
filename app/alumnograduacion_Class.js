@@ -48,11 +48,11 @@ class alumnograduacion extends EntidadAbstracta {
 
 			<label class="label_alumnograduacion_titulacion">Titulacion</label>
 			<select id='alumnograduacion_titulacion' name='alumnograduacion_titulacion'>
-				<option value="GREI">GREI</option>
-				<option value="GRIA">GRIA</option>
-				<option value="MEI">MEI</option>
-				<option value="MIA">MIA</option>
-				<option value="PCEO">PCEO</option>
+				<option elem="GREI">GREI</option>
+				<option elem="GRIA">GRIA</option>
+				<option elem="MEI">MEI</option>
+				<option elem="MIA">MIA</option>
+				<option elem="PCEO">PCEO</option>
 			</select>
 			<span id="span_error_alumnograduacion_titulacion" ><a id="error_alumnograduacion_titulacion"></a></span>
 			
@@ -92,7 +92,7 @@ class alumnograduacion extends EntidadAbstracta {
 			<span id="span_error_nuevo_alumnograduacion_fotoacto"><a id="error_nuevo_alumnograduacion_fotoacto"></a></span>
 			<br>
 
-			<input id="submit_button" type="submit" value="Submit">
+			<input id="submit_button" type="submit" elem="Submit">
 
 		</form>
 		`
@@ -115,15 +115,15 @@ class alumnograduacion extends EntidadAbstracta {
 	}
 	/*alfabéticos y espacios sin acentos ni ñ, min 8 max 100 */
 	ADD_alumnograduacion_password_validation() {
-		if (!this.personalize_min_size_password(document.getElementById('alumnograduacion_password').value)) {
+		if (!this.personalize_min_size_password(document.getElementById('alumnograduacion_password').elem)) {
 			this.dom.mostrar_error_campo('alumnograduacion_password', 'alumnograduacion_password_min_size_KO')
 			return 'alumnograduacion_password_min_size_KO'
 		}
-		if (!this.personalize_max_size_password(document.getElementById('alumnograduacion_password').value)) {
+		if (!this.personalize_max_size_password(document.getElementById('alumnograduacion_password').elem)) {
 			this.dom.mostrar_error_campo('alumnograduacion_password', 'alumnograduacion_password_max_size_KO')
 			return 'alumnograduacion_password_max_size_KO'
 		}
-		if (!(this.personalize_format_password(document.getElementById('alumnograduacion_password').value))) {
+		if (!(this.personalize_format_password(document.getElementById('alumnograduacion_password').elem))) {
 			return 'alumnograduacion_password_format_KO'
 		}
 		this.dom.mostrar_exito_campo('alumnograduacion_password');
@@ -202,7 +202,7 @@ class alumnograduacion extends EntidadAbstracta {
 	}
 	/*valores posibles: 'GREI','GRIA','MEI','MIA','PCEO'*/
 	ADD_alumnograduacion_titulacion_validation() {
-		const titulacion = document.getElementById('alumnograduacion_titulacion').value;
+		const titulacion = document.getElementById('alumnograduacion_titulacion').elem;
 		const valoresPermitidos = ['GREI', 'GRIA', 'MEI', 'MIA', 'PCEO'];
 		
 		// Verificar que no está vacío
@@ -263,7 +263,7 @@ class alumnograduacion extends EntidadAbstracta {
 
 	personalize_dni_nie() {
 
-		var dni = document.getElementById('alumnograduacion_dni').value;
+		var dni = document.getElementById('alumnograduacion_dni').elem;
 		if (this.personalize_dni_format() == true) {
 			if (!(this.personalize_validate_dni(dni))) {
 				return "alumnograduacion_dni_nie_format_KO";
@@ -285,9 +285,9 @@ class alumnograduacion extends EntidadAbstracta {
 	}
 	/**
 	 * get dni as parameter, split letter and numbers, calculate
-	 * %23 from number to obtain corresponding letter and compares with letter in dni value
+	 * %23 from number to obtain corresponding letter and compares with letter in dni elem
 	 * 
-	 * @param dni value
+	 * @param dni elem
 	 * @returns true if dni is valid false otherwise
 	 */
 	personalize_dni_format() {
@@ -309,7 +309,7 @@ class alumnograduacion extends EntidadAbstracta {
 	}
 	personalize_validate_dni(dni) {
 
-		//var dni = document.getElementById('dni').value;
+		//var dni = document.getElementById('dni').elem;
 		var dni_letters = "TRWAGMYFPDXBNJZSQVHLCKE";
 		var letter = dni_letters.charAt(parseInt(dni, 10) % 23);
 
@@ -321,12 +321,12 @@ class alumnograduacion extends EntidadAbstracta {
 	 * the number from this letter and create dni for validating in 
 	 * personalizate method
 	 * 
-	 * @param nie value
+	 * @param nie elem
 	 * @returns true if nie is valid false otherwise
 	 */
 	personalize_validate_nie(nie) {
 
-		//var nie = document.getElementById('dni').value;
+		//var nie = document.getElementById('dni').elem;
 		// Change the initial letter for the corresponding number and validate as DNI
 		var nie_prefix = nie.charAt(0);
 
@@ -579,6 +579,8 @@ class alumnograduacion extends EntidadAbstracta {
 	}
 
 	SEARCH_alumnograduacion_login_validation() {
+		var elem = document.getElementById('alumnograduacion_login').elem;
+		if(!elem) return true;
 		if (!this.validations.max_size('alumnograduacion_login', 15)) {
 			this.dom.mostrar_error_campo('alumnograduacion_login', 'alumnograduacion_login_max_size_KO');
 			return 'alumnograduacion_login_max_size_KO';
@@ -590,17 +592,19 @@ class alumnograduacion extends EntidadAbstracta {
 	}
 
 	SEARCH_alumnograduacion_password_validation() {
-		if (!this.search_max_size_password(document.getElementById('alumnograduacion_password').value)) {
-			this.dom.mostrar_error_campo('alumnograduacion_password', 'alumnograduacion_password_max_size_KO')
+		var elem = document.getElementById('alumnograduacion_password').elem;
+		if(!elem) return true;
+		if (!this.personalize_search_max_size_password(document.getElementById('alumnograduacion_password').elem)) {
+			this.dom.personalize_mostrar_error_campo('alumnograduacion_password', 'alumnograduacion_password_max_size_KO')
 			return 'alumnograduacion_password_max_size_KO'
 		}
-		if (!(this.search_format_password(document.getElementById('alumnograduacion_password').value))) {
+		if (!(this.search_format_password(document.getElementById('alumnograduacion_password').elem))) {
 			return 'alumnograduacion_password_format_KO'
 		}
 		return true;
 	}
 
-	search_max_size_password(password) {
+	personalize_search_max_size_password(password) {
 		// Validar nulos y vacíos
 		if (!password) return false;
 
@@ -610,7 +614,7 @@ class alumnograduacion extends EntidadAbstracta {
 		return true;
 	}
 
-	search_format_password(password) {
+	personalize_search_format_password(password) {
 		// 1. Verificar que no es null/undefined
 		if (!password) return false;
 
@@ -625,6 +629,8 @@ class alumnograduacion extends EntidadAbstracta {
 	}
 
 	SEARCH_alumnograduacion_nombre_validation() {
+		var elem = document.getElementById('alumnograduacion_nombre').elem;
+		if(!elem) return true;
 		if (!this.validations.max_size('alumnograduacion_nombre', 25)) {
 			this.dom.mostrar_error_campo('alumnograduacion_nombre', 'alumnograduacion_nombre_max_size_KO')
 			return 'alumnograduacion_nombre_max_size_KO'
@@ -638,6 +644,8 @@ class alumnograduacion extends EntidadAbstracta {
 	}
 
 	SEARCH_alumnograduacion_apellidos_validation() {
+		var elem = document.getElementById('alumnograduacion_apellidos').elem;
+		if(!elem) return true;
 		if (!this.validations.max_size('alumnograduacion_apellidos', 35)) {
 			this.dom.mostrar_error_campo('alumnograduacion_apellidos', 'alumnograduacion_apellidos_max_size_KO')
 			return 'alumnograduacion_apellidos_max_size_KO'
@@ -654,7 +662,7 @@ class alumnograduacion extends EntidadAbstracta {
 		// En SEARCH el campo puede quedar vacío (búsqueda libre). Si viene vacío, es válido.
 		const elem = document.getElementById('alumnograduacion_titulacion');
 		if (!elem) return true;
-		const valor = elem.value;
+		const valor = elem.elem;
 		const valoresPermitidos = ['GREI', 'GRIA', 'MEI', 'MIA', 'PCEO'];
 
 		// Permitir vacío en SEARCH
@@ -680,6 +688,8 @@ class alumnograduacion extends EntidadAbstracta {
 	}
 
 	SEARCH_alumnograduacion_dni_validation() {
+		var elem = document.getElementById('alumnograduacion_dni').value;
+		if(!elem) return true;
 		if (!this.validations.max_size('alumnograduacion_dni', 9)) {
 			this.dom.mostrar_error_campo('alumnograduacion_dni', 'alumnograduacion_dni_max_size_KO');
 			return 'alumnograduacion_dni_max_size_KO';
@@ -749,6 +759,8 @@ class alumnograduacion extends EntidadAbstracta {
 
 
 	SEARCH_alumnograduacion_telefono_validation() {
+		var elem = document.getElementById('alumnograduacion_telefono').value;
+		if(!elem) return true;
 		if (!this.validations.max_size('alumnograduacion_telefono', 9)) {
 			this.dom.mostrar_error_campo('alumnograduacion_telefono', 'alumnograduacion_telefono_max_size_KO');
 			return 'alumnograduacion_telefono_max_size_KO';
@@ -761,6 +773,8 @@ class alumnograduacion extends EntidadAbstracta {
 	}
 
 	SEARCH_alumnograduacion_direccion_validation() {
+		var elem = document.getElementById('alumnograduacion_direccion').value;
+		if(!elem) return true;
 		if (!this.validations.max_size('alumnograduacion_direccion', 100)) {
 			this.dom.mostrar_error_campo('alumnograduacion_direccion', 'alumnograduacion_direccion_max_size_KO')
 			return 'alumnograduacion_direccion_max_size_KO'
@@ -773,6 +787,8 @@ class alumnograduacion extends EntidadAbstracta {
 	}
 
 	SEARCH_alumnograduacion_email_validation() {
+		var elem = document.getElementById('alumnograduacion_email').value;
+		if(!elem) return true;
 		if (!this.validations.max_size('alumnograduacion_email', 100)) {
 			this.dom.mostrar_error_campo('alumnograduacion_email', 'alumnograduacion_email_max_size_KO');
 			return 'alumnograduacion_email_max_size_KO'
@@ -785,6 +801,8 @@ class alumnograduacion extends EntidadAbstracta {
 	}
 
 	SEARCH_alumnograduacion_fotoacto_validation() {
+		var elem = document.getElementById('alumnograduacion_fotoacto').value;
+		if(!elem) return true;
 		if (!this.validations.max_size('alumnograduacion_fotoacto', 40)) {
 			this.dom.mostrar_error_campo('alumnograduacion_fotoacto', 'alumnograduacion_fotoacto_max_size_KO')
 			return 'alumnograduacion_fotoacto_name_max_size_KO'
@@ -890,7 +908,7 @@ class alumnograduacion extends EntidadAbstracta {
 		this.dom.assign_class_value('class_contenido_titulo_form', 'text_contenido_titulo_form_alumnograduacion_SHOWCURRENT');
 
 		// rellenar y action
-		//this.dom.assign_property_value('form_iu', 'action', 'javascript:entidad.DELETE();');
+		//this.dom.assign_property_elem('form_iu', 'action', 'javascript:entidad.DELETE();');
 
 		// poner no visible el campo nuevo_alumnograduacion_fotoacto (solo se puede ver el nombre de fichero)
 		this.dom.hide_element_form('nuevo_alumnograduacion_fotoacto');
@@ -964,8 +982,6 @@ class alumnograduacion extends EntidadAbstracta {
 		this.dom.hide_element_form('nuevo_alumnograduacion_fotoacto');
 		this.dom.hide_element('link_alumnograduacion_fotoacto');
 
-		//Escondemos la password para no permitir buscar por contraseña (se supone que son ocultas)
-		this.dom.hide_element_form('alumnograduacion_password');
 
 		// reemplazar enumerados por texto
 		// titulacionque es un select

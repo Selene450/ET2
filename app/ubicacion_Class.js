@@ -625,6 +625,8 @@ class ubicacion extends EntidadAbstracta {
     }
 
     SEARCH_id_site_validation() {
+        var elem = document.getElementById('id_site').value;
+		if(!elem) return true;
         if (!(this.validations.max_size('id_site', 11))) {
             this.dom.mostrar_error_campo('id_site', 'id_site_max_size_KO');
             return "id_site_max_size_KO";
@@ -638,6 +640,8 @@ class ubicacion extends EntidadAbstracta {
     }
 
     SEARCH_site_latitud_validation() {
+        var elem = document.getElementById('site_latitud').value;
+		if(!elem) return true;
         if (!(this.validations.format('site_latitud', '^[+-]?\\d{1,3}\\.\\d{6}$'))) {
             this.dom.mostrar_error_campo('site_latitud', 'site_latitud_format_KO');
             return "site_latitud_format_KO";
@@ -651,6 +655,8 @@ class ubicacion extends EntidadAbstracta {
     }
 
     SEARCH_site_longitud_validation() {
+        var elem = document.getElementById('site_longitud').value;
+		if(!elem) return true;
         if (!(this.validations.format('site_longitud', '^[+-]?\\d{1,3}\\.\\d{6}$'))) {
             this.dom.mostrar_error_campo('site_longitud', 'site_longitud_format_KO');
             return "site_longitud_format_KO";
@@ -665,6 +671,8 @@ class ubicacion extends EntidadAbstracta {
     }
 
     SEARCH_site_altitude_validation() {
+        var elem = document.getElementById('site_altitude').value;
+		if(!elem) return true;
         if (!(this.validations.format('site_altitude', '^[-]?[0-9]+$'))) {
             this.dom.mostrar_error_campo('site_altitude', 'site_altitude_format_KO');
             return "site_altitude_format_KO";
@@ -678,6 +686,8 @@ class ubicacion extends EntidadAbstracta {
     }
 
     SEARCH_site_locality_validation() {
+        var elem = document.getElementById('site_locality').value;
+		if(!elem) return true;
         if (!(this.validations.max_size('site_locality', 40))) {
             this.dom.mostrar_error_campo('site_locality', 'site_locality_max_size_KO');
             return "site_locality_max_size_KO";
@@ -691,6 +701,8 @@ class ubicacion extends EntidadAbstracta {
     }
 
     SEARCH_site_provider_login_validation() {
+        var elem = document.getElementById('site_provider_login').value;
+		if(!elem) return true;
         if (!(this.validations.max_size('site_provider_login', 30))) {
             this.dom.mostrar_error_campo('site_provider_login', 'site_provider_login_max_size_KO');
             return "site_provider_login_max_size_KO";
@@ -704,6 +716,8 @@ class ubicacion extends EntidadAbstracta {
     }
 
     SEARCH_site_north_photo_validation() {
+        var elem = document.getElementById('site_north_photo').value;
+		if(!elem) return true;
         if (!(this.validations.max_size('site_north_photo', 50))) {
             this.dom.mostrar_error_campo('site_north_photo', 'site_north_photo_name_max_size_KO');
             return "site_north_photo_name_max_size_KO";
@@ -717,6 +731,8 @@ class ubicacion extends EntidadAbstracta {
     }
 
     SEARCH_site_south_photo_validation() {
+        var elem = document.getElementById('site_south_photo').value;
+		if(!elem) return true;
         if (!(this.validations.max_size('site_south_photo', 50))) {
             this.dom.mostrar_error_campo('site_south_photo', 'site_south_photo_name_max_size_KO');
             return "site_south_photo_name_max_size_KO";
@@ -730,6 +746,8 @@ class ubicacion extends EntidadAbstracta {
     }
 
     SEARCH_site_east_photo_validation() {
+        var elem = document.getElementById('site_east_photo').value;
+		if(!elem) return true;
         if (!(this.validations.max_size('site_east_photo', 50))) {
             this.dom.mostrar_error_campo('site_east_photo', 'site_east_photo_name_max_size_KO');
             return "site_east_photo_name_max_size_KO";
@@ -743,6 +761,8 @@ class ubicacion extends EntidadAbstracta {
     }
 
     SEARCH_site_west_photo_validation() {
+        var elem = document.getElementById('site_west_photo').value;
+		if(!elem) return true;
         if (!(this.validations.max_size('site_west_photo', 50))) {
             this.dom.mostrar_error_campo('site_west_photo', 'site_west_photo_name_max_size_KO');
             return "site_west_photo_name_max_size_KO";

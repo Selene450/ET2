@@ -412,6 +412,8 @@ class articulo extends EntidadAbstracta {
     }
 
     SEARCH_CodigoA_validation() {
+        var elem = document.getElementById('CodigoA').value;
+		if(!elem) return true;
         if(!(this.validations.max_size('CodigoA', 11))) {
             this.dom.mostrar_error_campo('CodigoA', 'CodigoA_max_size_KO');
             return "CodigoA_max_size_KO";
@@ -425,6 +427,8 @@ class articulo extends EntidadAbstracta {
     }
 
     SEARCH_AutoresA_validation() {
+        var elem = document.getElementById('AutoresA').value;
+		if(!elem) return true;
         if(!(this.validations.max_size('AutoresA', 100))) {
             this.dom.mostrar_error_campo('AutoresA', 'AutoresA_max_size_KO');
             return "AutoresA_max_size_KO";
@@ -438,6 +442,8 @@ class articulo extends EntidadAbstracta {
     }
 
     SEARCH_TituloA_validation() {
+        var elem = document.getElementById('TituloA').value;
+		if(!elem) return true;
         if(!(this.validations.max_size('TituloA', 100))) {
             this.dom.mostrar_error_campo('TituloA', 'TituloA_max_size_KO');
             return "TituloA_max_size_KO";
@@ -451,6 +457,8 @@ class articulo extends EntidadAbstracta {
     }
 
     SEARCH_TituloR_validation() {
+        var elem = document.getElementById('TituloR').value;
+		if(!elem) return true;
         if(!(this.validations.max_size('TituloR', 100))) {
             this.dom.mostrar_error_campo('TituloR', 'TituloR_max_size_KO');
             return "TituloR_max_size_KO";
@@ -464,6 +472,8 @@ class articulo extends EntidadAbstracta {
     }
 
     SEARCH_ISSN_validation() {
+        var elem = document.getElementById('ISSN').value;
+		if(!elem) return true;
         if(!this.validations.format('ISSN', '^\\d{4}-\\d{3}[\\dX]$')) {
             this.dom.mostrar_error_campo('ISSN', 'ISSN_format_KO');
             return "ISSN_format_KO";
@@ -473,6 +483,8 @@ class articulo extends EntidadAbstracta {
     }
 
     SEARCH_VolumenR_validation() {
+        var elem = document.getElementById('VolumenR').value;
+		if(!elem) return true;
         if(!(this.validations.max_size('VolumenR', 4))) {
             this.dom.mostrar_error_campo('VolumenR', 'VolumenR_max_size_KO');
             return "VolumenR_max_size_KO";
@@ -486,6 +498,8 @@ class articulo extends EntidadAbstracta {
     }
 
     SEARCH_PagIniA_validation() {
+        var elem = document.getElementById('PagIniA').value;
+		if(!elem) return true;
         if(!(this.validations.max_size('PagIniA', 4))) {
             this.dom.mostrar_error_campo('PagIniA', 'PagIniA_max_size_KO');
             return "PagIniA_max_size_KO";
@@ -499,6 +513,8 @@ class articulo extends EntidadAbstracta {
     }
 
     SEARCH_PagFinA_validation() {
+        var elem = document.getElementById('PagFinA').value;
+		if(!elem) return true;
         if(!(this.validations.max_size('PagFinA', 4))) {
             this.dom.mostrar_error_campo('PagFinA', 'PagFinA_max_size_KO');
             return "PagFinA_max_size_KO";
@@ -512,6 +528,8 @@ class articulo extends EntidadAbstracta {
     }
 
     SEARCH_FechaPublicacionR_validation() {
+        var elem = document.getElementById('FechaPublicacionR').value;
+		if(!elem) return true;
         if(!this.validations.format('FechaPublicacionR', '^(\\d{4})-(0[1-9]|1[0-2])-(0[1-9]|[12]\\d|3[01])$')) {
             this.dom.mostrar_error_campo('FechaPublicacionR', 'FechaPublicacionR_format_KO');
             return "FechaPublicacionR_format_KO";
@@ -522,6 +540,8 @@ class articulo extends EntidadAbstracta {
     }
 
     SEARCH_FicheropdfA_validation() {
+        var elem = document.getElementById('FicheropdfA').value;
+		if(!elem) return true;
         if(!this.validations.max_size('FicheropdfA', 20)) {
             this.dom.mostrar_error_campo('FicheropdfA', 'FicheropdfA_max_size_KO');
             return "FicheropdfA_max_size_KO";
@@ -536,6 +556,8 @@ class articulo extends EntidadAbstracta {
 
 
     SEARCH_EstadoA_validation() {
+        var elem = document.getElementById('EstadoA').value;
+		if(!elem) return true;
         const estados_validos = ['Enviado', 'Revision', 'Publicado'];
         if(!(estados_validos.includes(document.getElementById('EstadoA').value))) {
             this.dom.mostrar_error_campo('EstadoA', 'EstadoA_format_KO');
