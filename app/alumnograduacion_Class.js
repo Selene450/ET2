@@ -964,6 +964,9 @@ class alumnograduacion extends EntidadAbstracta {
 		this.dom.hide_element_form('nuevo_alumnograduacion_fotoacto');
 		this.dom.hide_element('link_alumnograduacion_fotoacto');
 
+		//Escondemos la password para no permitir buscar por contraseña (se supone que son ocultas)
+		this.dom.hide_element_form('alumnograduacion_password');
+
 		// reemplazar enumerados por texto
 		// titulacionque es un select
 		this.dom.replaceSelectXEmptyInput('alumnograduacion_titulacion');

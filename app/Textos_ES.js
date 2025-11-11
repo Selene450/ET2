@@ -163,7 +163,7 @@ var textos_ES = {
 
 	//alumnograduacion_direccion
 	'alumnograduacion_direccion_min_size_KO':'Dirección demasiado corta. Debe tener al menos un caracter',
-	'alumnograduacion_direccion_max_size_KO':'Dirección demasiado larga. Debe tener menos de 10 caracteres alfanuméricos',
+	'alumnograduacion_direccion_max_size_KO':'Dirección demasiado larga. Debe tener menos de 100 caracteres alfanuméricos',
 	'alumnograduacion_direccion_format_KO':'Dirección incorrecta. Solo se permiten caracteres alfanuméricos',
 
 	// nuevo foto alumnograduacion	
@@ -229,7 +229,7 @@ var textos_ES = {
 	'nuevo_FicheropdfA_type_file_KO': 'El formato del fichero es incorrecto, debe ser un JPG',
 	'nuevo_FicheropdfA_max_size_file_KO': 'El archivo es demasiado grandem solo se permiten archivos de, como máximo, 2MB',
 	'nuevo_FicheropdfA_name_min_size_KO': 'El nombre del fichero es demasiado corto. Debe tener entre 3 y 20 caracteres alfanuméricos incluyendo ñ, acentos y ".". Sin espacios',
-	'nuevo_FicheropdfA_name_max_size_KO': 'El nombre del fichero es demasiado corto. Debe tener entre 3 y 20 caracteres alfanuméricos incluyendo ñ, acentos y ".". Sin espacios',
+	'nuevo_FicheropdfA_name_max_size_KO': 'El nombre del fichero es demasiado largo. Debe tener entre 3 y 20 caracteres alfanuméricos incluyendo ñ, acentos y ".". Sin espacios',
 	'nuevo_FicheropdfA_name_format_KO': 'El nombre del fichero solo permite caracteres alfanuméricos incluyendo ñ, acentos y ".". Sin espacios',
 
 	//SEARCH
@@ -242,7 +242,7 @@ var textos_ES = {
 	//id_site
 	'id_site_min_size_KO': 'El ID debe tener 11 dígitos',
 	'id_site_max_size_KO': 'El ID debe tener 11 dígitos',
-	'id_site_format_KO': 'El ID solompermite dígitos',
+	'id_site_format_KO': 'El ID solo permite dígitos',
 
 	//site_latitud
 	'site_latitud_min_size_KO': 'La lattitud debe ser un número decimal superior a -90.000000',
